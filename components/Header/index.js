@@ -1,5 +1,3 @@
-import React from 'React';
-
 class Header extends React.Component {
   constructor(props) {
     super(props);
