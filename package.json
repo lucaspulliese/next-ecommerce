@@ -1,0 +1,18 @@
+{
+  "name": "next-ecommerce",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "9.4.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-id-swiper": "^4.0.0",
+    "sass": "^1.26.9",
+    "swiper": "^5.4.5"
+  }
+}

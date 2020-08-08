@@ -1,0 +1,22 @@
+// A map of breakpoints.
+$breakpoints: (
+  phone-sm: 420px,
+  phone: 767px,
+  tablet-lg: 1024px,
+  desktop-lg: 1202px
+);
+
+@mixin breakpoint($breakpoint) {
+
+    // If the breakpoint exists in the map.
+	@if map-has-key($breakpoints, $breakpoint) {
+	
+	// Get the breakpoint value.
+	$breakpoint-value: map-get($breakpoints, $breakpoint);
+	
+	//Build the media query
+		@media (min-width: $breakpoint-value) {
+			@content;
+		}
+	} 
+}
