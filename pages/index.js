@@ -1,6 +1,7 @@
 import Layout from './../layouts/Main';
 import PageIntro from './../components/PageIntro';
 import Product from './../components/Product';
+import ProductsFeatured from './../components/ProductsFeatured';
 
 const IndexPage = () => (
   <Layout>
@@ -31,18 +32,7 @@ const IndexPage = () => (
       </div>
     </section>
 
-    <section className="section-products-featured">
-      <div className="container">
-        <header className="section-products-featured__header">
-          <h3>Selected just for you</h3>
-          <a href="#" className="btn btn--rounded btn--border">Show All</a>
-        </header>
-
-        <div className="products-carousel">
-          <Product />
-        </div>
-      </div>
-    </section>
+    <ProductsFeatured />
 
     <footer className="site-footer">
       <div className="container">

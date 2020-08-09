@@ -5,23 +5,28 @@ class Header extends React.Component {
       onTop: false,
     };  
   }
-  
+
+  headerClass() {
+    if(window.pageYOffset === 0) {
+      this.setState({
+        onTop: true,
+      });
+    } else {
+      this.setState({
+        onTop: false,
+      });
+    }
+  }
+
   componentWillUnmount() {
     window.onscroll = null;
   }
 
   componentDidMount() {
     const self = this;
+    this.headerClass();
     window.onscroll = function() {
-      if(window.pageYOffset === 0) {
-        self.setState({
-          onTop: true,
-        });
-      } else {
-        self.setState({
-          onTop: false,
-        });
-      }
+      self.headerClass();
     };
   }
 
