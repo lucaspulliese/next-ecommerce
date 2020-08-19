@@ -1,4 +1,4 @@
-import Product from './../Product';
+import Product from './../product';
 import Swiper from 'react-id-swiper';
 
 const ProductsFeatured = () => {

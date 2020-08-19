@@ -54,8 +54,8 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icon-materials:before { content: '\e800'; } /* '' */
-.icon-happy:before { content: '\e801'; } /* '' */
+.icon-up-open:before { content: '\e800'; } /* '' */
+.icon-down-open:before { content: '\e801'; } /* '' */
 .icon-cash:before { content: '\e802'; } /* '' */
 .icon-payment:before { content: '\e803'; } /* '' */
 .icon-shipping:before { content: '\e804'; } /* '' */
@@ -65,3 +65,13 @@
 .icon-home:before { content: '\e808'; } /* '' */
 .icon-delivery:before { content: '\e809'; } /* '' */
 .icon-avatar:before { content: '\e80a'; } /* '' */
+.icon-left:before { content: '\e80b'; } /* '' */
+.icon-happy:before { content: '\e80c'; } /* '' */
+.icon-materials:before { content: '\e80d'; } /* '' */
+.icon-heart:before { content: '\e80e'; } /* '' */
+.icon-right:before { content: '\e811'; } /* '' */
+.icon-twitter:before { content: '\f099'; } /* '' */
+.icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-linkedin:before { content: '\f0e1'; } /* '' */
+.icon-youtube-play:before { content: '\f16a'; } /* '' */
+.icon-instagram:before { content: '\f16d'; } /* '' */
