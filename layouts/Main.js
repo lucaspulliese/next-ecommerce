@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Header from './../components/Header'
+import Header from '../components/Header'
 
 export default ({ children, title = 'Next.js Ecommerce' }) => (
   <div className="app-main">
