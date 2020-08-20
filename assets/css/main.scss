@@ -139,7 +139,7 @@ h1,h2,h3,h4,h5 {
     margin-right: auto;
   }
   @include breakpoint(desktop-lg) {
-    max-width: 1212px;
+    max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -158,6 +158,9 @@ h1,h2,h3,h4,h5 {
     text-transform: uppercase;
     &.btn--border {
       border: 1px solid #D8D8D8;
+    }
+    &.btn--yellow {
+      background-color: var(--color-orange);
     }
   }
 }
@@ -297,6 +300,23 @@ h1,h2,h3,h4,h5 {
         line-height: 120%;
         width: 550px;
       }
+      .btn-shop {
+        display: flex;
+        color: #FFF;
+        align-items: center;
+        i {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          width: 40px;
+          height: 40px;
+          color: #FFF;
+          font-size: 15px;
+          margin-right: 10px;
+          background-color: var(--color-orange);
+          border-radius: 100%;
+        }
+      }
     }
   }
 }
@@ -396,12 +416,45 @@ h1,h2,h3,h4,h5 {
 .subscribe {
   .subscribe__content {
     background-color: #FAFAFA;
-    padding: 80px 145px 80px 105px;
+    padding: 80px 125px 80px 105px;
     display: flex;
     align-items: center;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    &:before {
+      content: '';
+      width: 100%;
+      left: 0;
+      z-index: 5;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(0,0,0, 0.4);
+    }
+    * {
+      z-index: 10;
+      position: relative;
+    }
+    h4 {
+      font-size: 26px;
+      color: #FFF;
+      line-height: 130%;
+      width: 504px;
+      margin-right: auto;
+    }
+    .subscribe__form {
+      input {
+        height: 48px;
+        padding: 0 35px;
+        color: #ABABAB;
+        font-size: 13px;
+        background-color: #FFF;
+        border-radius: 30px;
+        margin-right: 25px;
+      }
+    }
   }
 }
 

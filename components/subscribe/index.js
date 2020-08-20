@@ -6,7 +6,7 @@ const Subscribe = () => {
           <h4>Subscribe to our newsletter and receive exclusive offers every week</h4>
 
           <form className="subscribe__form">
-            <input type="email" />
+            <input type="email" placeholder="Email address" />
             <button type="submit" className="btn btn--rounded btn--yellow">Subscribe</button>
           </form>
         </div>
