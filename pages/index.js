@@ -1,7 +1,8 @@
 import Layout from '../layouts/Main';
-import PageIntro from '../components/PageIntro';
-import ProductsFeatured from '../components/ProductsFeatured';
-import Footer from '../components/Footer';
+import PageIntro from '../components/page-intro';
+import ProductsFeatured from '../components/products-featured';
+import Footer from '../components/footer';
+import Subscribe from '../components/subscribe';
 
 const IndexPage = () => (
   <Layout>
@@ -9,21 +10,21 @@ const IndexPage = () => (
 
     <section className="featured">
       <div className="container">
-        <article className="featured-item featured-item-large">
+        <article style={{backgroundImage: 'url(/images/featured-1.jpg)'}} className="featured-item featured-item-large">
           <div className="featured-item__content">
             <h3>New arrivals are now in!</h3>
             <a href="#" className="btn btn--rounded">Show Collection</a>
           </div>
         </article>
         
-        <article className="featured-item featured-item-small-first">
+        <article style={{backgroundImage: 'url(/images/featured-2.jpg)'}} className="featured-item featured-item-small-first">
           <div className="featured-item__content">
             <h3>Basic t-shirts $29,99</h3>
             <a href="#" className="btn btn--rounded">More details</a>
           </div>
         </article>
         
-        <article className="featured-item featured-item-small">
+        <article style={{backgroundImage: 'url(/images/featured-3.jpg)'}} className="featured-item featured-item-small">
           <div className="featured-item__content">
             <h3>Sale this summer</h3>
             <a href="#" className="btn btn--rounded">VIEW ALL</a>
@@ -62,12 +63,20 @@ const IndexPage = () => (
               <p>30 days warranty for each product from our store</p>
             </div>
           </li>
+          
+          <li>
+            <i className="icon-cash"></i>
+            <div className="data-item__content">
+              <h4>Originality Guaranteed</h4>
+              <p>30 days warranty for each product from our store</p>
+            </div>
+          </li>
         </ul>
       </div>
     </section>
 
-
     <ProductsFeatured />
+    <Subscribe />
     <Footer />
   </Layout>
 )
