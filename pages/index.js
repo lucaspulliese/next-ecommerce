@@ -1,6 +1,6 @@
 import Layout from './../layouts/Main';
-import PageIntro from './../components/page-intro';
-import ProductsFeatured from './../components/products-featured';
+import PageIntro from './../components/PageIntro';
+import ProductsFeatured from './../components/ProductsFeatured';
 import Footer from './../components/footer';
 
 const IndexPage = () => (
