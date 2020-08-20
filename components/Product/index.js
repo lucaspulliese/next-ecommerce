@@ -6,7 +6,7 @@ const Product = () => (
     
     <div className="product__description">
       <h3>T-Shirt Summer Vibes</h3>
-      <div class="product__price">
+      <div className="product__price">
         <h4>$89.99</h4>
         <span>$119.99</span>
       </div>
