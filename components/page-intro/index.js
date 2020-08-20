@@ -2,6 +2,10 @@ import Swiper from 'react-id-swiper';
 
 const PageIntro = () => {
   const params = {
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar',
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
@@ -15,7 +19,7 @@ const PageIntro = () => {
           <div className="container">
             <div className="page-intro__slide__content">
               <h2>Make your house into a home</h2>
-              <a href="#" className="btn-shop"></a>
+              <a href="#" className="btn-shop"><i className="icon-right"></i>Shop now</a>
             </div>
           </div>
         </div>

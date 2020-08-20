@@ -5,7 +5,42 @@ const Footer = () => {
         <div className="site-footer__top">
           <div className="site-footer__description">
             <h6><img src="/images/logo.svg" alt="logo" /> E-Shop</h6>
-            <p>House My Brand designs clothing for the young, the old & everyone in between – but most importantly, for the fashionable</p>
+            <p>House My Brand designs clothing for the young, the old & everyone in between – but most 
+              importantly, for the fashionable</p>
+            <ul className="site-footer__social-networks">
+              <li><a href="#"><i className="icon-facebook"></i></a></li>
+              <li><a href="#"><i className="icon-twitter"></i></a></li>
+              <li><a href="#"><i className="icon-linkedin"></i></a></li>
+              <li><a href="#"><i className="icon-instagram"></i></a></li>
+              <li><a href="#"><i className="icon-youtube-play"></i></a></li>
+            </ul>
+          </div>
+
+          <div className="site-footer__links">
+            <ul>
+              <li>Shopping online</li>
+              <li><a href="#">Order Status</a></li>
+              <li><a href="#">Shipping and Delivery</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Payment options</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul>
+              <li>Shopping online</li>
+              <li><a href="#">Order Status</a></li>
+              <li><a href="#">Shipping and Delivery</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Payment options</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul>
+              <li>Shopping online</li>
+              <li><a href="#">Order Status</a></li>
+              <li><a href="#">Shipping and Delivery</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Payment options</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
           </div>
         </div>
       </div>

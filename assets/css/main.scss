@@ -212,6 +212,9 @@ h1,h2,h3,h4,h5 {
 
 .page-intro {
   position: relative;
+  .swiper-pagination-progressbar {
+    
+  }
   .shop-data {
     bottom: 0;
     left: 0;
@@ -386,11 +389,53 @@ h1,h2,h3,h4,h5 {
 }
 
 .site-footer {
+  padding-top: 90px;
   .site-footer__top {
     display: flex;
+    padding-bottom: 50px;
+  }
+  .site-footer__description {
+    width: 400px;
+    margin-right: auto;
+    h6 {
+      margin-bottom: 33px;
+    }
+    p {
+      font-size: 13px;
+      line-height: 190%;
+    }
+  }
+  .site-footer__social-networks {
+    display: flex;
+    margin-top: 20px;
+    li {
+      font-size: 21px;
+      margin-right: 25px;
+    }
+  }
+  .site-footer__links {
+    display: flex;
+    ul {
+      margin-right: 99px;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      li {
+        font-size: 14px;
+        color: #000;
+        margin-bottom: 15px;
+        &:first-child {
+          font-weight: 600;
+          margin-bottom: 34px;
+        }
+      }
+    }
   }
   .site-footer__bottom {
     padding: 33px 0;
     border-top: 1px solid #EBEBEB;
+    .container {
+      text-align: center;
+    }
   }
 }
