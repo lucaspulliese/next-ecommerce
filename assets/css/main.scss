@@ -293,12 +293,14 @@ h1,h2,h3,h4,h5 {
       height: 100%;
     }
     .page-intro__slide__content {
+      margin-bottom: 80px;
       h2 {
         font-size: 64px;
         color: #FFF;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 120%;
-        width: 550px;
+        width: 600px;
+        margin-bottom: 25px;
       }
       .btn-shop {
         display: flex;
