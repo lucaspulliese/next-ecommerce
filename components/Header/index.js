@@ -1,3 +1,5 @@
+import Logo from '../../assets/icons/logo';
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +36,7 @@ class Header extends React.Component {
     return(
       <header className={`site-header ${!this.state.onTop ? 'site-header--fixed' : ''}`}>
         <div className="container">
-          <h1>E-shop</h1>
+          <h1 className="site-logo"><Logo />E-Shop</h1>
           <nav className="site-nav">
             <a href="#">Products</a>
             <a href="#">Insipiration</a>

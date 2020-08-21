@@ -44,31 +44,32 @@ const IndexPage = () => (
             <i className="icon-shipping"></i>
             <div className="data-item__content">
               <h4>Free Shipping</h4>
-              <p>On purchases over $199</p>
+              <p>All purchases over $199 are eligible for free shipping via USPS First Class Mail.</p>
             </div>
           </li>
           
           <li>
-            <i className="icon-shipping"></i>
+            <i className="icon-payment"></i>
             <div className="data-item__content">
-              <h4>99% Satisfied Customers</h4>
-              <p>Our clients' opinions speak for themselves</p>
-            </div>
-          </li>
-          
-          <li>
-            <i className="icon-cash"></i>
-            <div className="data-item__content">
-              <h4>Originality Guaranteed</h4>
-              <p>30 days warranty for each product from our store</p>
+              <h4>Easy Payments</h4>
+              <p>All payments are processed instantly over a secure payment protocol.</p>
             </div>
           </li>
           
           <li>
             <i className="icon-cash"></i>
             <div className="data-item__content">
-              <h4>Originality Guaranteed</h4>
-              <p>30 days warranty for each product from our store</p>
+              <h4>Money-Back Guarantee</h4>
+              <p>If an item arrived damaged or you've changed your mind, you can send it
+              back for a full refund.</p>
+            </div>
+          </li>
+          
+          <li>
+            <i className="icon-materials"></i>
+            <div className="data-item__content">
+              <h4>Finest Quality</h4>
+              <p>Designed to last, each of our products has been crafted with the finest materials.</p>
             </div>
           </li>
         </ul>

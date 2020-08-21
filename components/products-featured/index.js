@@ -21,10 +21,10 @@ const ProductsFeatured = () => {
 
         <div className="products-carousel">
           <Swiper {...params} className="swiper-wrapper">
-            <div><Product /></div>
-            <div><Product /></div>
-            <div><Product /></div>
-            <div><Product /></div>
+            <div><Product discount={30} productImage={'/images/products/product-1.jpg'} /></div>
+            <div><Product productImage={'/images/products/product-2.jpg'} /></div>
+            <div><Product productImage={'/images/products/product-3.jpg'} /></div>
+            <div><Product productImage={'/images/products/product-4.jpg'} /></div>
           </Swiper>
         </div>
       </div>
