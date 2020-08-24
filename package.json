@@ -12,8 +12,7 @@
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-id-swiper": "^4.0.0",
     "sass": "^1.26.9",
-    "swiper": "^5.4.5"
+    "swiper": "^6.1.2"
   }
 }
