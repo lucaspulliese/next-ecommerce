@@ -1,10 +1,12 @@
 import Logo from '../../assets/icons/logo';
+import Link from 'next/link';
+import { withRouter } from 'next/router';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      onTop: false,
+      onTop: this.props.router.pathname === '/products' ? false : true,
     };  
   }
 
@@ -25,6 +27,10 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
+    if(this.props.router.pathname === '/products') {
+      return;
+    }
+
     const self = this;
     this.headerClass();
     window.onscroll = function() {
@@ -36,9 +42,13 @@ class Header extends React.Component {
     return(
       <header className={`site-header ${!this.state.onTop ? 'site-header--fixed' : ''}`}>
         <div className="container">
-          <h1 className="site-logo"><Logo />E-Shop</h1>
+          <Link href="/">
+            <a><h1 className="site-logo"><Logo />E-Shop</h1></a>
+          </Link>
           <nav className="site-nav">
-            <a href="#">Products</a>
+            <Link href="/products">
+              <a>Products</a>
+            </Link>
             <a href="#">Insipiration</a>
             <a href="#">Rooms</a>
           </nav>
@@ -55,4 +65,4 @@ class Header extends React.Component {
 };
 
 
-export default Header
+export default withRouter(Header);

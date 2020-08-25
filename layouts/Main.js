@@ -1,16 +1,22 @@
 import Head from 'next/head';
-import Header from '../components/Header'
+import Header from '../components/Header';
+import { useRouter } from 'next/router';
 
-export default ({ children, title = 'Next.js Ecommerce' }) => (
-  <div className="app-main">
-    <Head>
-      <title>{ title }</title>
-    </Head>
+export default ({ children, title = 'Next.js Ecommerce' }) => {
+  const router = useRouter();
+  const pathname = router.pathname;
 
-    <Header />
+  return (
+    <div className="app-main">
+      <Head>
+        <title>{ title }</title>
+      </Head>
 
-    <main>
-      { children }
-    </main>
-  </div>
-)
+      <Header />
+
+      <main className={(pathname !== '/' ? 'main-page' : '')}>
+        { children }
+      </main>
+    </div>
+  )
+}
