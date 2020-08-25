@@ -1,4 +1,4 @@
-import Product from '../product';
+import Product from './../product';
 
 const ProductsContent = () => (
   <section className="products-content">
