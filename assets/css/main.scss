@@ -730,6 +730,12 @@ h1,h2,h3,h4,h5 {
       input:checked + .checkbox__check {
         background-color: #000;
       }
+      &.checkbox--square {
+        position: relative;
+        p {
+          position: absolute;
+        }
+      }
     }
   }
   .products-content {
@@ -754,6 +760,11 @@ h1,h2,h3,h4,h5 {
       }
     }
   }
+}
+
+.checkbox-square-wrapper {
+  display: flex;
+
 }
 
 .products-list {

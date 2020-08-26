@@ -1,9 +1,9 @@
-const Checkbox = () => (
-	<label for="check" className="checkbox">
+const Checkbox = ({ type, label }) => (
+	<label for="check" className={`checkbox ${type ? 'checkbox--'+type : ''}`}>
 		<input type="checkbox" id="check" />
 		<span className="checkbox__check"></span>
-		Option 1
+    <p>{label}</p>
 	</label>
-)
+);
   
-export default Checkbox
+export default Checkbox;

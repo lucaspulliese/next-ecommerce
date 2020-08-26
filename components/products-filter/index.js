@@ -1,4 +1,5 @@
 import Checkbox from './form-builder/checkbox';
+import { Range } from 'rc-slider';
 
 const ProductsFilter = () => (
   <form className="products-filter">
@@ -15,14 +16,14 @@ const ProductsFilter = () => (
     <div className="products-filter__block">
       <button type="button">Price <i className="icon-down-open"></i></button>
       <div className="products-filter__block__content">
-        <Checkbox />
+        <Range />
       </div>
     </div>
     
     <div className="products-filter__block">
-      <button type="button">Size <i className="icon-down-open"></i></button>
-      <div className="products-filter__block__content">
-        <Checkbox />
+      <button type="button">Size</button>
+      <div className="products-filter__block__content checkbox-square-wrapper">
+        <Checkbox type="square" label="SM" />
       </div>
     </div>
     
