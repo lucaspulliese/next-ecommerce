@@ -1,15 +1,15 @@
 import Checkbox from './form-builder/checkbox';
 import { Range } from 'rc-slider';
+import productsTypes from './../../data/products-types';
 
 const ProductsFilter = () => (
   <form className="products-filter">
     <div className="products-filter__block">
       <button type="button">Product type <i className="icon-down-open"></i></button>
       <div className="products-filter__block__content">
-        <Checkbox />
-        <Checkbox />
-        <Checkbox />
-        <Checkbox />
+        {productsTypes.map(type => (
+          <Checkbox key={type.id} name="product-type" label={type.name} />
+        ))}
       </div>
     </div>
 
