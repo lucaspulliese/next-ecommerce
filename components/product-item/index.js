@@ -1,4 +1,4 @@
-const Product = ({ discount, productImage }) => (
+const ProductItem = ({ discount, productImage }) => (
   <a href="#" className="product-item">
     <div className="product__image">
       <img src={productImage} alt="product" />
@@ -21,4 +21,4 @@ const Product = ({ discount, productImage }) => (
 );
 
 
-export default Product
+export default ProductItem
