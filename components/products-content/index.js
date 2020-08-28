@@ -25,7 +25,7 @@ const ProductsContent = () => {
         <Product productImage={'/images/products/product-2.jpg'} />
       </div>
     </section>
-  )
+  );
 };
   
 export default ProductsContent
