@@ -680,6 +680,7 @@ h1,h2,h3,h4,h5 {
   .site-footer__top {
     @include breakpoint(phone) {
       display: flex;
+      padding-bottom: 60px;
     }
   }
   .site-footer__description {
