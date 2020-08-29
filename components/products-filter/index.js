@@ -48,6 +48,11 @@ const ProductsFilter = () => (
       <button type="button">Size</button>
       <div className="products-filter__block__content checkbox-square-wrapper">
         <Checkbox type="square" label="SM" />
+        <Checkbox type="square" label="SM" />
+        <Checkbox type="square" label="SM" />
+        <Checkbox type="square" label="SM" />
+        <Checkbox type="square" label="SM" />
+        <Checkbox type="square" label="XXL" />
       </div>
     </div>
     

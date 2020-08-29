@@ -573,7 +573,10 @@ h1,h2,h3,h4,h5 {
     justify-content: space-between;
     h3 {
       font-weight: 300;
-      font-size: 29px;
+      font-size: 18px;
+      @include breakpoint(phone) {
+        font-size: 29px;
+      }
     }
   }
 }
@@ -649,7 +652,10 @@ h1,h2,h3,h4,h5 {
 }
 
 .section {
-  margin-bottom: 150px;
+  margin-bottom: 70px;
+  @include breakpoint(phone) {
+    margin-bottom: 150px;
+  }
   .section__intro {
     margin-bottom: 36px;
     @include breakpoint(phone) {
@@ -672,14 +678,17 @@ h1,h2,h3,h4,h5 {
     padding-top: 90px;
   }
   .site-footer__top {
-    padding-bottom: 50px;
     @include breakpoint(phone) {
       display: flex;
     }
   }
   .site-footer__description {
-    width: 400px;
     margin-right: auto;
+    margin-bottom: 40px;
+    @include breakpoint(phone) {
+      width: 400px;
+      margin-bottom: 0;
+    }
     svg {
       object-fit: contain;
       width: 45px;
@@ -842,12 +851,6 @@ h1,h2,h3,h4,h5 {
   input:checked + .checkbox__check {
     background-color: #000;
   }
-  &.checkbox--square {
-    position: relative;
-    p {
-      position: absolute;
-    }
-  }
 }
 
 .products-page {
@@ -912,8 +915,36 @@ h1,h2,h3,h4,h5 {
       }
       &.checkbox--square {
         position: relative;
+        width: calc(100%/6);
+        input {
+          display: none;
+        }
         p {
           position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .checkbox__check {
+          display: block;
+          width: 100%;
+          margin-right: 0;
+          position: relative;
+          padding-bottom: 100%;
+          border-left: none;
+          border-top: 1px solid #D4D4D4; 
+          border-bottom: 1px solid #D4D4D4; 
+          border-right: 1px solid #D4D4D4; 
+          .checkbox__color {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+          }
+        }
+        &:first-of-type {
+          border-left: 1px solid #D4D4D4; 
         }
       }
     }
@@ -944,7 +975,8 @@ h1,h2,h3,h4,h5 {
 
 .checkbox-square-wrapper {
   display: flex;
-
+  .checkbox {
+  }
 }
 
 .products-list {
