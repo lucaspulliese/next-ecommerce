@@ -5,3 +5,8 @@ This repo contains a work in progress Ecommerce responsive made with Next.js. I'
 ## Design
 
 [This](https://www.xdguru.com/free-xd-ecommerce-ui-kit-by-iceo/) is the design of the project.
+
+## Available pages
+
+- Home page: /
+- Products page: /products
