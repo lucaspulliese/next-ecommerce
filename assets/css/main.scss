@@ -171,13 +171,21 @@ h1,h2,h3,h4,h5 {
 
 .site-logo {
   display: flex;
+  font-size: 14px;
   align-items: center;
+  @include breakpoint(phone) {
+    font-size: 16px;
+  }
   svg {
-    width: 45px;
-    height: 35px;
+    width: 38px;
+    height: 28px;
     fill: currentColor;
     object-fit: contain;
     margin-right: 15px;
+    @include breakpoint(phone) {
+      width: 45px;
+      height: 35px;
+    }
   }
 }
 
@@ -205,10 +213,13 @@ h1,h2,h3,h4,h5 {
   top: 0;
   left: 0;
   z-index: 999;
-  height: 100px;
+  height: 65px;
   color: #FFF;
   box-shadow: none;
   transition: all .3s ease;
+  @include breakpoint(phone) {
+    height: 100px;
+  }
   &.site-header--fixed {
     border-bottom: 1px solid #E5E5E5;
     background-color: #FFF;
@@ -234,6 +245,10 @@ h1,h2,h3,h4,h5 {
     color: #FFF;
   }
   .site-header__actions {
+    margin-left: auto;
+    @include breakpoint(phone) {
+      margin-left: 0;
+    }
     button {
       margin-left: 15px;
     }
@@ -243,8 +258,18 @@ h1,h2,h3,h4,h5 {
     }
   }
   .site-nav {
+    right: -250px;
+    width: 250px;
+    height: 100vh;
     margin-left: auto;
     margin-right: auto;
+    position: fixed;
+    @include breakpoint(phone) {
+      position: relative;
+      height: auto;
+      right: 0;
+      width: auto;
+    }
     a {
       font-size: 14px;
       font-weight: 500;
@@ -256,21 +281,29 @@ h1,h2,h3,h4,h5 {
 .page-intro {
   position: relative;
   .swiper-button-prev, .swiper-button-next {
-    bottom: 30px;
+    bottom: 20px;
     top: auto;
     transform: translateX(50%);
     right: 14%;
     left: auto;
-    width: 72px;
-    height: 72px;
+    width: 42px;
+    height: 42px;
     z-index: 100;
-    font-size: 21px;
+    font-size: 13px;
     display: flex;
     cursor: pointer;
     justify-content: center;
     align-items: center;
     position: absolute;
+    display: none;
     background-color: rgba(255,255,255, .12);
+    @include breakpoint(phone) {
+      width: 72px;
+      height: 72px;
+      bottom: 30px;
+      font-size: 21px;
+      display: flex;
+    }
     &:before {
       color: #FFF;
       content: '\e80b';
@@ -284,7 +317,10 @@ h1,h2,h3,h4,h5 {
     }
   }
   .swiper-button-next {
-    right: 7%;
+    right: 20px;
+    @include breakpoint(phone) {
+      right: 7%;
+    }
     &:before {
       content: '\e811';
     }
@@ -297,8 +333,12 @@ h1,h2,h3,h4,h5 {
     left: 0;
     width: 80%;
     z-index: 99;
+    display: none;
     position: absolute;
     padding: 36px 30px 30px 30px;
+    @include breakpoint(phone) {
+      display: block;
+    }
     &:before {
       background: #FFF;
       content: '';
@@ -347,12 +387,15 @@ h1,h2,h3,h4,h5 {
     }
   }
   .page-intro__slide {
-    height: 90vh;
+    height: 450px;
     position: relative;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-color: #FAFAFA;
+    @include breakpoint(phone) {
+      height: 90vh;
+    }
     &:before {
       content: '';
       left: 0;
@@ -370,14 +413,22 @@ h1,h2,h3,h4,h5 {
       height: 100%;
     }
     .page-intro__slide__content {
-      margin-bottom: 80px;
+      margin-top: auto;
+      margin-bottom: 40px;
+      @include breakpoint(phone) {
+        margin-bottom: 80px;
+        margin-top: 0;
+      }
       h2 {
-        font-size: 64px;
+        font-size: 36px;
         color: #FFF;
         font-weight: 600;
         line-height: 120%;
-        width: 600px;
         margin-bottom: 45px;
+        @include breakpoint(phone) {
+          font-size: 64px;
+          width: 600px;
+        }
       }
       .btn-shop {
         display: flex;
@@ -401,12 +452,17 @@ h1,h2,h3,h4,h5 {
 }
 
 .featured {
-  padding: 70px 0 92px 0;
+  padding: 35px 0 62px 0;
+  @include breakpoint(phone) {
+    padding: 70px 0 92px 0;
+  }
   .container {
-    display: grid;
-    grid-gap: 34px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "\31  \31  \31  \31  \31  \31  \32  \32  \32  \33  \33  \33 ";
+    @include breakpoint(phone) {
+      display: grid;
+      grid-gap: 34px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "\31  \31  \31  \31  \31  \31  \32  \32  \32  \33  \33  \33 ";
+    }
   }
   .featured-item-large {
     grid-area: \31 ; 
@@ -418,13 +474,19 @@ h1,h2,h3,h4,h5 {
     grid-area: \33 ; 
   }
   .featured-item {
-    height: 375px;
+    height: 200px;
     display: flex;
+    margin-bottom: 10px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 55px 46px;
+    padding: 25px 26px;
     position: relative;
+    @include breakpoint(phone) {
+      height: 375px;
+      padding: 55px 46px;
+      margin-bottom: 0;
+    }
     &:before {
       content: '';
       top: 0;
@@ -433,7 +495,7 @@ h1,h2,h3,h4,h5 {
       z-index: 1;
       height: 100%;
       position: absolute;
-      background: rgba(0,0,0, 0.23);
+      background: rgba(0,0,0, 0.28);
     }
     .featured-item__content {
       margin-top: auto;
@@ -518,18 +580,23 @@ h1,h2,h3,h4,h5 {
 
 .subscribe {
   .subscribe__content {
+    padding: 35px 20px;
     background-color: #FAFAFA;
-    padding: 80px 125px 80px 105px;
-    display: flex;
-    align-items: center;
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    background-position: center;
+    @include breakpoint(phone) {
+      padding: 80px 125px 80px 105px;
+      display: flex;
+      align-items: center;
+      background-position: center;
+    }
     &:before {
       content: '';
       width: 100%;
       left: 0;
+      top: 0;
       z-index: 5;
       width: 100%;
       height: 100%;
@@ -541,21 +608,41 @@ h1,h2,h3,h4,h5 {
       position: relative;
     }
     h4 {
-      font-size: 26px;
+      font-size: 18px;
       color: #FFF;
+      margin-bottom: 20px;
       line-height: 130%;
-      width: 504px;
       margin-right: auto;
+      @include breakpoint(phone) {
+        font-size: 26px;
+        margin-bottom: 0;
+        width: 504px;
+      }
     }
     .subscribe__form {
       input {
-        height: 48px;
-        padding: 0 35px;
+        height: 40px;
+        padding: 0 25px;
         color: #ABABAB;
         font-size: 13px;
         background-color: #FFF;
         border-radius: 30px;
         margin-right: 25px;
+        @include breakpoint(phone) {
+          height: 48px;
+          padding: 0 35px;
+        }
+      }
+      .btn {
+        margin-top: 10px;
+        font-size: 11px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        @include breakpoint(phone) {
+          padding: 15px 25px;
+          font-size: 13px;
+          margin-top: 0;
+        }
       }
     }
   }
@@ -564,20 +651,31 @@ h1,h2,h3,h4,h5 {
 .section {
   margin-bottom: 150px;
   .section__intro {
-    margin-bottom: 93px;
+    margin-bottom: 36px;
+    @include breakpoint(phone) {
+      margin-bottom: 93px;
+    }
     h4 {
-      font-size: 29px;
+      font-size: 23px;
       font-weight: 300;
       text-align: center;
+      @include breakpoint(phone) {
+        font-size: 29px;
+      }
     }
   }
 }
 
 .site-footer {
-  padding-top: 90px;
+  padding-top: 50px;
+  @include breakpoint(phone) {
+    padding-top: 90px;
+  }
   .site-footer__top {
-    display: flex;
     padding-bottom: 50px;
+    @include breakpoint(phone) {
+      display: flex;
+    }
   }
   .site-footer__description {
     width: 400px;
@@ -614,16 +712,25 @@ h1,h2,h3,h4,h5 {
     }
   }
   .site-footer__links {
-    display: flex;
+    @include breakpoint(phone) {
+      display: flex;
+    }
     ul {
-      margin-right: 99px;
+      margin-bottom: 40px;
+      @include breakpoint(phone) {
+        margin-right: 99px;
+        margin-bottom: 0;
+      }
       &:last-of-type {
         margin-right: 0;
       }
       li {
         font-size: 14px;
         color: #000;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
+        @include breakpoint(phone) {
+          margin-bottom: 15px;
+        }
         &:first-child {
           font-weight: 600;
           margin-bottom: 34px;
@@ -637,19 +744,30 @@ h1,h2,h3,h4,h5 {
     }
   }
   .site-footer__bottom {
-    padding: 33px 0;
+    padding: 20px 0;
     border-top: 1px solid #EBEBEB;
+    @include breakpoint(phone) {
+      padding: 33px 0;
+    }
     .container {
+      font-size: 13px;
       text-align: center;
+      @include breakpoint(phone) {
+        font-size: 16px;
+      }
     }
   }
 }
 
 .shop-data-items {
-  display: flex;
-  justify-content: space-between;
+  @include breakpoint(phone) {
+    display: flex;
+    justify-content: space-between;
+  }
   li {
-    width: 22%;
+    @include breakpoint(phone) {
+      width: 22%;
+    }
     i {
       height: 70px;
       width: 70px;

@@ -2,6 +2,13 @@ import ProductItem from './../product-item'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ProductsFeatured = () => {
+  
+  let slidesPerView = 1;
+  if (process.browser) {
+    if(window.innerWidth > 768) {
+      slidesPerView = 4;
+    }
+  }
 
   return (
     <section className="section section-products-featured">
@@ -12,7 +19,8 @@ const ProductsFeatured = () => {
         </header>
 
         <div className="products-carousel">
-          <Swiper spaceBetween={65} slidesPerView={4} className="swiper-wrapper">
+          <Swiper 
+          spaceBetween={65} slidesPerView={slidesPerView} className="swiper-wrapper">
             <SwiperSlide>
               <ProductItem discount={30} productImage={'/images/products/product-1.jpg'} />
             </SwiperSlide>
