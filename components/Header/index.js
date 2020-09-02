@@ -6,7 +6,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      onTop: this.props.router.pathname === '/products' ? false : true,
+      onTop: this.props.router.pathname === '/products' || this.props.router.pathname === '/product/[pid]' ? false : true,
     };  
   }
 
@@ -27,7 +27,7 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    if(this.props.router.pathname === '/products') {
+    if(this.props.router.pathname === '/products' || this.props.router.pathname === '/product/[pid]') {
       return;
     }
 

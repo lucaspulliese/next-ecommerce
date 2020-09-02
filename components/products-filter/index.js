@@ -6,6 +6,7 @@ import Tooltip from 'rc-tooltip';
 // data
 import productsTypes from './../../data/products-types';
 import productsColors from './../../data/products-colors';
+import productsSizes from './../../data/products-sizes';
 
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
@@ -47,19 +48,16 @@ const ProductsFilter = () => (
     <div className="products-filter__block">
       <button type="button">Size</button>
       <div className="products-filter__block__content checkbox-square-wrapper">
-        <Checkbox type="square" label="SM" />
-        <Checkbox type="square" label="SM" />
-        <Checkbox type="square" label="SM" />
-        <Checkbox type="square" label="SM" />
-        <Checkbox type="square" label="SM" />
-        <Checkbox type="square" label="XXL" />
+        {productsSizes.map(type => (
+          <Checkbox type="square" key={type.id} name="product-size" label={type.label} />
+        ))}
       </div>
     </div>
     
     <div className="products-filter__block">
       <button type="button">Color <i className="icon-down-open"></i></button>
       <div className="products-filter__block__content">
-        <div class="checkbox-color-wrapper">
+        <div className="checkbox-color-wrapper">
           {productsColors.map(type => (
             <CheckboxColor key={type.id} name="product-color" color={type.color} />
           ))}

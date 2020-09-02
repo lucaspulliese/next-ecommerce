@@ -9,9 +9,19 @@ const ProductsContent = () => {
         <form className="products-content__filter">
           <div className="products__filter__select">
             <h4>Show products: </h4>
+            <div className="select-wrapper">
+              <select>
+                <option>Popular</option>
+              </select>
+            </div>
           </div>
           <div className="products__filter__select">
             <h4>Sort by: </h4>
+            <div className="select-wrapper">
+              <select>
+                <option>Popular</option>
+              </select>
+            </div>
           </div>
         </form>
       </div>

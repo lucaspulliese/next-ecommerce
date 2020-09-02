@@ -968,6 +968,11 @@ h1,h2,h3,h4,h5 {
         display: flex;
         .products__filter__select {
           margin-left: 42px;
+          display: flex;
+          align-items: center;
+          .select-wrapper {
+            margin-left: 15px;
+          }
         }
       }
     }
@@ -988,5 +993,14 @@ h1,h2,h3,h4,h5 {
     width: calc(100%/3 - 63px);
     margin-right: 63px;
     margin-bottom: 85px;
+  }
+}
+
+.select-wrapper {
+  select {
+    font-size: 17px;
+    padding: 7px 12px;
+    border: 1px solid #D8D8D8;
+    border-radius: 50px;
   }
 }
