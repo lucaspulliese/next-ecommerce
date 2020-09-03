@@ -4,6 +4,7 @@ export const products = [
     name: 'T-Shirt Summer Vibes',
     price: 119.99,
     discount: 30,
+    category: 'T-shirt',
     currentPrice: 89.99,
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
   },
