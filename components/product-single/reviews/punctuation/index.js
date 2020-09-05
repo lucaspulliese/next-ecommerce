@@ -12,30 +12,35 @@ const Punctuation = () => {
       <div className="product-punctuation__rates">
         <ul className="punctuations-lists">
           <li className="punctuation-item">
+            <Rater total={1} interactive={false} rating={1} />
             <span>1</span>
             <div className="punctuation-item__bar">
               <div className="punctuation-item__bar__current"></div>
             </div>
           </li>
           <li className="punctuation-item">
+            <Rater total={1} interactive={false} rating={1} />
             <span>2</span>
             <div className="punctuation-item__bar">
               <div className="punctuation-item__bar__current"></div>
             </div>
           </li>
           <li className="punctuation-item">
+            <Rater total={1} interactive={false} rating={1} />
             <span>3</span>
             <div className="punctuation-item__bar">
               <div className="punctuation-item__bar__current"></div>
             </div>
           </li>
           <li className="punctuation-item">
+            <Rater total={1} interactive={false} rating={1} />
             <span>4</span>
             <div className="punctuation-item__bar">
               <div className="punctuation-item__bar__current"></div>
             </div>
           </li>
           <li className="punctuation-item">
+            <Rater total={1} interactive={false} rating={1} />
             <span>5</span>
             <div className="punctuation-item__bar">
               <div className="punctuation-item__bar__current"></div>

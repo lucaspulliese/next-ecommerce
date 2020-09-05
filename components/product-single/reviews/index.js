@@ -1,9 +1,13 @@
 import ReviewsList from './reviews-list';
 import Punctuation from './punctuation';
 
-const Reviews = () => {
+const Reviews = ({ show }) => {
+  const style = {
+    display: show ? 'flex' : 'none',
+  }
+  
   return (
-    <section className="product-single__reviews">
+    <section style={style} className="product-single__reviews">
       <Punctuation />
       <ReviewsList />
     </section>

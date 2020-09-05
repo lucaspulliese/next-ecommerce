@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Footer from '../../components/footer';
 import Layout from '../../layouts/Main';
@@ -9,8 +10,9 @@ import Description from '../../components/product-single/description';
 import Reviews from '../../components/product-single/reviews';
 
 const Product = () => {
-  const router = useRouter()
-  const { pid } = router.query
+  const router = useRouter();
+  const { pid } = router.query;
+  const [showBlock, setShowBlock] = useState('description');
 
   return (
     <Layout>
@@ -25,12 +27,12 @@ const Product = () => {
 
           <div className="product-single__info">
             <div className="product-single__info-btns">
-              <button type="button" className="btn btn--rounded btn--active">Description</button>
-              <button type="button" className="btn btn--rounded">Reviews (2)</button>
+              <button type="button" onClick={() => setShowBlock('description')} className="btn btn--rounded btn--active">Description</button>
+              <button type="button" onClick={() => setShowBlock('reviews')} className="btn btn--rounded">Reviews (2)</button>
             </div>
 
-            <Description />
-            <Reviews />
+            <Description show={showBlock === 'description'} />
+            <Reviews show={showBlock === 'reviews'} />
           </div>
         </div>
       </section>
