@@ -14,6 +14,9 @@ const Gallery = () => {
         <div className="product-gallery__thumb">
           <img src="/images/products/product-1.jpg" alt="" />
         </div>
+        <div className="product-gallery__thumb">
+          <img src="/images/products/product-1.jpg" alt="" />
+        </div>
       </div>
 
       <div className="product-gallery__image">

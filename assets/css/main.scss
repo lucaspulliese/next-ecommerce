@@ -146,20 +146,27 @@ h1,h2,h3,h4,h5 {
 }
 
 .main-page {
-  padding-top: 100px;
+  padding-top: 65px;
+  @include breakpoint(phone) {
+    padding-top: 100px;
+  }
 }
 
 .btn {
   color: #000000;
   cursor: pointer;
   &.btn--rounded {
-    font-size: 13px;
+    font-size: 12px;
     background: #FFF;
     display: inline-block;
     border-radius: 50px;
-    padding: 15px 25px;
+    padding: 11px 20px;
     font-weight: 500;
     text-transform: uppercase;
+    @include breakpoint(phone) {
+      font-size: 13px;
+      padding: 15px 25px;
+    }
     &.btn--border {
       border: 1px solid #D8D8D8;
     }
@@ -190,7 +197,10 @@ h1,h2,h3,h4,h5 {
 }
 
 .breadcrumb {
-  padding: 29px 0 35px 0;
+  padding: 20px 0 20px 0;
+  @include breakpoint(phone) {
+    padding: 29px 0 35px 0;
+  }
   .breadcrumb-list {
     display: flex;
     li {
@@ -569,8 +579,11 @@ h1,h2,h3,h4,h5 {
   .section-products-featured__header {
     display: flex;
     align-items: center;
-    margin-bottom: 65px;
+    margin-bottom: 35px;
     justify-content: space-between;
+    @include breakpoint(phone) {
+      margin-bottom: 65px;
+    }
     h3 {
       font-weight: 300;
       font-size: 18px;
@@ -1062,42 +1075,86 @@ h1,h2,h3,h4,h5 {
   border: 1px solid #D8D8D8;
 }
 
+.product-single-page {
+  .section {
+    margin-bottom: 90;
+  }
+}
+
 .product-single {
-  margin-bottom: 80px;
+  margin-bottom: 70px;
+  @include breakpoint(phone) {
+    margin-bottom: 170px;
+  }
   .product-single__description {
     max-width: 938px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    @include breakpoint(phone) {
+      display: flex;
+      justify-content: space-between;
+    }
     .product-description-block {
       text-align: center;
-      width: 48%;
+      width: 100%;
+      margin-bottom: 60px;
+      @include breakpoint(phone) {
+        width: 48%;
+        margin-bottom: 0;
+      }
       i {
         display: block;
-        font-size: 38px;
-        margin-bottom: 48px;
+        font-size: 30px;
+        margin-bottom: 30px;
+        @include breakpoint(phone) {
+          font-size: 38px;
+          margin-bottom: 48px;
+        }
       }
       h4 {
         color: #000;
         font-weight: 700;
-        font-size: 16px;
-        margin-bottom: 35px;
+        font-size: 15px;
+        margin-bottom: 25px;
+        @include breakpoint(phone) {
+          margin-bottom: 35px;
+          font-size: 16px;
+        }
       }
       p {
         color: #000;
-        font-size: 14px;
+        font-size: 13px;
         line-height: 145%;
         text-align: left;
+        @include breakpoint(phone) {
+          font-size: 14px;
+        }
       }
     }
   }
   .product-single__content {
-    display: flex;
-    margin-bottom: 100px;
-    align-items: flex-start;
+    margin-bottom: 50px;
+    @include breakpoint(phone) {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 100px;
+    }
   }
   .product-gallery {
-    margin-right: 110px;
+    @include breakpoint(phone) {
+      margin-right: 110px;
+    }
+    .product-gallery__thumbs {
+      height: 300px;
+      @include breakpoint(phone) {
+        height: 491px;
+      }
+    }
+    .product-gallery__thumb {
+      @include breakpoint(phone) {
+        height: calc(100%/5 - 15px);
+      }
+    }
   }
   .product-content {
     flex: 1;
@@ -1129,7 +1186,10 @@ h1,h2,h3,h4,h5 {
 .product-content {
   position: relative;
   .product-content__intro {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+    @include breakpoint(phone) {
+      margin-bottom: 60px;
+    }
   }
   .product-filter-item {
     margin-bottom: 38px;
@@ -1146,12 +1206,29 @@ h1,h2,h3,h4,h5 {
     }
     .checkbox-color-wrapper {
       .checkbox-color {
-        width: 43px;
-        height: 43px;
-        margin-right: 13px;
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
         border: none;
+        @include breakpoint(phone) {
+          width: 43px;
+          height: 43px;
+          margin-right: 13px;
+        }
         .checkbox__check {
           border: 1px solid #D4D4D4;
+        }
+        .checkbox__color {
+          top: 4px;
+          left: 4px;
+          right: 4px;
+          bottom: 4px;
+          @include breakpoint(phone) {
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+          }
         }
       }
     }
@@ -1159,14 +1236,21 @@ h1,h2,h3,h4,h5 {
   .product__prices {
     display: flex;
     h4 {
-      font-weight: 300;
+      font-weight: 400;
       color: #FF0000;
-      font-size: 30px;
+      font-size: 18px;
+      @include breakpoint(phone) {
+        font-size: 30px;
+      }
     }
     span {
       margin-left: 30px;
-      font-size: 30px;
+      font-weight: 400;
+      font-size: 18px;
       color: #CECECE;
+      @include breakpoint(phone) {
+        font-size: 30px;
+      }
     }
   }
   .product__id {
@@ -1179,28 +1263,44 @@ h1,h2,h3,h4,h5 {
     position: absolute;
   }
   .product__name {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 300;
-    margin-bottom: 15px;
+    margin-bottom: 9px;
+    @include breakpoint(phone) {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
   }
   .product-on-sale {
     background-color: #FF0000;
     color: #FFF;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
     padding: 5px 9px;
     text-transform: uppercase;
     border-radius: 40px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     display: inline-block;
+    @include breakpoint(phone) {
+      font-size: 12px;
+      margin-bottom: 25px;
+    }
   }
 }
 
 .product-gallery {
   display: flex;
+  margin-bottom: 40px;
+  @include breakpoint(phone) {
+    margin-bottom: 0;
+  }
   .product-gallery__thumbs {
-    width: 97px;
-    margin-right: 28px;
+    display: none;
+    @include breakpoint(phone) {
+      width: 97px;
+      display: block;
+      margin-right: 28px;
+    }
   }
   .product-gallery__thumb {
     width: 100%;
@@ -1213,8 +1313,12 @@ h1,h2,h3,h4,h5 {
     }
   }
   .product-gallery__image {
-    width: 476px;
-    height: 476px;
+    height: 300px;
+    width: 100%;
+    @include breakpoint(phone) {
+      width: 476px;
+      height: 476px;
+    }
     img {
       width: 100%;
       height: 100%;
