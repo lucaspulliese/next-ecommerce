@@ -152,6 +152,50 @@ h1,h2,h3,h4,h5 {
   }
 }
 
+.btn-hamburger {
+  display: block;
+  position: relative;
+  display: block;
+  z-index: 100;
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  &:before,
+  &:after,
+  span {
+      background-color: #000;
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      top: 50%;
+      border-radius: 3px;
+      margin-top: -1px;
+      position: absolute;
+      left: 50%;
+      margin-left: -10px;
+      transition: none .3s ease .3s;
+      transition-property: transform, top, bottom, right, opacity;
+  }
+  &:before {
+      transform: translateY(-6px);
+  }
+  &:after {
+      transform: translateY(6px);
+  }
+  &.is-active {
+    &:before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+    span {
+        opacity: 0;
+    }
+  }
+}
+
 .btn {
   color: #000000;
   cursor: pointer;
@@ -254,8 +298,21 @@ h1,h2,h3,h4,h5 {
   .site-logo {
     color: #FFF;
   }
+  .site-header__btn-avatar {
+    display: none;
+    @include breakpoint(phone) {
+      display: block;
+    }
+  }
+  .site-header__btn-menu {
+    @include breakpoint(phone) {
+      display: none;
+    }
+  }
   .site-header__actions {
     margin-left: auto;
+    display: flex;
+    align-items: center;
     @include breakpoint(phone) {
       margin-left: 0;
     }
@@ -268,22 +325,39 @@ h1,h2,h3,h4,h5 {
     }
   }
   .site-nav {
+    top: 0;
     right: -250px;
     width: 250px;
+    z-index: 9999;
     height: 100vh;
     margin-left: auto;
     margin-right: auto;
     position: fixed;
+    background-color: #FFF;
+    transition: all .3s ease;
+    border-left: 1px solid #E5E5E5;
     @include breakpoint(phone) {
       position: relative;
       height: auto;
       right: 0;
       width: auto;
+      border: none;
+    }
+    &.site-nav--open {
+      right: 0;
     }
     a {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 500;
       margin-right: 76px;
+      width: 100%;
+      display: block;
+      text-align: left;
+      padding: 15px 18px;
+      @include breakpoint(phone) {
+        width: auto;
+        font-size: 14px;
+      }
     }
   }
 }
@@ -524,11 +598,15 @@ h1,h2,h3,h4,h5 {
 
 .product-item {
   .product__image {
-    height: 385px;
-    padding: 24px;
+    height: 250px;
+    padding: 18px;
     background-color: #FAFAFA;
     margin-bottom: 30px;
     position: relative;
+    @include breakpoint(phone) {
+      height: 385px;
+      padding: 24px;
+    }
     > img {
       top: 0;
       left: 0;
@@ -698,7 +776,7 @@ h1,h2,h3,h4,h5 {
   }
   .site-footer__description {
     margin-right: auto;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
     @include breakpoint(phone) {
       width: 400px;
       margin-bottom: 0;
@@ -756,7 +834,10 @@ h1,h2,h3,h4,h5 {
         }
         &:first-child {
           font-weight: 600;
-          margin-bottom: 34px;
+          margin-bottom: 26px;
+          @include breakpoint(phone) {
+            margin-bottom: 34px;
+          }
         }
         a {
           &:hover {
@@ -773,7 +854,7 @@ h1,h2,h3,h4,h5 {
       padding: 33px 0;
     }
     .container {
-      font-size: 13px;
+      font-size: 11px;
       text-align: center;
       @include breakpoint(phone) {
         font-size: 16px;
@@ -788,8 +869,12 @@ h1,h2,h3,h4,h5 {
     justify-content: space-between;
   }
   li {
+    text-align: center;
+    margin-bottom: 50px;
     @include breakpoint(phone) {
       width: 22%;
+      margin-bottom: 0;
+      text-align: left;
     }
     i {
       height: 70px;
@@ -803,7 +888,14 @@ h1,h2,h3,h4,h5 {
       transition: all .3s ease;
       justify-content: center;
       align-items: center;
-      margin-bottom: 43px;
+      margin-bottom: 28px;
+      margin-left: auto;
+      margin-right: auto;
+      @include breakpoint(phone) {
+        margin-bottom: 43px;
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
     .data-item__content {
       h4 {
@@ -871,13 +963,22 @@ h1,h2,h3,h4,h5 {
 
 .products-page {
   .container {
-    display: flex;
-    align-items: flex-start;
+    @include breakpoint(phone) {
+      display: flex;
+      align-items: flex-start;
+    }
   }
   .products-filter {
-    width: 310px;
+    width: 250px;
+    left: -250px;
     flex-shrink: 0;
-    margin-right: 30px;
+    position: fixed;
+    @include breakpoint(phone) {
+      position: relative;
+      left: 0;
+      margin-right: 30px;
+      width: 310px;
+    }
     .products-filter__block {
       padding: 24px 31px;
       margin-bottom: 13px;
@@ -974,15 +1075,21 @@ h1,h2,h3,h4,h5 {
       align-items: center;
       margin-bottom: 35px;
       h2 {
-        font-size: 24px;
+        font-size: 18px;
         margin-right: auto;
         font-weight: 300;
+        @include breakpoint(phone) {
+          font-size: 24px;
+        }
         span {
           color: #D8D8D8;
         }
       }
       .products-content__filter {
-        display: flex;
+        display: none;
+        @include breakpoint(phone) {
+          display: flex;
+        }
         .products__filter__select {
           margin-left: 42px;
           display: flex;
@@ -1005,11 +1112,19 @@ h1,h2,h3,h4,h5 {
 .products-list {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -63px;
+  margin-right: -15px;
+  @include breakpoint(phone) {
+    margin-right: -63px;
+  }
   .product-item {
-    width: calc(100%/3 - 63px);
-    margin-right: 63px;
-    margin-bottom: 85px;
+    width: calc(100%/2 - 15px);
+    margin-bottom: 50px;
+    margin-right: 15px;
+    @include breakpoint(phone) {
+      margin-right: 63px;
+      margin-bottom: 85px;
+      width: calc(100%/3 - 63px);
+    }
   }
 }
 

@@ -7,6 +7,7 @@ const ProductsContent = () => {
       <div className="products-content__intro">
         <h2>Men's Tops <span>(133)</span></h2>
         <form className="products-content__filter">
+          <button type="button" className="products-filter-btn"><i className="icon-search"></i></button>
           <div className="products__filter__select">
             <h4>Show products: </h4>
             <div className="select-wrapper">

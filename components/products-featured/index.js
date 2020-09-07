@@ -20,7 +20,7 @@ const ProductsFeatured = () => {
 
         <div className="products-carousel">
           <Swiper 
-          spaceBetween={65} slidesPerView={slidesPerView} className="swiper-wrapper">
+          spaceBetween={65} watchOverflow={true} slidesPerView={slidesPerView} className="swiper-wrapper">
             <SwiperSlide>
               <ProductItem discount={30} productImage={'/images/products/product-1.jpg'} />
             </SwiperSlide>

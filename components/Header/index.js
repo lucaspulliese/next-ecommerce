@@ -7,6 +7,7 @@ class Header extends React.Component {
     super(props);
     this.state = {
       onTop: this.props.router.pathname === '/products' || this.props.router.pathname === '/product/[pid]' ? false : true,
+      menuOpen: false,
     };  
   }
 
@@ -24,6 +25,10 @@ class Header extends React.Component {
 
   componentWillUnmount() {
     window.onscroll = null;
+  }
+
+  openMenu() {
+    this.setState({ menuOpen: true });
   }
 
   componentDidMount() {
@@ -45,18 +50,24 @@ class Header extends React.Component {
           <Link href="/">
             <a><h1 className="site-logo"><Logo />E-Shop</h1></a>
           </Link>
-          <nav className="site-nav">
+          <nav className={`site-nav ${this.state.menuOpen ? 'site-nav--open' : ''}`}>
             <Link href="/products">
               <a>Products</a>
             </Link>
             <a href="#">Insipiration</a>
             <a href="#">Rooms</a>
+            <button><i className="icon-avatar"></i></button>
           </nav>
 
           <div className="site-header__actions">
             <button><i className="icon-search"></i></button>
             <button><i className="icon-cart"></i></button>
-            <button><i className="icon-avatar"></i></button>
+            <button className="site-header__btn-avatar"><i className="icon-avatar"></i></button>
+            <button 
+              onClick={() => this.openMenu()} 
+              className="site-header__btn-menu">
+              <i className="btn-hamburger"><span></span></i>
+            </button>
           </div>
         </div>
       </header>
