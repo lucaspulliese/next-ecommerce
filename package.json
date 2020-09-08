@@ -8,6 +8,13 @@
     "start": "next start",
     "export": "next build && next export"
   },
+  "keywords": [
+    "react",
+    "reactjs",
+    "ecommerce",
+    "nextjs",
+    "next"
+  ],
   "dependencies": {
     "next": "9.4.4",
     "rc-slider": "^9.3.1",
