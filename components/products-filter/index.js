@@ -30,7 +30,7 @@ const handle = props => {
 const ProductsFilter = () => (
   <form className="products-filter">
     <div className="products-filter__block">
-      <button type="button">Product type <i className="icon-down-open"></i></button>
+      <button type="button">Product type</button>
       <div className="products-filter__block__content">
         {productsTypes.map(type => (
           <Checkbox key={type.id} name="product-type" label={type.name} />
@@ -39,7 +39,7 @@ const ProductsFilter = () => (
     </div>
 
     <div className="products-filter__block">
-      <button type="button">Price <i className="icon-down-open"></i></button>
+      <button type="button">Price</button>
       <div className="products-filter__block__content">
         <Range min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`} />
       </div>
@@ -55,7 +55,7 @@ const ProductsFilter = () => (
     </div>
     
     <div className="products-filter__block">
-      <button type="button">Color <i className="icon-down-open"></i></button>
+      <button type="button">Color</button>
       <div className="products-filter__block__content">
         <div className="checkbox-color-wrapper">
           {productsColors.map(type => (

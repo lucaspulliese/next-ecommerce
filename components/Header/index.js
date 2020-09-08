@@ -1,79 +1,83 @@
+import { useState, useEffect, useRef } from 'react';
+import useOnClickOutside from 'use-onclickoutside';
 import Logo from '../../assets/icons/logo';
 import Link from 'next/link';
-import { withRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      onTop: this.props.router.pathname === '/products' || this.props.router.pathname === '/product/[pid]' ? false : true,
-      menuOpen: false,
-    };  
-  }
+const Header = () => {
+  const router = useRouter();
+  const [onTop, setOnTop] = useState(router.pathname === '/products' || router.pathname === '/product/[pid]' ? false : true);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
-  headerClass() {
+  const navRef = useRef(null);
+  const searchRef = useRef(null);
+
+  const headerClass = () => {
     if(window.pageYOffset === 0) {
-      this.setState({
-        onTop: true,
-      });
+      setOnTop(true);
     } else {
-      this.setState({
-        onTop: false,
-      });
+      setOnTop(false);
     }
   }
 
-  componentWillUnmount() {
-    window.onscroll = null;
-  }
-
-  openMenu() {
-    this.setState({ menuOpen: true });
-  }
-
-  componentDidMount() {
-    if(this.props.router.pathname === '/products' || this.props.router.pathname === '/product/[pid]') {
+  //window.onscroll = null;
+  useEffect(() => {
+    if(router.pathname === '/products' || router.pathname === '/product/[pid]') {
       return;
     }
 
-    const self = this;
-    this.headerClass();
+    headerClass();
     window.onscroll = function() {
-      self.headerClass();
+      headerClass();
     };
+  }, []);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
   }
 
-  render() {
-    return(
-      <header className={`site-header ${!this.state.onTop ? 'site-header--fixed' : ''}`}>
-        <div className="container">
-          <Link href="/">
-            <a><h1 className="site-logo"><Logo />E-Shop</h1></a>
+  const closeSearch = () => {
+    setSearchOpen(false);
+  }
+
+  useOnClickOutside(navRef, closeMenu);
+  useOnClickOutside(searchRef, closeSearch);
+
+  return(
+    <header className={`site-header ${!onTop ? 'site-header--fixed' : ''}`}>
+      <div className="container">
+        <Link href="/">
+          <a><h1 className="site-logo"><Logo />E-Shop</h1></a>
+        </Link>
+        <nav ref={navRef} className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}>
+          <Link href="/products">
+            <a>Products</a>
           </Link>
-          <nav className={`site-nav ${this.state.menuOpen ? 'site-nav--open' : ''}`}>
-            <Link href="/products">
-              <a>Products</a>
-            </Link>
-            <a href="#">Insipiration</a>
-            <a href="#">Rooms</a>
-            <button><i className="icon-avatar"></i></button>
-          </nav>
+          <a href="#">Insipiration</a>
+          <a href="#">Rooms</a>
+          <button className="site-nav__btn"><i className="icon-avatar"></i></button>
+        </nav>
 
-          <div className="site-header__actions">
-            <button><i className="icon-search"></i></button>
-            <button><i className="icon-cart"></i></button>
-            <button className="site-header__btn-avatar"><i className="icon-avatar"></i></button>
-            <button 
-              onClick={() => this.openMenu()} 
-              className="site-header__btn-menu">
-              <i className="btn-hamburger"><span></span></i>
-            </button>
-          </div>
+        <div className="site-header__actions">
+          <button ref={searchRef} className={`search-form-wrapper ${searchOpen ? 'search-form--active' : ''}`}>
+            <form className={`search-form`}>
+              <input type="text" name="search" placeholder="Enter the product you are looking for" />
+            </form>  
+            <i onClick={() => setSearchOpen(!searchOpen)}  className="icon-search"></i>
+          </button>
+          <button><i className="icon-cart"></i></button>
+          <button className="site-header__btn-avatar"><i className="icon-avatar"></i></button>
+          <button 
+            onClick={() => setMenuOpen(true)} 
+            className="site-header__btn-menu">
+            <i className="btn-hamburger"><span></span></i>
+          </button>
         </div>
-      </header>
-    )
-  }
+      </div>
+    </header>
+  )
 };
 
 
-export default withRouter(Header);
+export default Header;

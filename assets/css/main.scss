@@ -163,7 +163,6 @@ h1,h2,h3,h4,h5 {
   &:before,
   &:after,
   span {
-      background-color: #000;
       content: '';
       display: block;
       width: 20px;
@@ -274,20 +273,9 @@ h1,h2,h3,h4,h5 {
   @include breakpoint(phone) {
     height: 100px;
   }
-  &.site-header--fixed {
-    border-bottom: 1px solid #E5E5E5;
-    background-color: #FFF;
-    a, i {
-      color: #000;
-    }
-    button {
-      color: #000;
-      i {
-        color: #000;
-      }
-    }
-    .site-logo {
-      color: #000;
+  .btn-hamburger {
+    &:before, &:after, span {
+      background-color: #FFF;
     }
   }
   .container {
@@ -318,9 +306,15 @@ h1,h2,h3,h4,h5 {
     }
     button {
       margin-left: 15px;
+      @include breakpoint(phone) {
+        margin-left: 25px;
+      }
     }
     i {
       color: #FFF;
+      z-index: 10;
+      transition: all .3s ease;
+      position: relative;
       font-size: 18px;
     }
   }
@@ -342,6 +336,15 @@ h1,h2,h3,h4,h5 {
       right: 0;
       width: auto;
       border: none;
+      background-color: transparent;
+    }
+    .site-nav__btn {
+      padding: 15px 18px;
+      text-align: center;
+      width: 100%;
+      @include breakpoint(phone) {
+        display: none;
+      }
     }
     &.site-nav--open {
       right: 0;
@@ -349,15 +352,88 @@ h1,h2,h3,h4,h5 {
     a {
       font-size: 15px;
       font-weight: 500;
-      margin-right: 76px;
       width: 100%;
+      color: #000;
       display: block;
       text-align: left;
       padding: 15px 18px;
       @include breakpoint(phone) {
         width: auto;
+        padding: 0;
+        color: #FFF;
+        margin-right: 76px;
+        display: inline-block;
         font-size: 14px;
       }
+    }
+  }
+  &.site-header--fixed {
+    border-bottom: 1px solid #E5E5E5;
+    background-color: #FFF;
+    .btn-hamburger {
+      &:before, &:after, span {
+        background-color: #000;
+      }
+    }
+    a, i {
+      color: #000;
+    }
+    button {
+      color: #000;
+      i {
+        color: #000;
+      }
+    }
+    .site-logo {
+      color: #000;
+    }
+    .search-form-wrapper {
+      &.search-form--active {
+        .search-form {
+          input {
+            border: 1px solid #E5E5E5;
+          }
+        }
+      }
+    }
+  }
+}
+
+.search-form-wrapper {
+  position: relative;
+  .search-form {
+    input {
+      width: 0;
+      padding: 0;
+      right: -9px;
+      top: 50%;
+      overflow: hidden;
+      height: 42px;
+      color: #808080;
+      margin-top: -21px;
+      border-radius: 50px;
+      font-size: 13px;
+      transition: all .3s ease;
+      position: absolute;
+      background-color: transparent;
+      @include inputPlaceholder {
+        color: #808080;
+      }
+    }
+  }
+  &.search-form--active {
+    input {
+      padding: 0 19px;
+      width: 283px;
+      padding-right: 40px;
+      background-color: #FFF;
+      @include breakpoint(phone) {
+        width: 300px;
+      }
+    }
+    i {
+      color: #000!important;
+      z-index: 10;
     }
   }
 }
@@ -564,7 +640,7 @@ h1,h2,h3,h4,h5 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 25px 26px;
+    padding: 21px 22px;
     position: relative;
     @include breakpoint(phone) {
       height: 375px;
@@ -587,10 +663,14 @@ h1,h2,h3,h4,h5 {
       z-index: 2;
       h3 {
         font-weight: 400;
-        font-size: 23px;
+        font-size: 20px;
         color: #FFF;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         line-height: 150%;
+        @include breakpoint(phone) {
+          font-size: 23px;
+          margin-bottom: 20px;
+        }
       }
     }
   }
@@ -601,11 +681,12 @@ h1,h2,h3,h4,h5 {
     height: 250px;
     padding: 18px;
     background-color: #FAFAFA;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     position: relative;
     @include breakpoint(phone) {
       height: 385px;
       padding: 24px;
+      margin-bottom: 30px;
     }
     > img {
       top: 0;
@@ -631,18 +712,28 @@ h1,h2,h3,h4,h5 {
     h3 {
       margin-bottom: 9px;
       font-weight: 300;
-      font-size: 16px;
+      font-size: 13px;
+      @include breakpoint(phone) {
+        font-size: 16px;
+      }
     }
     .product__price {
       display: flex;
       h4 {
         font-weight: 400;
-        font-size: 20px;
+        font-size: 15px;
+        @include breakpoint(phone) {
+          font-size: 20px;
+        }
       }
       span {
         color: #CECECE;
-        margin-left: 29px;
-        font-size: 20px;
+        margin-left: 20px;
+        font-size: 15px;
+        @include breakpoint(phone) {
+          font-size: 20px;
+          margin-left: 29px;
+        }
       }
       &.product__price--discount {
         h4 {
@@ -667,6 +758,14 @@ h1,h2,h3,h4,h5 {
       font-size: 18px;
       @include breakpoint(phone) {
         font-size: 29px;
+      }
+    }
+  }
+  .products-carousel {
+    .swiper-container {
+      overflow: visible;
+      @include breakpoint(phone) {
+        overflow: hidden;
       }
     }
   }

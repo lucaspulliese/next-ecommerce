@@ -3,10 +3,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ProductsFeatured = () => {
   
-  let slidesPerView = 1;
+  let slidesPerView = 1.3;
+  let centeredSlides = true;
+  let spaceBetween = 30;
+  let loop = true;
   if (process.browser) {
     if(window.innerWidth > 768) {
       slidesPerView = 4;
+      spaceBetween = 65;
+      loop = false;
+      centeredSlides = false;
     }
   }
 
@@ -20,7 +26,12 @@ const ProductsFeatured = () => {
 
         <div className="products-carousel">
           <Swiper 
-          spaceBetween={65} watchOverflow={true} slidesPerView={slidesPerView} className="swiper-wrapper">
+          spaceBetween={spaceBetween} 
+          loop={loop} 
+          centeredSlides={centeredSlides} 
+          watchOverflow={true} 
+          slidesPerView={slidesPerView} 
+          className="swiper-wrapper">
             <SwiperSlide>
               <ProductItem discount={30} productImage={'/images/products/product-1.jpg'} />
             </SwiperSlide>
