@@ -1068,15 +1068,38 @@ h1,h2,h3,h4,h5 {
     }
   }
   .products-filter {
-    width: 250px;
-    left: -250px;
-    flex-shrink: 0;
-    position: fixed;
-    @include breakpoint(phone) {
-      position: relative;
+    .products-filter__wrapper {
+      width: 100%;
+      top: -100%;
+      flex-shrink: 0;
+      position: fixed;
+      z-index: 99;
+      background-color: #FFF;
+      transition: all .4s ease;
+      @include breakpoint(phone) {
+        position: relative;
+        left: 0;
+        margin-right: 30px;
+        width: 310px;
+      }
+      &.products-filter__wrapper--open {
+        top: 0;
+      }
+    }
+    .products-filter__menu-btn {
+      position: fixed;
+      top: 65px;
+      width: 100%;
       left: 0;
-      margin-right: 30px;
-      width: 310px;
+      right: 0;
+      padding: 8px 16px;
+      z-index: 999;
+      font-size: 12px;
+      background-color: #FFF;
+      border-bottom: 1px solid #E6E6E6;
+      @include breakpoint(phone) {
+        display: none;
+      }
     }
     .products-filter__block {
       padding: 24px 31px;
@@ -1171,6 +1194,7 @@ h1,h2,h3,h4,h5 {
     width: 100%;
     .products-content__intro {
       display: flex;
+      position: relative;
       align-items: center;
       margin-bottom: 35px;
       h2 {
@@ -1184,17 +1208,62 @@ h1,h2,h3,h4,h5 {
           color: #D8D8D8;
         }
       }
+      .products-filter-btn {
+        font-size: 18px;
+        @include breakpoint(phone) {
+          display: none;
+        }
+      }
       .products-content__filter {
+        position: absolute;
+        width: 290px;
+        padding: 20px;
+        top: 150%;
+        right: 0;
         display: none;
+        z-index: 100;
+        border: 1px solid #E5E5E5;
+        background-color: #FFF;
+        &.products-order-open {
+          display: block;
+        }
         @include breakpoint(phone) {
           display: flex;
+          width: auto;
+          padding: 0;
+          border: none;
+          position: static;
         }
         .products__filter__select {
-          margin-left: 42px;
           display: flex;
           align-items: center;
+          margin-bottom: 20px;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          @include breakpoint(phone) {
+            margin-left: 42px;
+            margin-bottom: 0;
+          }
+          h4 {
+            font-size: 13px;
+            @include breakpoint(phone) {
+              font-size: 16px;
+            }
+          }
           .select-wrapper {
-            margin-left: 15px;
+            margin-left: auto;
+            @include breakpoint(phone) {
+              margin-left: 15px;
+            }
+            select {
+              font-size: 13px;
+              padding: 6px 25px 6px 8px;
+              @include breakpoint(phone) {
+                padding: 9px 38px 9px 12px;
+                font-size: 15px;
+              }
+            }
           }
         }
       }
@@ -1657,3 +1726,6 @@ h1,h2,h3,h4,h5 {
     }
   }
 }
+
+.cart {
+} 

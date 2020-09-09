@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 const Header = () => {
   const router = useRouter();
-  const [onTop, setOnTop] = useState(router.pathname === '/products' || router.pathname === '/product/[pid]' ? false : true);
+  const [onTop, setOnTop] = useState(router.pathname === '/products' || router.pathname === '/product/[pid]' || router.pathname === '/cart' ? false : true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -23,7 +23,7 @@ const Header = () => {
 
   //window.onscroll = null;
   useEffect(() => {
-    if(router.pathname === '/products' || router.pathname === '/product/[pid]') {
+    if(router.pathname === '/products' || router.pathname === '/product/[pid]' || router.pathname === '/cart') {
       return;
     }
 
