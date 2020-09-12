@@ -70,6 +70,10 @@
 .icon-materials:before { content: '\e80d'; } /* '' */
 .icon-heart:before { content: '\e80e'; } /* '' */
 .icon-right:before { content: '\e811'; } /* '' */
+.icon-card-payment:before { content: '\e815'; } /* '' */
+.icon-filters:before { content: '\e816'; } /* '' */
+.icon-send:before { content: '\e817'; } /* '' */
+.icon-cancel:before { content: '\e818'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */
 .icon-linkedin:before { content: '\f0e1'; } /* '' */
