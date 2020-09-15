@@ -5,9 +5,9 @@ import Slider from 'rc-slider';
 import Tooltip from 'rc-tooltip';
 
 // data
-import productsTypes from './../../data/products-types';
-import productsColors from './../../data/products-colors';
-import productsSizes from './../../data/products-sizes';
+import productsTypes from './../../utils/data/products-types';
+import productsColors from './../../utils/data/products-colors';
+import productsSizes from './../../utils/data/products-sizes';
 
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
@@ -33,7 +33,12 @@ const ProductsFilter = () => {
 
   return (
     <form className="products-filter">
-      <button type="button" onClick={() => setFiltersOpen(!filtersOpen)} className="products-filter__menu-btn">Add Filter <i className="icon-down"></i></button>
+      <button type="button" 
+        onClick={() => setFiltersOpen(!filtersOpen)} 
+        className={`products-filter__menu-btn ${filtersOpen ? 'products-filter__menu-btn--active' : ''}`}>
+          Add Filter <i className="icon-down-open"></i>
+      </button>
+      
       <div className={`products-filter__wrapper ${filtersOpen ? 'products-filter__wrapper--open' : ''}`}>
         <div className="products-filter__block">
           <button type="button">Product type</button>

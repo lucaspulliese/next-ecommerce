@@ -20,3 +20,18 @@ $breakpoints: (
 		}
 	} 
 }
+
+@mixin breakpointMax($breakpoint) {
+
+    // If the breakpoint exists in the map.
+	@if map-has-key($breakpoints, $breakpoint) {
+	
+	// Get the breakpoint value.
+	$breakpoint-value: map-get($breakpoints, $breakpoint);
+	
+	//Build the media query
+		@media (max-width: $breakpoint-value) {
+			@content;
+		}
+	} 
+}

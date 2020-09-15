@@ -1,4 +1,4 @@
-import productsColors from './../../../data/products-colors';
+import productsColors from './../../../utils/data/products-colors';
 import CheckboxColor from './../../products-filter/form-builder/checkbox-color';
 
 const Content = () => {

@@ -1119,6 +1119,15 @@ h1,h2,h3,h4,h5 {
       @include breakpoint(phone) {
         display: none;
       }
+      i {
+        display: inline-block;
+        transition: all .3s ease;
+      }
+      &.products-filter__menu-btn--active {
+        i {
+          transform: rotate(180deg);
+        }
+      }
     }
     .products-filter__block {
       padding: 20px 21px;
@@ -1382,11 +1391,14 @@ h1,h2,h3,h4,h5 {
 
 .quantity-button {
   border-radius: 50px;
-  height: 49px;
+  height: 38px;
   padding: 0 20px;
   display: inline-flex;
   align-items: center;
   border: 1px solid #D8D8D8;
+  @include breakpoint(phone) {
+    height: 49px;
+  }
   .quantity-button__btn {
     font-size: 23px;
     font-weight: 400;
@@ -1802,7 +1814,10 @@ h1,h2,h3,h4,h5 {
 .cart {
   padding: 52px 0;
   .cart__intro {
-    margin-bottom: 66px;
+    margin-bottom: 35px;
+    @include breakpoint(phone) {
+      margin-bottom: 66px;
+    }
   }
   .cart__title {
     font-size: 20px;
@@ -1812,6 +1827,7 @@ h1,h2,h3,h4,h5 {
     margin-top: 75px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
   .icon-cancel {
     font-size: 13px;
@@ -1820,6 +1836,10 @@ h1,h2,h3,h4,h5 {
     font-weight: 700;
     font-size: 14px;
     margin-right: auto;
+    margin-bottom: 18px;
+    @include breakpoint(phone) {
+      margin-bottom: 0;
+    }
     i {
       margin-right: 15px;
     }
@@ -1827,17 +1847,27 @@ h1,h2,h3,h4,h5 {
   .cart__promo-code {
     padding: 0 20px;
     font-size: 13px;
-    height: 49px;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 18px;
     border: 1px solid #D8D8D8;
     border-radius: 30px;
-    margin-right: 70px;
+    @include breakpoint(phone) {
+      height: 49px;
+      width: auto;
+      margin-bottom: 0;
+      margin-right: 70px;
+    }
     @include placeholder {
       color: #ABABAB;
     }
   }
   .cart-actions__total {
     font-weight: 300;
-    margin-right: 60px;
+    margin-right: auto;
+    @include breakpoint(phone) {
+      margin-right: 60px;
+    }
     strong {
       margin-left: 15px;
       color: #000;
@@ -1852,6 +1882,27 @@ h1,h2,h3,h4,h5 {
     width: 100%;
   }
   tr {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #D8D8D8;
+    @include breakpoint(phone) {
+      display: table-row;
+      padding: 0;
+      margin: 0;
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+    &:first-of-type {
+      display: none;
+      @include breakpoint(phone) {
+        display: table-row;
+      }
+    }
     th {
       text-align: center;
       font-size: 14px;
@@ -1859,10 +1910,62 @@ h1,h2,h3,h4,h5 {
       padding-bottom: 30px;
     }
     td {
-      padding: 20px 0;
-      text-align: center;
+      display: block;
+      flex-wrap: wrap;
+      padding: 10px 0;
       color: #000;
-      vertical-align: middle;
+      @include breakpointMax(phone) {
+        width: 100%!important;
+      }
+      @include breakpoint(phone) {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        padding: 20px 0;
+      }
+      &.cart-item-before {
+        &:before {
+          font-weight: 600;
+          margin-right: 15px;
+          content: attr(data-label)': ';
+          @include breakpoint(phone) {
+            display: none;
+          }
+        }
+      } 
+      &:nth-of-type(1) {
+        width: 30%;
+      }
+      &:nth-of-type(2) {
+        width: 12%;
+      }
+      &:nth-of-type(3) {
+        width: 12%;
+      }
+      &:nth-of-type(4) {
+        width: 50%!important;
+        text-align: right;
+        @include breakpoint(phone) {
+          width: 23%;
+        }
+      }
+      &:nth-of-type(5) {
+        text-align: left;
+        padding-left: 15px;
+        width: 50%!important;
+        @include breakpoint(phone) {
+          width: 23%;
+        }
+      }
+      &.cart-item-cancel {
+        top: 5px;
+        right: 0;
+        width: auto!important;
+        position: absolute;
+        @include breakpoint(phone) {
+          position: static;
+        }
+      }
     }
   }
 }
@@ -1875,7 +1978,10 @@ h1,h2,h3,h4,h5 {
     width: 70px;
     background: #FAFAFA;
     border-radius: 100%;
-    margin-right: 48px;
+    margin-right: 25px;
+    @include breakpoint(phone) {
+      margin-right: 48px;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -1884,7 +1990,11 @@ h1,h2,h3,h4,h5 {
     }
   }
   .cart-product__content {
+    padding-right: 25px;
     text-align: left;
+    @include breakpoint(phone) {
+      padding: 0;
+    }
     h3 {
       font-size: 16px;
       font-weight: 700;

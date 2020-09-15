@@ -17,7 +17,7 @@ const ShoppingCart = () => (
           </tr>
 
           <tr>
-            <td width="30%">
+            <td>
               <div className="cart-product">
                 <div className="cart-product__img">
                   <img src="/images/products/product-1.jpg" alt="" />
@@ -29,9 +29,9 @@ const ShoppingCart = () => (
                 </div>
               </div>
             </td>
-            <td width="12%">White</td>
-            <td width="12%">XL</td>
-            <td width="23%">
+            <td className="cart-item-before" data-label="Color">White</td>
+            <td className="cart-item-before" data-label="Size">XL</td>
+            <td>
               <div className="quantity-button">
                 <button type="button" className="quantity-button__btn">
                   -
@@ -42,40 +42,40 @@ const ShoppingCart = () => (
                 </button>
               </div>
             </td>
-            <td width="23%">$89.99</td>
-            <td><i className="icon-cancel"></i></td>
+            <td>$89.99</td>
+            <td className="cart-item-cancel"><i className="icon-cancel"></i></td>
+          </tr>
+
+          <tr>
+            <td>
+              <div className="cart-product">
+                <div className="cart-product__img">
+                  <img src="/images/products/product-1.jpg" alt="" />
+                </div>
+
+                <div className="cart-product__content">
+                  <h3>T-Shirt Summer Vibes</h3>
+                  <p>#261311</p>
+                </div>
+              </div>
+            </td>
+            <td className="cart-item-before" data-label="Color">White</td>
+            <td className="cart-item-before" data-label="Size">XL</td>
+            <td>
+              <div className="quantity-button">
+                <button type="button" className="quantity-button__btn">
+                  -
+                </button>
+                <span>1</span>
+                <button type="button" className="quantity-button__btn">
+                  +
+                </button>
+              </div>
+            </td>
+            <td>$89.99</td>
+            <td className="cart-item-cancel"><i className="icon-cancel"></i></td>
           </tr>
           
-          <tr>
-            <td width="30%">
-              <div className="cart-product">
-                <div className="cart-product__img">
-                  <img src="/images/products/product-1.jpg" alt="" />
-                </div>
-
-                <div className="cart-product__content">
-                  <h3>T-Shirt Summer Vibes</h3>
-                  <p>#261311</p>
-                </div>
-              </div>
-            </td>
-            <td width="12%">White</td>
-            <td width="12%">XL</td>
-            <td width="23%">
-              <div className="quantity-button">
-                <button type="button" className="quantity-button__btn">
-                  -
-                </button>
-                <span>1</span>
-                <button type="button" className="quantity-button__btn">
-                  +
-                </button>
-              </div>
-            </td>
-            <td width="23%">$89.99</td>
-            <td><i className="icon-cancel"></i></td>
-          </tr>
-        
         </table> 
       </div>
     
