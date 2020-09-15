@@ -70,6 +70,8 @@ const ProductsFilter = () => {
             </div>
           </div>
         </div>
+
+        <button type="submit" className="btn btn-submit btn--rounded btn--yellow">Apply</button>
       </div>
     </form>
   )

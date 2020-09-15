@@ -17,10 +17,10 @@ const ShoppingCart = () => (
           </tr>
 
           <tr>
-            <td>
+            <td width="30%">
               <div className="cart-product">
                 <div className="cart-product__img">
-
+                  <img src="/images/products/product-1.jpg" alt="" />
                 </div>
 
                 <div className="cart-product__content">
@@ -29,9 +29,9 @@ const ShoppingCart = () => (
                 </div>
               </div>
             </td>
-            <td width="15%">White</td>
-            <td width="15%">XL</td>
-            <td width="30%">
+            <td width="12%">White</td>
+            <td width="12%">XL</td>
+            <td width="23%">
               <div className="quantity-button">
                 <button type="button" className="quantity-button__btn">
                   -
@@ -42,15 +42,15 @@ const ShoppingCart = () => (
                 </button>
               </div>
             </td>
-            <td>$89.99</td>
-            <td>$89.99</td>
+            <td width="23%">$89.99</td>
+            <td><i className="icon-cancel"></i></td>
           </tr>
-
+          
           <tr>
-            <td>
+            <td width="30%">
               <div className="cart-product">
                 <div className="cart-product__img">
-
+                  <img src="/images/products/product-1.jpg" alt="" />
                 </div>
 
                 <div className="cart-product__content">
@@ -59,9 +59,9 @@ const ShoppingCart = () => (
                 </div>
               </div>
             </td>
-            <td width="15%">White</td>
-            <td width="15%">XL</td>
-            <td width="30%">
+            <td width="12%">White</td>
+            <td width="12%">XL</td>
+            <td width="23%">
               <div className="quantity-button">
                 <button type="button" className="quantity-button__btn">
                   -
@@ -72,16 +72,18 @@ const ShoppingCart = () => (
                 </button>
               </div>
             </td>
-            <td>$89.99</td>
-            <td>$89.99</td>
+            <td width="23%">$89.99</td>
+            <td><i className="icon-cancel"></i></td>
           </tr>
         
         </table> 
       </div>
     
       <div className="cart-actions">
-        <button type="button" className="cart__btn-back">Continue Shopping</button>
+        <button type="button" className="cart__btn-back"><i className="icon-left"></i> Continue Shopping</button>
         <input type="text" placeholder="Promo Code" className="cart__promo-code" />
+        <p className="cart-actions__total">Total cost <strong>$159,98</strong></p>
+        <button type="button" className="btn btn--rounded btn--yellow">Checkout</button>
       </div>
     </div>
   </section>

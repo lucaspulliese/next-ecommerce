@@ -11,6 +11,7 @@ This repo contains a work in progress Ecommerce responsive made with Next.js. I'
 - Home page: /
 - Products page: /products
 - Product single page: /product/test
+- Cart page: /cart
 
 ## Screenshots
 

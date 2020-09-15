@@ -339,9 +339,11 @@ h1,h2,h3,h4,h5 {
       background-color: transparent;
     }
     .site-nav__btn {
-      padding: 15px 18px;
-      text-align: center;
+      padding: 13px 18px;
       width: 100%;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: left;
       @include breakpoint(phone) {
         display: none;
       }
@@ -694,6 +696,7 @@ h1,h2,h3,h4,h5 {
       z-index: 5;
       width: 100%;
       height: 100%;
+      object-position: top center;
       object-fit: cover;
       position: absolute;
     }
@@ -1068,22 +1071,38 @@ h1,h2,h3,h4,h5 {
     }
   }
   .products-filter {
+    .btn-submit {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 150px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      @include breakpoint(phone) {
+        display: none;
+      }
+    }
     .products-filter__wrapper {
       width: 100%;
       top: -100%;
+      left: 0;
+      overflow: auto;
+      height: calc(100% - 101px);
       flex-shrink: 0;
       position: fixed;
       z-index: 99;
+      padding: 20px 20px;
       background-color: #FFF;
       transition: all .4s ease;
       @include breakpoint(phone) {
         position: relative;
         left: 0;
+        height: auto;
         margin-right: 30px;
         width: 310px;
       }
       &.products-filter__wrapper--open {
-        top: 0;
+        top: 101px;
       }
     }
     .products-filter__menu-btn {
@@ -1093,7 +1112,7 @@ h1,h2,h3,h4,h5 {
       left: 0;
       right: 0;
       padding: 8px 16px;
-      z-index: 999;
+      z-index: 100;
       font-size: 12px;
       background-color: #FFF;
       border-bottom: 1px solid #E6E6E6;
@@ -1102,9 +1121,12 @@ h1,h2,h3,h4,h5 {
       }
     }
     .products-filter__block {
-      padding: 24px 31px;
+      padding: 20px 21px;
       margin-bottom: 13px;
       border: 1px solid #E6E6E6;
+      @include breakpoint(phone) {
+        padding: 24px 31px;
+      }
       > button {
         font-size: 12px;
         display: flex;
@@ -1146,15 +1168,45 @@ h1,h2,h3,h4,h5 {
         display: block;
         width: 26px;
         height: 26px;
+        position: relative;
         margin-right: 18px;
         border: 1px solid #D4D4D4; 
+        &:before {
+          display: block;
+          content: '';
+          position: absolute;
+          top: 4px;
+          left: 9px;
+          opacity: 0;
+          width: 7px;
+          height: 12.5px;
+          transform: scale(1) rotate(45deg);
+          z-index: 100;
+          border: 1px solid black;
+          -webkit-transition: all .2s linear;
+          -o-transition: all .2s linear;
+          transition: all .2s linear;
+          border-width: 0 2px 2px 0;
+        }
       }
       input:checked + .checkbox__check {
-        background-color: #000;
+        &:before {
+          opacity: 1;
+        }
       }
       &.checkbox--square {
         position: relative;
         width: calc(100%/6);
+        input:checked + .checkbox__check {
+          background-color: #000;
+          border-color: #000;
+          &:before {
+            opacity: 0;
+          }
+        }
+        input:checked ~ p {
+          color: #fff;
+        }
         input {
           display: none;
         }
@@ -1209,7 +1261,7 @@ h1,h2,h3,h4,h5 {
         }
       }
       .products-filter-btn {
-        font-size: 18px;
+        font-size: 16px;
         @include breakpoint(phone) {
           display: none;
         }
@@ -1221,7 +1273,7 @@ h1,h2,h3,h4,h5 {
         top: 150%;
         right: 0;
         display: none;
-        z-index: 100;
+        z-index: 50;
         border: 1px solid #E5E5E5;
         background-color: #FFF;
         &.products-order-open {
@@ -1445,9 +1497,13 @@ h1,h2,h3,h4,h5 {
   .product-single__reviews {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
     .reviews-list {
-      width: 48%;
+      width: 100%;
       margin-left: auto;
+      @include breakpoint(phone) {
+        width: 48%;
+      }
     }
   }
   .product-single__info {
@@ -1457,7 +1513,10 @@ h1,h2,h3,h4,h5 {
       margin-bottom: 90px;
       .btn {
         margin: 0 15px;
-        padding: 12px 28px;
+        padding: 8px 22px;
+        @include breakpoint(phone) {
+          padding: 12px 28px;
+        }
         &.btn--active {
           border: 1px solid var(--color-orange);
         }
@@ -1658,11 +1717,19 @@ h1,h2,h3,h4,h5 {
 .product-punctuation {
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin-bottom: 50px;
+  @include breakpoint(phone) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+  }
   .product-punctuation__values {
     text-align: center;
+    margin-bottom: 25px;
+    @include breakpoint(phone) {
+      margin-bottom: 0;
+    }
     h3 {
       font-size: 59px;
       font-weight: 700;
@@ -1681,13 +1748,18 @@ h1,h2,h3,h4,h5 {
     }
   }
   .product-punctuation__rates {
-    width: 200px;
-    margin-left: 68px;
+    @include breakpoint(phone) {
+      width: 200px;
+      margin-left: 68px;
+    }
   }
   .punctuation-btn-wrapper {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 30px;
     text-align: center;
+    @include breakpoint(phone) {
+      margin-top: 50px;
+    }
   }
 }
 
@@ -1736,6 +1808,42 @@ h1,h2,h3,h4,h5 {
     font-size: 20px;
     font-weight: 700;
   }
+  .cart-actions {
+    margin-top: 75px;
+    display: flex;
+    align-items: center;
+  }
+  .icon-cancel {
+    font-size: 13px;
+  }
+  .cart__btn-back {
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: auto;
+    i {
+      margin-right: 15px;
+    }
+  }
+  .cart__promo-code {
+    padding: 0 20px;
+    font-size: 13px;
+    height: 49px;
+    border: 1px solid #D8D8D8;
+    border-radius: 30px;
+    margin-right: 70px;
+    @include placeholder {
+      color: #ABABAB;
+    }
+  }
+  .cart-actions__total {
+    font-weight: 300;
+    margin-right: 60px;
+    strong {
+      margin-left: 15px;
+      color: #000;
+      font-weight: 700;
+    }
+  }
 } 
 
 .cart-list {
@@ -1751,7 +1859,7 @@ h1,h2,h3,h4,h5 {
       padding-bottom: 30px;
     }
     td {
-      padding: 15px 0;
+      padding: 20px 0;
       text-align: center;
       color: #000;
       vertical-align: middle;
@@ -1768,6 +1876,12 @@ h1,h2,h3,h4,h5 {
     background: #FAFAFA;
     border-radius: 100%;
     margin-right: 48px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100%;
+    }
   }
   .cart-product__content {
     text-align: left;

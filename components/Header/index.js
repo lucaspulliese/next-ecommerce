@@ -56,7 +56,7 @@ const Header = () => {
           </Link>
           <a href="#">Insipiration</a>
           <a href="#">Rooms</a>
-          <button className="site-nav__btn"><i className="icon-avatar"></i></button>
+          <button className="site-nav__btn"><p>Account</p></button>
         </nav>
 
         <div className="site-header__actions">
@@ -66,7 +66,9 @@ const Header = () => {
             </form>  
             <i onClick={() => setSearchOpen(!searchOpen)}  className="icon-search"></i>
           </button>
-          <button><i className="icon-cart"></i></button>
+          <Link href="/cart">
+            <button><i className="icon-cart"></i></button>
+          </Link>
           <button className="site-header__btn-avatar"><i className="icon-avatar"></i></button>
           <button 
             onClick={() => setMenuOpen(true)} 
