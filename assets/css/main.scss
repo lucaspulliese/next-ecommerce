@@ -426,7 +426,7 @@ h1,h2,h3,h4,h5 {
   &.search-form--active {
     input {
       padding: 0 19px;
-      width: 283px;
+      width: 230px;
       padding-right: 40px;
       background-color: #FFF;
       @include breakpoint(phone) {
@@ -460,6 +460,13 @@ h1,h2,h3,h4,h5 {
     display: none;
     background-color: rgba(255,255,255, .12);
     @include breakpoint(phone) {
+      width: 52px;
+      height: 52px;
+      bottom: 30px;
+      font-size: 17px;
+      display: flex;
+    }
+    @include breakpoint(tablet-lg) {
       width: 72px;
       height: 72px;
       bottom: 30px;
@@ -522,6 +529,14 @@ h1,h2,h3,h4,h5 {
       li {
         display: flex;
         margin-left: 80px;
+        @include breakpoint(phone) {
+          display: block;
+          margin-left: 30px;
+        }
+        @include breakpoint(tablet-lg) {
+          margin-left: 80px;
+          display: flex;
+        }
         i {
           margin-right: 27px;
           height: 39px;
@@ -534,6 +549,12 @@ h1,h2,h3,h4,h5 {
           background: var(--color-orange-light);
           justify-content: center;
           align-items: center;
+          @include breakpoint(phone) {
+            margin-bottom: 15px;
+          }
+          @include breakpoint(tablet-lg) {
+            margin-bottom: 0;
+          }
         }
         .data-item__content {
           h4 {
@@ -620,6 +641,11 @@ h1,h2,h3,h4,h5 {
   }
   .container {
     @include breakpoint(phone) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    @include breakpoint(tablet-lg) {
       display: grid;
       grid-gap: 34px;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -628,12 +654,25 @@ h1,h2,h3,h4,h5 {
   }
   .featured-item-large {
     grid-area: \31 ; 
+    width: 100%;
   }
   .featured-item-small-first { 
     grid-area: \32 ; 
+    @include breakpoint(phone) {
+      width: 49%;
+    }
+    @include breakpoint(tablet-lg) {
+      width: 100%;
+    }
   }
   .featured-item-small { 
     grid-area: \33 ; 
+    @include breakpoint(phone) {
+      width: 49%;
+    }
+    @include breakpoint(tablet-lg) {
+      width: 100%;
+    }
   }
   .featured-item {
     height: 200px;
@@ -647,6 +686,9 @@ h1,h2,h3,h4,h5 {
     @include breakpoint(phone) {
       height: 375px;
       padding: 55px 46px;
+      margin-bottom: 10px;
+    }
+    @include breakpoint(tablet-lg) {
       margin-bottom: 0;
     }
     &:before {
@@ -783,10 +825,12 @@ h1,h2,h3,h4,h5 {
     position: relative;
     background-position: center;
     @include breakpoint(phone) {
+      padding: 40px 60px 40px 60px;
+    }
+    @include breakpoint(tablet-lg) {
       padding: 80px 125px 80px 105px;
       display: flex;
       align-items: center;
-      background-position: center;
     }
     &:before {
       content: '';
@@ -810,13 +854,17 @@ h1,h2,h3,h4,h5 {
       line-height: 130%;
       margin-right: auto;
       @include breakpoint(phone) {
+        font-size: 23px;
+      }
+      @include breakpoint(tablet-lg) {
+        width: 504px;
         font-size: 26px;
         margin-bottom: 0;
-        width: 504px;
       }
     }
     .subscribe__form {
       input {
+        width: 100%;
         height: 40px;
         padding: 0 25px;
         color: #ABABAB;
@@ -825,6 +873,7 @@ h1,h2,h3,h4,h5 {
         border-radius: 30px;
         margin-right: 25px;
         @include breakpoint(phone) {
+          width: auto;
           height: 48px;
           padding: 0 35px;
         }
@@ -873,7 +922,11 @@ h1,h2,h3,h4,h5 {
   .site-footer__top {
     @include breakpoint(phone) {
       display: flex;
+      flex-wrap: wrap;
       padding-bottom: 60px;
+    }
+    @include breakpoint(tablet-lg) {
+      flex-wrap: nowrap;
     }
   }
   .site-footer__description {
@@ -881,6 +934,9 @@ h1,h2,h3,h4,h5 {
     margin-bottom: 70px;
     @include breakpoint(phone) {
       width: 400px;
+      margin-bottom: 50px;
+    }
+    @include breakpoint(tablet-lg) {
       margin-bottom: 0;
     }
     svg {
@@ -917,12 +973,19 @@ h1,h2,h3,h4,h5 {
   .site-footer__links {
     @include breakpoint(phone) {
       display: flex;
+      width: 100%;
+    }
+    @include breakpoint(tablet-lg) {
+      width: auto;
     }
     ul {
       margin-bottom: 40px;
       @include breakpoint(phone) {
-        margin-right: 99px;
+        margin-right: 50px;
         margin-bottom: 0;
+      }
+      @include breakpoint(tablet-lg) {
+        margin-right: 99px;
       }
       &:last-of-type {
         margin-right: 0;
@@ -1083,9 +1146,9 @@ h1,h2,h3,h4,h5 {
       }
     }
     .products-filter__wrapper {
-      width: 100%;
-      top: -100%;
-      left: 0;
+      width: 300px;
+      left: -300px;
+      top: 101px;
       overflow: auto;
       height: calc(100% - 101px);
       flex-shrink: 0;
@@ -1095,14 +1158,23 @@ h1,h2,h3,h4,h5 {
       background-color: #FFF;
       transition: all .4s ease;
       @include breakpoint(phone) {
+        top: 134px;
+      }
+      @include breakpoint(tablet-lg) {
         position: relative;
         left: 0;
+        top: 0;
         height: auto;
-        margin-right: 30px;
+        margin-right: 20px;
+        width: 220px;
+      }
+      @include breakpoint(desktop-lg) {
         width: 310px;
+        top: 0;
+        margin-right: 30px;
       }
       &.products-filter__wrapper--open {
-        top: 101px;
+        left: 0;
       }
     }
     .products-filter__menu-btn {
@@ -1117,15 +1189,19 @@ h1,h2,h3,h4,h5 {
       background-color: #FFF;
       border-bottom: 1px solid #E6E6E6;
       @include breakpoint(phone) {
+        top: 100px;
+      }
+      @include breakpoint(tablet-lg) {
         display: none;
       }
       i {
         display: inline-block;
         transition: all .3s ease;
+        transform: rotate(270deg);
       }
       &.products-filter__menu-btn--active {
         i {
-          transform: rotate(180deg);
+          transform: rotate(90deg);
         }
       }
     }
@@ -1133,7 +1209,7 @@ h1,h2,h3,h4,h5 {
       padding: 20px 21px;
       margin-bottom: 13px;
       border: 1px solid #E6E6E6;
-      @include breakpoint(phone) {
+      @include breakpoint(tablet-lg) {
         padding: 24px 31px;
       }
       > button {
@@ -1258,6 +1334,7 @@ h1,h2,h3,h4,h5 {
       position: relative;
       align-items: center;
       margin-bottom: 35px;
+      flex-wrap: wrap;
       h2 {
         font-size: 18px;
         margin-right: auto;
@@ -1290,10 +1367,15 @@ h1,h2,h3,h4,h5 {
         }
         @include breakpoint(phone) {
           display: flex;
-          width: auto;
+          width: 100%;
           padding: 0;
           border: none;
           position: static;
+          margin-top: 30px;
+        }
+        @include breakpoint(tablet-lg) {
+          width: auto;
+          margin-top: 0;
         }
         .products__filter__select {
           display: flex;
@@ -1301,6 +1383,9 @@ h1,h2,h3,h4,h5 {
           margin-bottom: 20px;
           &:last-of-type {
             margin-bottom: 0;
+          }
+          &:first-of-type {
+            margin-left: 0;
           }
           @include breakpoint(phone) {
             margin-left: 42px;
@@ -1343,6 +1428,9 @@ h1,h2,h3,h4,h5 {
   flex-wrap: wrap;
   margin-right: -15px;
   @include breakpoint(phone) {
+    margin-right: -33px;
+  }
+  @include breakpoint(tablet-lg) {
     margin-right: -63px;
   }
   .product-item {
@@ -1350,6 +1438,11 @@ h1,h2,h3,h4,h5 {
     margin-bottom: 50px;
     margin-right: 15px;
     @include breakpoint(phone) {
+      margin-right: 33px;
+      margin-bottom: 55px;
+      width: calc(100%/3 - 33px);
+    }
+    @include breakpoint(tablet-lg) {
       margin-right: 63px;
       margin-bottom: 85px;
       width: calc(100%/3 - 63px);
@@ -1663,6 +1756,7 @@ h1,h2,h3,h4,h5 {
     img {
       width: 100%;
       height: 100%;
+      object-position: top center;
       object-fit: cover;
     }
   }
@@ -1676,6 +1770,7 @@ h1,h2,h3,h4,h5 {
     img {
       width: 100%;
       height: 100%;
+      object-position: top center;
       object-fit: cover;
     }
   }
@@ -1836,7 +1931,7 @@ h1,h2,h3,h4,h5 {
     font-weight: 700;
     font-size: 14px;
     margin-right: auto;
-    margin-bottom: 18px;
+    margin-bottom: 40px;
     @include breakpoint(phone) {
       margin-bottom: 0;
     }
@@ -1893,6 +1988,7 @@ h1,h2,h3,h4,h5 {
       display: table-row;
       padding: 0;
       margin: 0;
+      border: none;
     }
     &:last-of-type {
       border-bottom: none;
@@ -1946,7 +2042,8 @@ h1,h2,h3,h4,h5 {
         width: 50%!important;
         text-align: right;
         @include breakpoint(phone) {
-          width: 23%;
+          text-align: center;
+          width: 23%!important;
         }
       }
       &:nth-of-type(5) {
@@ -1954,7 +2051,8 @@ h1,h2,h3,h4,h5 {
         padding-left: 15px;
         width: 50%!important;
         @include breakpoint(phone) {
-          width: 23%;
+          text-align: center;
+          width: 23%!important;
         }
       }
       &.cart-item-cancel {
@@ -1987,6 +2085,7 @@ h1,h2,h3,h4,h5 {
       height: 100%;
       object-fit: cover;
       border-radius: 100%;
+      object-position: top center;
     }
   }
   .cart-product__content {

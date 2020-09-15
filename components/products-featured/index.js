@@ -9,6 +9,12 @@ const ProductsFeatured = () => {
   let loop = true;
   if (process.browser) {
     if(window.innerWidth > 768) {
+      slidesPerView = 3;
+      spaceBetween = 35;
+      loop = false;
+      centeredSlides = false;
+    }
+    if(window.innerWidth > 1024) {
       slidesPerView = 4;
       spaceBetween = 65;
       loop = false;

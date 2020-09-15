@@ -1,6 +1,6 @@
 # Next.js Ecommerce
 
-This repo contains a work in progress Ecommerce responsive made with Next.js. I'm doing this to learn and practice more about React, Redux and Next.js.
+This repo contains a work in progress Ecommerce responsive made with Next.js. I'm doing this to learn and practice React, Redux and Next.js.
 
 ## Design
 
