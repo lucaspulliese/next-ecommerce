@@ -2063,6 +2063,9 @@ h1,h2,h3,h4,h5 {
         @include breakpoint(phone) {
           position: static;
         }
+        i {
+          cursor: pointer;
+        }
       }
     }
   }
