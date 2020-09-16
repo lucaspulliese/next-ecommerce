@@ -1,9 +1,17 @@
 import { useState } from 'react';
+import useSwr from 'swr';
 import ProductItem from './../product-item';
+
+const fetcher = (url) => fetch(url).then((res) => res.json())
 
 const ProductsContent = () => {
   const [orderProductsOpen, setOrderProductsOpen] = useState(false);
   
+  const { data, error } = useSwr('/api/products', fetcher);
+
+  if (error) return <div>Failed to load users</div>
+  if (!data) return <div>Loading...</div>
+
   return (
     <section className="products-content">
       <div className="products-content__intro">
@@ -30,12 +38,14 @@ const ProductsContent = () => {
       </div>
 
       <div className="products-list">
-        <ProductItem discount={30} productImage={'/images/products/product-1.jpg'} />
-        <ProductItem productImage={'/images/products/product-2.jpg'} />
-        <ProductItem productImage={'/images/products/product-3.jpg'} />
-        <ProductItem productImage={'/images/products/product-4.jpg'} />
-        <ProductItem discount={30} productImage={'/images/products/product-1.jpg'} />
-        <ProductItem productImage={'/images/products/product-2.jpg'} />
+        {data.map(item => (
+          <ProductItem 
+            discount={item.discount} 
+            id={item.id} 
+            productImage={item.images[0]} 
+            name={item.name}
+          />
+        ))}
       </div>
     </section>
   );

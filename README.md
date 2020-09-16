@@ -1,6 +1,7 @@
 # Next.js Ecommerce
 
 This repo contains a work in progress Ecommerce responsive made with Next.js. I'm doing this to learn and practice React, Redux and Next.js.
+All the data is fake, you can see it inside utils/data folder.
 
 ## Design
 
@@ -10,7 +11,7 @@ This repo contains a work in progress Ecommerce responsive made with Next.js. I'
 
 - Home page: /
 - Products page: /products
-- Product single page: /product/test
+- Product single page: /product/1
 - Cart page: /cart
 
 ## Screenshots
