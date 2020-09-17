@@ -22,8 +22,8 @@
     "react-dom": "16.13.1",
     "react-rater": "^5.1.1",
     "react-select": "^3.1.0",
-    "sass": "^1.26.9",
-    "swiper": "^6.1.2",
+    "sass": "^1.26.10",
+    "swiper": "^6.2.0",
     "swr": "^0.3.2",
     "use-onclickoutside": "^0.3.1"
   },
