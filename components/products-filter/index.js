@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Checkbox from './form-builder/checkbox';
 import CheckboxColor from './form-builder/checkbox-color';
 import Slider from 'rc-slider';
 import Tooltip from 'rc-tooltip';
+import { useForm } from "react-hook-form";
 
 // data
 import productsTypes from './../../utils/data/products-types';
@@ -29,10 +31,19 @@ const handle = props => {
 };
 
 const ProductsFilter = () => {
+  const router = useRouter();
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const { handleSubmit, register, getValues } = useForm();
+
+  const addQueryParams = () => {
+    router.push({
+      pathname: '/products',
+      query: { 'type': 't-shirt' },
+    })
+  }
 
   return (
-    <form className="products-filter">
+    <form className="products-filter" onChange={addQueryParams}>
       <button type="button" 
         onClick={() => setFiltersOpen(!filtersOpen)} 
         className={`products-filter__menu-btn ${filtersOpen ? 'products-filter__menu-btn--active' : ''}`}>
@@ -60,7 +71,12 @@ const ProductsFilter = () => {
           <button type="button">Size</button>
           <div className="products-filter__block__content checkbox-square-wrapper">
             {productsSizes.map(type => (
-              <Checkbox type="square" key={type.id} name="product-size" label={type.label} />
+              <Checkbox 
+                type="square" 
+                key={type.id} 
+                ref={register}
+                name="product-size" 
+                label={type.label} />
             ))}
           </div>
         </div>

@@ -2,5 +2,9 @@
 import products from '../../utils/data/products';
 
 export default (req, res) => {
-  res.status(200).json(products);
+
+  // fake loading
+  setTimeout(() => {
+    res.status(200).json(products);
+  }, 800);
 }

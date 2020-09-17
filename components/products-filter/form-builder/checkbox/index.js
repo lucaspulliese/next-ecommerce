@@ -1,6 +1,6 @@
-const Checkbox = ({ type, label, name }) => (
-	<label for={label+'-'+name} className={`checkbox ${type ? 'checkbox--'+type : ''}`}>
-		<input name={name} type="checkbox" id={label+'-'+name} />
+const Checkbox = ({ type, label, name, onChange }) => (
+	<label htmlFor={label+'-'+name} className={`checkbox ${type ? 'checkbox--'+type : ''}`}>
+		<input name={name} onChange={onChange} type="checkbox" id={label+'-'+name} />
 		<span className="checkbox__check"></span>
     	<p>{label}</p>
 	</label>
