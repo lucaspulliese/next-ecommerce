@@ -10,14 +10,14 @@ export default (state = initialState, action) => {
     case HYDRATE:
       return {...state, ...action.payload};
     case 'ADD_PRODUCT': 
-      return [
+      return {
         ...state,
-        {
-          id: action.id,
-          text: action.text,
-          completed: false
-        }
-      ];
+        cartItems: [...state.cartItems,
+          {
+            name: action.name
+          }
+        ]
+      };
     case 'TICK':
       return {...state, tick: action.payload};
     default:

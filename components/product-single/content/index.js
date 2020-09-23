@@ -1,7 +1,19 @@
 import productsColors from './../../../utils/data/products-colors';
 import CheckboxColor from './../../products-filter/form-builder/checkbox-color';
+import { useDispatch } from 'react-redux'
 
 const Content = () => {
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    dispatch (
+      { 
+        type: 'ADD_PRODUCT',
+        name: 'product cart',
+      }
+    )
+  }
+
   return (
     <section className="product-content">
       <div className="product-content__intro">
@@ -47,7 +59,7 @@ const Content = () => {
               </button>
             </div>
             
-            <button type="submit" className="btn btn--rounded btn--yellow">Add to cart</button>
+            <button type="submit" onClick={() => addToCart()} className="btn btn--rounded btn--yellow">Add to cart</button>
             <button type="button" className="btn-heart"><i className="icon-heart"></i></button>
           </div>
         </div>

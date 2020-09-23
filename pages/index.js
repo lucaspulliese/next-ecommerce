@@ -4,16 +4,6 @@ import ProductsFeatured from '../components/products-featured';
 import Footer from '../components/footer';
 import Subscribe from '../components/subscribe';
 
-import {Provider, useSelector} from 'react-redux';
-import {wrapper} from '../store';
-
-export const getStaticProps = wrapper.getStaticProps(
-  ({store, preview}) => {
-      console.log('2. Page.getStaticProps uses the store to dispatch things');
-      store.dispatch({type: 'TICK', payload: 'was set in other page ' + preview});
-  }
-);
-
 const IndexPage = () => {
   return (
     <Layout>
