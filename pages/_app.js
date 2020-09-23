@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import Router from 'next/router';
+import {wrapper} from '../store';
 
+// global styles
 import 'swiper/swiper.scss';
 import 'rc-slider/assets/index.css';
 import 'react-rater/lib/react-rater.css';
@@ -16,11 +18,10 @@ if(isProduction) {
   Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 }
 
-// This default export is required in a new `pages/_app.js` file.
-export default ({ Component, pageProps }) => {
-  return (
-    <Fragment>
-      <Component {...pageProps} />
-    </Fragment>
-  )
-}
+const MyApp = ({Component, pageProps}) => (
+  <Fragment>
+    <Component {...pageProps} />
+  </Fragment>
+);
+
+export default wrapper.withRedux(MyApp);
