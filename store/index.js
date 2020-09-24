@@ -1,9 +1,14 @@
-import {createStore} from 'redux';
-import {createWrapper} from 'next-redux-wrapper';
+import { createStore, combineReducers } from 'redux';
+import { createWrapper } from 'next-redux-wrapper';
 import cartReducer from './reducers/cart';
+import userReducer from './reducers/user';
 
 // create your reducer
-const reducer = cartReducer;
+export const reducer = combineReducers({
+  cart: cartReducer,
+  user: userReducer
+})
+  
 
 // create a makeStore function
 const makeStore = context => createStore(reducer);

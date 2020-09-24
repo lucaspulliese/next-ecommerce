@@ -2,7 +2,6 @@ import {HYDRATE} from 'next-redux-wrapper';
 
 const initialState = {
   cartItems: [],
-  tick: 'hola',
 }
 
 export default (state = initialState, action) => {
@@ -14,12 +13,13 @@ export default (state = initialState, action) => {
         ...state,
         cartItems: [...state.cartItems,
           {
-            name: action.name
+            name: action.name,
+            thumb: action.thumb,
+            price: action.price,
+            count: action.count,
           }
         ]
       };
-    case 'TICK':
-      return {...state, tick: action.payload};
     default:
       return state;
   }

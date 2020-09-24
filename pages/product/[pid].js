@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import Footer from '../../components/footer';
 import Layout from '../../layouts/Main';
 import Breadcrumb from '../../components/breadcrumb';
@@ -8,15 +7,14 @@ import Gallery from '../../components/product-single/gallery';
 import Content from '../../components/product-single/content';
 import Description from '../../components/product-single/description';
 import Reviews from '../../components/product-single/reviews';
+import { server } from '../../utils/server'; 
 
-export async function getServerSideProps(context) {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const res = await fetch('http://localhost:3000/api/products');
+export async function getServerSideProps({ query }) {
+
+  const pid = query.pid;
+  const res = await fetch(`${server}/api/product/${pid}`);
   const product = await res.json();
 
-  // By returning { props: posts }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
       product,
@@ -25,19 +23,17 @@ export async function getServerSideProps(context) {
 }
 
 const Product = ({ product }) => {
-  const router = useRouter();
-  const { pid } = router.query;
   const [showBlock, setShowBlock] = useState('description');
 
   return (
     <Layout>
-      <Breadcrumb />
+      <Breadcrumb currentPage={product.name} />
 
       <section className="product-single">
         <div className="container">
           <div className="product-single__content">
-            <Gallery />
-            <Content />
+            <Gallery images={product.images} />
+            <Content product={product} />
           </div>
 
           <div className="product-single__info">
@@ -46,13 +42,13 @@ const Product = ({ product }) => {
               <button type="button" onClick={() => setShowBlock('reviews')} className={`btn btn--rounded ${showBlock === 'reviews' ? 'btn--active' : ''}`}>Reviews (2)</button>
             </div>
 
-            <Description show={showBlock === 'description'} />
-            <Reviews show={showBlock === 'reviews'} />
+            <Description product={product} show={showBlock === 'description'} />
+            <Reviews product={product} show={showBlock === 'reviews'} />
           </div>
         </div>
       </section>
 
-      <div class="product-single-page">
+      <div className="product-single-page">
         <ProductsFeatured />
       </div>
       <Footer />

@@ -1982,6 +1982,7 @@ h1,h2,h3,h4,h5 {
   .cart__btn-back {
     font-weight: 700;
     font-size: 14px;
+    color: #000;
     margin-right: auto;
     margin-bottom: 40px;
     @include breakpoint(phone) {
