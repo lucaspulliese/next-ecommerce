@@ -9,7 +9,22 @@ import Content from '../../components/product-single/content';
 import Description from '../../components/product-single/description';
 import Reviews from '../../components/product-single/reviews';
 
-const Product = () => {
+export async function getServerSideProps(context) {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const res = await fetch('http://localhost:3000/api/products');
+  const product = await res.json();
+
+  // By returning { props: posts }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      product,
+    },
+  }
+}
+
+const Product = ({ product }) => {
   const router = useRouter();
   const { pid } = router.query;
   const [showBlock, setShowBlock] = useState('description');
