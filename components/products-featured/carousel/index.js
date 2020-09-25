@@ -1,21 +1,20 @@
-import ProductItem from './../../product-item'
+import ProductItem from './../../product-item';
+
+// import Swiper core and required components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 let slidesPerView = 1.3;
 let centeredSlides = true;
 let spaceBetween = 30;
-let loop = true;
 if (process.browser) {
   if(window.innerWidth > 768) {
     slidesPerView = 3;
     spaceBetween = 35;
-    loop = false;
     centeredSlides = false;
   }
   if(window.innerWidth > 1024) {
     slidesPerView = 4;
     spaceBetween = 65;
-    loop = false;
     centeredSlides = false;
   }
 }
@@ -27,7 +26,7 @@ const ProductsCarousel = ({ products }) => {
     <div className="products-carousel">
       <Swiper 
       spaceBetween={spaceBetween} 
-      loop={loop} 
+      loop={true} 
       centeredSlides={centeredSlides} 
       watchOverflow={true} 
       slidesPerView={slidesPerView} 
@@ -35,7 +34,9 @@ const ProductsCarousel = ({ products }) => {
         {products.map(item => (
           <SwiperSlide key={item.id}>
             <ProductItem 
-              discount={item.discount} 
+              discount={item.discount}
+              price={item.price}
+              currentPrice={item.currentPrice}
               key={item.id}
               id={item.id} 
               productImage={item.images[0]} 

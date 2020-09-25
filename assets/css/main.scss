@@ -783,6 +783,22 @@ h1,h2,h3,h4,h5 {
       padding: 24px;
       margin-bottom: 30px;
     }
+    .btn-heart {
+      top: 19px;
+      right: 19px;
+      z-index: 10;
+      width: 38px;
+      font-size: 14px;
+      border: none;
+      height: 38px;
+      background-color: #FFF;
+      position: absolute;
+      box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
+      &:hover {
+        color: #FFF;
+        background-color: var(--color-orange);
+      }
+    }
     > img {
       top: 0;
       left: 0;
@@ -860,9 +876,6 @@ h1,h2,h3,h4,h5 {
   .products-carousel {
     .swiper-container {
       overflow: visible;
-      @include breakpoint(phone) {
-        overflow: hidden;
-      }
     }
   }
 }
