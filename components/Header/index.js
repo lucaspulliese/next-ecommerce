@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import useOnClickOutside from 'use-onclickoutside';
 import Logo from '../../assets/icons/logo';
 import Link from 'next/link';
@@ -6,10 +7,10 @@ import { useRouter } from 'next/router';
 
 const Header = () => {
   const router = useRouter();
+  const { cartItems } = useSelector(state => state.cart);
   const [onTop, setOnTop] = useState(router.pathname === '/products' || router.pathname === '/product/[pid]' || router.pathname === '/cart' ? false : true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-
   const navRef = useRef(null);
   const searchRef = useRef(null);
 
@@ -41,6 +42,7 @@ const Header = () => {
     setSearchOpen(false);
   }
 
+  // on click outside
   useOnClickOutside(navRef, closeMenu);
   useOnClickOutside(searchRef, closeSearch);
 
@@ -67,7 +69,12 @@ const Header = () => {
             <i onClick={() => setSearchOpen(!searchOpen)}  className="icon-search"></i>
           </button>
           <Link href="/cart">
-            <button><i className="icon-cart"></i></button>
+            <button className="btn-cart">
+              <i className="icon-cart"></i>
+              {cartItems.length > 0 && 
+                <span className="btn-cart__count">{cartItems.length}</span>
+              }
+            </button>
           </Link>
           <button className="site-header__btn-avatar"><i className="icon-avatar"></i></button>
           <button 

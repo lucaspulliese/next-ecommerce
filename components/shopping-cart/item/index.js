@@ -1,4 +1,7 @@
+import { useDispatch } from 'react-redux';
+
 const ShoppingCart = () => {
+  const dispatch = useDispatch();
 
   return (
     <tr>

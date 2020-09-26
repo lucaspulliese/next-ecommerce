@@ -36,6 +36,7 @@ const ProductsFilter = () => {
   const { handleSubmit, register, getValues } = useForm();
 
   const addQueryParams = () => {
+    console.log(getValues());
     router.push({
       pathname: '/products',
       query: { 'type': 't-shirt' },
@@ -55,7 +56,12 @@ const ProductsFilter = () => {
           <button type="button">Product type</button>
           <div className="products-filter__block__content">
             {productsTypes.map(type => (
-              <Checkbox key={type.id} name="product-type" label={type.name} />
+              <Checkbox 
+                key={type.id} 
+                ref={register} 
+                name="product-type" 
+                label={type.name} 
+              />
             ))}
           </div>
         </div>

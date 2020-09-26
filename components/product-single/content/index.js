@@ -1,22 +1,23 @@
 import { useState } from 'react';
 import productsColors from './../../../utils/data/products-colors';
 import CheckboxColor from './../../products-filter/form-builder/checkbox-color';
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
+import { addProduct } from './../../../store/actions/cartActions';
+
 
 const Content = ({ product }) => {
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
 
   const addToCart = () => {
-    dispatch (
+    dispatch(addProduct(
       { 
-        type: 'ADD_PRODUCT',
         name: product.name,
         thumb: product.images[0],
         price: product.currentPrice,
         count: count,
       }
-    )
+    ))
   }
 
   return (
