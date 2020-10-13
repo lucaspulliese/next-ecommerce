@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-const ShoppingCart = () => {
+const ShoppingCart = ({ thumb, name, id, color, size }) => {
   const dispatch = useDispatch();
 
   return (
@@ -8,17 +8,17 @@ const ShoppingCart = () => {
       <td>
         <div className="cart-product">
           <div className="cart-product__img">
-            <img src="/images/products/product-1.jpg" alt="" />
+            <img src={thumb} alt="" />
           </div>
 
           <div className="cart-product__content">
-            <h3>T-Shirt Summer Vibes</h3>
-            <p>#261311</p>
+            <h3>{name}</h3>
+            <p>#{id}</p>
           </div>
         </div>
       </td>
-      <td className="cart-item-before" data-label="Color">White</td>
-      <td className="cart-item-before" data-label="Size">XL</td>
+      <td className="cart-item-before" data-label="Color">{color}</td>
+      <td className="cart-item-before" data-label="Size">{size}</td>
       <td>
         <div className="quantity-button">
           <button type="button" className="quantity-button__btn">

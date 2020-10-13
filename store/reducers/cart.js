@@ -9,10 +9,13 @@ export default (state = initialState, action) => {
         ...state,
         cartItems: [...state.cartItems,
           {
+            id: action.id,
             name: action.name,
             thumb: action.thumb,
             price: action.price,
             count: action.count,
+            color: action.color,
+            size: action.size
           }
         ]
       };

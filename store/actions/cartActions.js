@@ -1,7 +1,10 @@
-export const addProduct = ({ thumb, name, price, count }) => ({
+export const addProduct = ({ thumb, name, price, count, color, size, id }) => ({
   type: 'ADD_PRODUCT',
   name,
   thumb,
   price,
-  count
+  count,
+  color,
+  size,
+  id
 })

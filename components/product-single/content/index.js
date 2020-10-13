@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import productsColors from './../../../utils/data/products-colors';
+import productsSizes from './../../../utils/data/products-sizes';
 import CheckboxColor from './../../products-filter/form-builder/checkbox-color';
 import { useDispatch } from 'react-redux';
 import { addProduct } from './../../../store/actions/cartActions';
@@ -8,14 +9,23 @@ import { addProduct } from './../../../store/actions/cartActions';
 const Content = ({ product }) => {
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
+  const [color, setColor] = useState('');
+  const [itemSize, setItemSize] = useState('');
+
+  const onColorSet = (e) => setColor(e);
+  const onSelectChange = (e) => setItemSize(e.target.value);
+
 
   const addToCart = () => {
     dispatch(addProduct(
       { 
+        id: product.id,
         name: product.name,
         thumb: product.images[0],
         price: product.currentPrice,
         count: count,
+        color: color,
+        size: itemSize
       }
     ))
   }
@@ -28,9 +38,9 @@ const Content = ({ product }) => {
         <h2 className="product__name">{product.name}</h2>
 
         <div className="product__prices">
-          <h4>{ product.currentPrice }</h4>
+          <h4>${ product.currentPrice }</h4>
           {product.discount &&
-            <span>{ product.price }</span>
+            <span>${ product.price }</span>
           }
         </div>
       </div>
@@ -40,7 +50,14 @@ const Content = ({ product }) => {
           <h5>Color:</h5>
           <div className="checkbox-color-wrapper">
             {productsColors.map(type => (
-              <CheckboxColor key={type.id} name="product-color" color={type.color} />
+              <CheckboxColor 
+                key={type.id} 
+                type={'radio'} 
+                name="product-color" 
+                color={type.color}
+                valueName={type.label}
+                onChange={onColorSet} 
+              />
             ))}
           </div>
         </div>
@@ -48,8 +65,11 @@ const Content = ({ product }) => {
           <h5>Size: <strong>See size table</strong></h5>
           <div className="checkbox-color-wrapper">
             <div className="select-wrapper">
-              <select>
+              <select onChange={onSelectChange}>
                 <option>Choose size</option>
+                {productsSizes.map(type => (
+                  <option value={type.label}>{type.label}</option>
+                ))}
               </select>
             </div>
           </div>
