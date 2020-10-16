@@ -36,11 +36,7 @@ const ProductsFilter = () => {
   const { handleSubmit, register, getValues } = useForm();
 
   const addQueryParams = () => {
-    console.log(getValues());
-    router.push({
-      pathname: '/products',
-      query: { 'type': 't-shirt' },
-    })
+    // query params changes
   }
 
   return (
