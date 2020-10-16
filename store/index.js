@@ -1,15 +1,8 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunkMiddleware from "redux-thunk";
-import storage from 'redux-persist/lib/storage';
 import { createWrapper, HYDRATE } from 'next-redux-wrapper';
 import cartReducer from './reducers/cart';
 import userReducer from './reducers/user';
-
-const persistConfig = {
-  key: 'cartstorage',
-  storage: storage,
-  whitelist: ['cart']
-}
 
 //COMBINING ALL REDUCERS
 const combinedReducer = combineReducers({
