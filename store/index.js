@@ -29,7 +29,7 @@ const makeStore = ({ isServer }) => {
     const storage = require("redux-persist/lib/storage").default;
 
     const persistConfig = {
-      key: "cartlist",
+      key: "shoppingcart",
       whitelist: ["cart"], // only counter will be persisted, add other reducers if needed
       storage, // if needed, use a safer storage
     };

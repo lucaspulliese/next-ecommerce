@@ -8,3 +8,10 @@ export const addProduct = ({ thumb, name, price, count, color, size, id }) => ({
   size,
   id
 })
+
+export const removeProduct = ({ color, size, id }) => ({
+  type: 'REMOVE_PRODUCT',
+  color,
+  size,
+  id
+})

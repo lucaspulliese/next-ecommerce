@@ -4,7 +4,26 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_PRODUCT': 
+    case 'ADD_PRODUCT':   
+
+      // TODO refactor this, is horrible
+      var sameProduct = (product) => (
+        product.id === action.id && 
+        product.color === action.color && 
+        product.size === action.size
+      );
+
+      const index = state.cartItems.findIndex(sameProduct);
+
+      if(index !== -1) {
+        state.cartItems[index].count += action.count;
+
+        return {
+          ...state,
+          cartItems: state.cartItems
+        };
+      }
+
       return {
         ...state,
         cartItems: [...state.cartItems,
@@ -19,6 +38,22 @@ export default (state = initialState, action) => {
           }
         ]
       };
+    case 'REMOVE_PRODUCT': 
+
+      // TODO refactor this, is horrible
+      var sameProduct = (product) => (
+        product.id === action.id && 
+        product.color === action.color && 
+        product.size === action.size
+      );
+      
+      state.cartItems.splice(state.cartItems.findIndex(sameProduct), 1);
+
+      return {
+        ...state,
+        cartItems: state.cartItems
+      };
+  
     default:
       return state;
   }

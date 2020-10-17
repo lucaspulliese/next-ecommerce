@@ -15,7 +15,6 @@ const Content = ({ product }) => {
   const onColorSet = (e) => setColor(e);
   const onSelectChange = (e) => setItemSize(e.target.value);
 
-
   const addToCart = () => {
     dispatch(addProduct(
       { 

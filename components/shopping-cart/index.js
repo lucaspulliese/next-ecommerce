@@ -3,7 +3,6 @@ import Item from './item';
 
 const ShoppingCart = () => {
   const { cartItems } = useSelector(state => state.cart);
-  console.log(cartItems);
 
   return (
     <section className="cart">
@@ -31,6 +30,7 @@ const ShoppingCart = () => {
                   name={item.name}
                   color={item.color}
                   size={item.size}
+                  ammount={item.count}
                 />
               ))}
             </tbody>

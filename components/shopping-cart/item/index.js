@@ -1,7 +1,18 @@
 import { useDispatch } from 'react-redux';
+import { removeProduct } from './../../../store/actions/cartActions';
 
-const ShoppingCart = ({ thumb, name, id, color, size }) => {
+const ShoppingCart = ({ thumb, name, id, color, size, ammount }) => {
   const dispatch = useDispatch();
+
+  const removeFromCart = () => {
+    dispatch(removeProduct(
+      { 
+        id: id,
+        color: color,
+        size: size
+      }
+    ))
+  }
 
   return (
     <tr>
@@ -24,14 +35,14 @@ const ShoppingCart = ({ thumb, name, id, color, size }) => {
           <button type="button" className="quantity-button__btn">
             -
           </button>
-          <span>1</span>
+          <span>{ ammount }</span>
           <button type="button" className="quantity-button__btn">
             +
           </button>
         </div>
       </td>
       <td>$89.99</td>
-      <td className="cart-item-cancel"><i className="icon-cancel"></i></td>
+      <td className="cart-item-cancel"><i className="icon-cancel" onClick={() => removeFromCart()}></i></td>
     </tr>
   )
 };
