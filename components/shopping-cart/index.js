@@ -12,29 +12,35 @@ const ShoppingCart = () => {
         </div>
 
         <div className="cart-list">
-          <table>
-            <tbody>
-              <tr>
-                <th style={{textAlign: 'left'}}>Product</th>
-                <th>Color</th>
-                <th>Size</th>
-                <th>Ammount</th>
-                <th>Price</th>
-                <th></th>
-              </tr>
+          {cartItems.length > 0 &&
+            <table>
+              <tbody>
+                <tr>
+                  <th style={{textAlign: 'left'}}>Product</th>
+                  <th>Color</th>
+                  <th>Size</th>
+                  <th>Ammount</th>
+                  <th>Price</th>
+                  <th></th>
+                </tr>
 
-              {cartItems.length > 0 && cartItems.map(item => (
-                <Item 
-                  id={item.id}
-                  thumb={item.thumb}
-                  name={item.name}
-                  color={item.color}
-                  size={item.size}
-                  ammount={item.count}
-                />
-              ))}
-            </tbody>
-          </table> 
+                {cartItems.map(item => (
+                  <Item 
+                    id={item.id}
+                    thumb={item.thumb}
+                    name={item.name}
+                    color={item.color}
+                    size={item.size}
+                    ammount={item.count}
+                  />
+                ))}
+              </tbody>
+            </table> 
+          } 
+          
+          {cartItems.length === 0 && 
+            <p>Nothing in the cart</p>
+          }
         </div>
       
         <div className="cart-actions">

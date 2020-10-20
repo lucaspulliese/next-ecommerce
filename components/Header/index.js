@@ -8,7 +8,9 @@ import { useRouter } from 'next/router';
 const Header = () => {
   const router = useRouter();
   const { cartItems } = useSelector(state => state.cart);
-  const [onTop, setOnTop] = useState(router.pathname === '/products' || router.pathname === '/product/[pid]' || router.pathname === '/cart' ? false : true);
+  const arrayPaths = ['/products', '/product/[pid]', '/login', '/cart', '/register'];  
+
+  const [onTop, setOnTop] = useState(arrayPaths.includes(router.pathname) ? false : true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const navRef = useRef(null);
@@ -22,9 +24,8 @@ const Header = () => {
     }
   }
 
-  //window.onscroll = null;
   useEffect(() => {
-    if(router.pathname === '/products' || router.pathname === '/product/[pid]' || router.pathname === '/cart') {
+    if(arrayPaths.includes(router.pathname)) {
       return;
     }
 

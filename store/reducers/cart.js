@@ -38,8 +38,8 @@ export default (state = initialState, action) => {
           }
         ]
       };
-    case 'REMOVE_PRODUCT': 
 
+    case 'REMOVE_PRODUCT': 
       // TODO refactor this, is horrible
       var sameProduct = (product) => (
         product.id === action.id && 

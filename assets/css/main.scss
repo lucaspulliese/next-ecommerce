@@ -392,8 +392,14 @@ h1,h2,h3,h4,h5 {
     .search-form-wrapper {
       &.search-form--active {
         .search-form {
+          top: 0;
+          @include breakpoint(phone) {
+            top: auto;
+          }
           input {
-            border: 1px solid #E5E5E5;
+            @include breakpoint(phone) {
+              border: 1px solid #ABABAB;
+            }
           }
         }
       }
@@ -404,22 +410,44 @@ h1,h2,h3,h4,h5 {
 .search-form-wrapper {
   position: relative;
   .search-form {
+    position: fixed;
+    z-index: 100;
+    top: -100%;
+    left: 0;
+    height: 100vh;
+    right: 0;
+    transition: all .3s ease;
+    background-color: #FFF;
+    @include breakpoint(phone) {
+      position: static;
+      height: auto;
+      top: auto;
+    }
     input {
-      width: 0;
       padding: 0;
-      right: -9px;
-      top: 50%;
       overflow: hidden;
       height: 42px;
       color: #808080;
-      margin-top: -21px;
-      border-radius: 50px;
       font-size: 13px;
-      transition: all .3s ease;
       position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-bottom: 1px solid black;
+      transition: all .3s ease;
       background-color: transparent;
       @include inputPlaceholder {
         color: #808080;
+      }
+      @include breakpoint(phone) {
+        width: 0;
+        top: 50%;
+        left: auto;
+        right: -9px;
+        border: none;
+        border-radius: 50px;
+        margin-top: -21px;
+        transform: none;
       }
     }
   }
@@ -1314,90 +1342,6 @@ h1,h2,h3,h4,h5 {
     .products-filter__block__content {
       padding-top: 25px;
     }
-    .checkbox {
-      font-weight: 300;
-      font-size: 14px;
-      display: flex;
-      color: #000;
-      margin-bottom: 18px;
-      align-items: center;
-      .checkbox__check {
-        display: block;
-        width: 26px;
-        height: 26px;
-        position: relative;
-        margin-right: 18px;
-        border: 1px solid #D4D4D4; 
-        &:before {
-          display: block;
-          content: '';
-          position: absolute;
-          top: 4px;
-          left: 9px;
-          opacity: 0;
-          width: 7px;
-          height: 12.5px;
-          transform: scale(1) rotate(45deg);
-          z-index: 100;
-          border: 1px solid black;
-          -webkit-transition: all .2s linear;
-          -o-transition: all .2s linear;
-          transition: all .2s linear;
-          border-width: 0 2px 2px 0;
-        }
-      }
-      input:checked + .checkbox__check {
-        &:before {
-          opacity: 1;
-        }
-      }
-      &.checkbox--square {
-        position: relative;
-        width: calc(100%/6);
-        input:checked + .checkbox__check {
-          background-color: #000;
-          border-color: #000;
-          &:before {
-            opacity: 0;
-          }
-        }
-        input:checked ~ p {
-          color: #fff;
-        }
-        input {
-          display: none;
-        }
-        p {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-        }
-        .checkbox__check {
-          display: block;
-          width: 100%;
-          margin-right: 0;
-          position: relative;
-          padding-bottom: 100%;
-          border-left: none;
-          border-top: 1px solid #D4D4D4; 
-          border-bottom: 1px solid #D4D4D4; 
-          border-right: 1px solid #D4D4D4; 
-          .checkbox__color {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            right: 8px;
-            bottom: 8px;
-          }
-        }
-        &:first-of-type {
-          .checkbox__check {
-            border-left: 1px solid #D4D4D4; 
-          }
-        }
-      }
-    }
   }
   .products-content {
     width: 100%;
@@ -1489,10 +1433,100 @@ h1,h2,h3,h4,h5 {
   }
 }
 
+
+.checkbox {
+  font-weight: 300;
+  font-size: 14px;
+  display: flex;
+  color: #000;
+  margin-bottom: 18px;
+  align-items: center;
+  .checkbox__check {
+    display: block;
+    width: 26px;
+    height: 26px;
+    position: relative;
+    margin-right: 18px;
+    border: 1px solid #D4D4D4; 
+    &:before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 9px;
+      opacity: 0;
+      width: 7px;
+      height: 12.5px;
+      transform: scale(1) rotate(45deg);
+      z-index: 100;
+      border: 1px solid black;
+      -webkit-transition: all .2s linear;
+      -o-transition: all .2s linear;
+      transition: all .2s linear;
+      border-width: 0 2px 2px 0;
+    }
+  }
+  input:checked + .checkbox__check {
+    &:before {
+      opacity: 1;
+    }
+  }
+  &.checkbox--square {
+    position: relative;
+    width: calc(100%/6);
+    input:checked + .checkbox__check {
+      background-color: #000;
+      border-color: #000;
+      &:before {
+        opacity: 0;
+      }
+    }
+    input:checked ~ p {
+      color: #fff;
+    }
+    input {
+      display: none;
+    }
+    p {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .checkbox__check {
+      display: block;
+      width: 100%;
+      margin-right: 0;
+      position: relative;
+      padding-bottom: 100%;
+      border-left: none;
+      border-top: 1px solid #D4D4D4; 
+      border-bottom: 1px solid #D4D4D4; 
+      border-right: 1px solid #D4D4D4; 
+      .checkbox__color {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+      }
+    }
+    &:first-of-type {
+      .checkbox__check {
+        border-left: 1px solid #D4D4D4; 
+      }
+    }
+  }
+}
+
 .checkbox-square-wrapper {
   display: flex;
   .checkbox {
   }
+}
+
+.checkbox-wrapper {
+
 }
 
 .products-list {
@@ -2199,5 +2233,136 @@ h1,h2,h3,h4,h5 {
     border-radius: 100%;
     position: absolute;
     z-index: 100;
+  }
+}
+
+.back-button-section {
+  padding: 30px 0;
+  margin-bottom: 30px;
+  @include breakpoint(phone) {
+    margin-bottom: 50px;
+    padding: 50px 0;
+  }
+  a {
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+    @include breakpoint(phone) {
+      font-size: 14px;
+    }
+    i {
+      margin-right: 24px;
+    }
+  }
+}
+
+.form-page {
+  padding-bottom: 100px;
+}
+
+.form-block {
+  width: 100%;
+  margin: 0 auto;
+  @include breakpoint(phone) {
+    width: 448px;
+  }
+  .form-block__title {
+    font-size: 22px;
+    font-weight: 600;
+    padding: 0 50px;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .form-block__description {
+    font-size: 14px;
+    line-height: 165%;
+    text-align: center;
+  }
+  .form {
+    margin-top: 40px;
+  }
+}
+
+.form {
+  .form__input-row {
+    margin-bottom: 15px;
+  }
+  .form__input {
+    height: 47px;
+    width: 100%;
+    font-weight: 500;
+    color: #808080;
+    padding: 0 25px;
+    border-radius: 40px;
+    border: 1px solid #D8D8D8;
+    @include breakpoint(phone) {
+      height: 56px;
+      padding: 0 40px;
+    }
+  }
+  .form__btns {
+    justify-content: space-between;
+    display: flex;
+    .btn-social {
+      width: 48%;
+    }
+  }
+  .btn-submit {
+    margin-top: 20px;
+    width: 100%;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-weight: 600;
+    text-transform: none;
+    @include breakpoint(phone) {
+      padding-top: 19px;
+      padding-bottom: 19px;
+    }
+  }
+  .form__signup-link {
+    margin-top: 22px;
+    font-size: 14px;
+    color: #000;
+    padding-bottom: 2px;
+    text-align: center;
+    a {
+      margin-left: 30px;
+      font-weight: 600;
+    }
+  }
+  .form__info {
+    display: flex;
+    margin-bottom: 32px;
+    align-items: center;
+    justify-content: space-between;
+    .checkbox {
+      margin-bottom: 0;
+    }
+    a {
+      font-size: 15px;
+    }
+  }
+}
+
+.fb-btn {
+  color: #FFF;
+  font-weight: 600;
+  border-radius: 40px;
+  padding: 12px 30px;
+  background-color: #3B5998;
+  @include breakpoint(phone) {
+    padding: 18px 58px;
+  }
+}
+
+.google-btn {
+  color: #000;
+  font-weight: 600;
+  border-radius: 40px;
+  border: 1px solid #F1584D;
+  padding: 12px 30px;
+  @include breakpoint(phone) {
+    padding: 18px 58px;
   }
 }
