@@ -13,6 +13,8 @@ All the data is fake, you can see it inside utils/data folder.
 - Products page: /products
 - Product single page: /product/1
 - Cart page: /cart
+- Login page: /login
+- Register page: /register
 
 ## Screenshots
 

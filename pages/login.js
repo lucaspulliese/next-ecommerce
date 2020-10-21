@@ -27,7 +27,7 @@ const LoginPage = () => (
                 <label htmlFor="check-signed-in" className={`checkbox checkbox--sm`}>
                   <input name="signed-in" type="checkbox" id="check-signed-in" />
                   <span className="checkbox__check"></span>
-                    <p>Keep me signed in</p>
+                  <p>Keep me signed in</p>
                 </label>
               </div>
               <a href="#">Forgot password?</a>

@@ -2293,7 +2293,7 @@ h1,h2,h3,h4,h5 {
     width: 100%;
     font-weight: 500;
     color: #808080;
-    padding: 0 25px;
+    padding: 0 22px;
     border-radius: 40px;
     border: 1px solid #D8D8D8;
     @include breakpoint(phone) {
@@ -2338,9 +2338,22 @@ h1,h2,h3,h4,h5 {
     justify-content: space-between;
     .checkbox {
       margin-bottom: 0;
+      .checkbox__check {
+        height: 20px;
+        width: 20px;
+        &:before {
+          top: 2px;
+          left: 6px;
+          width: 6px;
+          height: 10.5px;
+        }
+      }
+      p {
+        font-size: 13px;
+      }
     }
     a {
-      font-size: 15px;
+      font-size: 14px;
     }
   }
 }

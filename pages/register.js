@@ -15,11 +15,19 @@ const RegisterPage = () => (
           
           <form className="form">
             <div className="form__input-row">
-              <input className="form__input" placeholder="email" type="text" />
+              <input className="form__input" placeholder="First Name" type="text" />
             </div>
             
             <div className="form__input-row">
-              <input className="form__input" type="password" placeholder="Password" />
+              <input className="form__input" placeholder="Last Name" type="text" />
+            </div>
+            
+            <div className="form__input-row">
+              <input className="form__input" placeholder="Email" type="text" />
+            </div>
+            
+            <div className="form__input-row">
+              <input className="form__input" type="Password" placeholder="Password" />
             </div>
 
             <div className="form__info">
@@ -27,20 +35,14 @@ const RegisterPage = () => (
                 <label htmlFor="check-signed-in" className={`checkbox checkbox--sm`}>
                   <input name="signed-in" type="checkbox" id="check-signed-in" />
                   <span className="checkbox__check"></span>
-                    <p>Keep me signed in</p>
+                    <p>I agree to the Google Terms of Service and Privacy Policy</p>
                 </label>
               </div>
-              <a href="#">Forgot password?</a>
             </div>
 
-            <div className="form__btns">
-              <button type="button" className="btn-social fb-btn">Facebook</button>
-              <button type="button" className="btn-social google-btn">Gmail</button>
-            </div>
+            <button type="button" className="btn btn--rounded btn--yellow btn-submit">Sign un</button>
 
-            <button type="button" className="btn btn--rounded btn--yellow btn-submit">Sign in</button>
-
-            <p className="form__signup-link">Not a member yet? <a href="#">Sign up</a></p>
+            <p className="form__signup-link"><a href="#">Are you already a member?</a></p>
           </form>
         </div>
 
