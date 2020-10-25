@@ -1,11 +1,14 @@
 import Layout from '../layouts/Main';
+import Link from 'next/link';
 
 const LoginPage = () => (
   <Layout>
     <section className="form-page">
       <div className="container">
         <div className="back-button-section">
-          <a href="#"><i className="icon-left"></i> Back to store</a>
+          <Link href="/products">
+            <a><i className="icon-left"></i> Back to store</a>
+          </Link>
         </div>
 
         <div className="form-block">
@@ -34,7 +37,7 @@ const LoginPage = () => (
             </div>
 
             <div className="form__btns">
-              <button type="button" className="btn-social fb-btn">Facebook</button>
+              <button type="button" className="btn-social fb-btn"><i className="icon-facebook"></i>Facebook</button>
               <button type="button" className="btn-social google-btn">Gmail</button>
             </div>
 

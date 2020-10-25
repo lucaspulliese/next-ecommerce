@@ -288,12 +288,12 @@ h1,h2,h3,h4,h5 {
   }
   .site-header__btn-avatar {
     display: none;
-    @include breakpoint(phone) {
+    @include breakpoint(tablet-lg) {
       display: block;
     }
   }
   .site-header__btn-menu {
-    @include breakpoint(phone) {
+    @include breakpoint(tablet-lg) {
       display: none;
     }
   }
@@ -301,12 +301,12 @@ h1,h2,h3,h4,h5 {
     margin-left: auto;
     display: flex;
     align-items: center;
-    @include breakpoint(phone) {
+    @include breakpoint(tablet-lg) {
       margin-left: 0;
     }
     button {
       margin-left: 15px;
-      @include breakpoint(phone) {
+      @include breakpoint(tablet-lg) {
         margin-left: 25px;
       }
     }
@@ -330,7 +330,7 @@ h1,h2,h3,h4,h5 {
     background-color: #FFF;
     transition: all .3s ease;
     border-left: 1px solid #E5E5E5;
-    @include breakpoint(phone) {
+    @include breakpoint(tablet-lg) {
       position: relative;
       height: auto;
       right: 0;
@@ -344,7 +344,7 @@ h1,h2,h3,h4,h5 {
       font-size: 15px;
       font-weight: 500;
       text-align: left;
-      @include breakpoint(phone) {
+      @include breakpoint(tablet-lg) {
         display: none;
       }
     }
@@ -393,11 +393,11 @@ h1,h2,h3,h4,h5 {
       &.search-form--active {
         .search-form {
           top: 0;
-          @include breakpoint(phone) {
+          @include breakpoint(tablet-lg) {
             top: auto;
           }
           input {
-            @include breakpoint(phone) {
+            @include breakpoint(tablet-lg) {
               border: 1px solid #ABABAB;
             }
           }
@@ -418,10 +418,18 @@ h1,h2,h3,h4,h5 {
     right: 0;
     transition: all .3s ease;
     background-color: #FFF;
-    @include breakpoint(phone) {
+    @include breakpoint(tablet-lg) {
       position: static;
       height: auto;
       top: auto;
+    }
+    .icon-cancel {
+      top: 18px;
+      right: 22px;
+      position: absolute;
+      @include breakpoint(tablet-lg) {
+        display: none;
+      }
     }
     input {
       padding: 0;
@@ -439,7 +447,7 @@ h1,h2,h3,h4,h5 {
       @include inputPlaceholder {
         color: #808080;
       }
-      @include breakpoint(phone) {
+      @include breakpoint(tablet-lg) {
         width: 0;
         top: 50%;
         left: auto;
@@ -453,12 +461,15 @@ h1,h2,h3,h4,h5 {
   }
   &.search-form--active {
     input {
-      padding: 0 19px;
-      width: 230px;
+      padding: 0 8px;
+      width: 80%;
+      text-align: center;
       padding-right: 40px;
       background-color: #FFF;
-      @include breakpoint(phone) {
+      @include breakpoint(tablet-lg) {
         width: 300px;
+        padding: 0 19px;
+        text-align: left;
       }
     }
     i {

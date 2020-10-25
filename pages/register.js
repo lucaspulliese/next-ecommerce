@@ -5,7 +5,9 @@ const RegisterPage = () => (
     <section className="form-page">
       <div className="container">
         <div className="back-button-section">
-          <a href="#"><i className="icon-left"></i> Back to store</a>
+          <Link href="/products">
+            <a><i className="icon-left"></i> Back to store</a>
+          </Link>
         </div>
 
         <div className="form-block">
