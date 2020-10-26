@@ -1,8 +1,6 @@
 # Next.js Ecommerce
 
-This repo contains a work in progress Ecommerce responsive made with Next.js. I'm doing this to learn and practice React, Redux and Next.js.
-All the data is fake, you can see it inside utils/data folder.
-
+This repo contains a work in progress Ecommerce responsive made with Next.js, Redux, Redux-persist, Hooks, SCSS and BEM. If you like it please give it a star :)
 ## Design
 
 [This](https://www.xdguru.com/free-xd-ecommerce-ui-kit-by-iceo/) is the design of the project.

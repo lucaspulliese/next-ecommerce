@@ -1456,6 +1456,7 @@ h1,h2,h3,h4,h5 {
     display: block;
     width: 26px;
     height: 26px;
+    flex-shrink: 0;
     position: relative;
     margin-right: 18px;
     border: 1px solid #D4D4D4; 
@@ -2340,13 +2341,27 @@ h1,h2,h3,h4,h5 {
     a {
       margin-left: 30px;
       font-weight: 600;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   .form__info {
-    display: flex;
-    margin-bottom: 32px;
-    align-items: center;
-    justify-content: space-between;
+    margin-bottom: 22px;
+    @include breakpoint(phone) {
+      display: flex;
+      margin-bottom: 32px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .form__info__forgot-password {
+      margin-top: 24px;
+      text-align: center;
+      display: block;
+      @include breakpoint(phone) {
+        margin-top: 0px;
+      }
+    }
     .checkbox {
       margin-bottom: 0;
       .checkbox__check {
@@ -2361,6 +2376,7 @@ h1,h2,h3,h4,h5 {
       }
       p {
         font-size: 13px;
+        line-height: 130%;
       }
     }
     a {
@@ -2374,19 +2390,30 @@ h1,h2,h3,h4,h5 {
   font-weight: 600;
   border-radius: 40px;
   padding: 12px 30px;
+  display: flex;
+  align-items: center;
   background-color: #3B5998;
   @include breakpoint(phone) {
     padding: 18px 58px;
+  }
+  i {
+    font-size: 18px;
+    margin-right: 8px;
   }
 }
 
 .google-btn {
   color: #000;
+  display: flex;
+  align-items: center;
   font-weight: 600;
   border-radius: 40px;
   border: 1px solid #F1584D;
   padding: 12px 30px;
   @include breakpoint(phone) {
     padding: 18px 58px;
+  }
+  img {
+    margin-right: 10px;
   }
 }
