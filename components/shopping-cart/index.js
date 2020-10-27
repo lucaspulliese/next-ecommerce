@@ -4,6 +4,16 @@ import Item from './item';
 const ShoppingCart = () => {
   const { cartItems } = useSelector(state => state.cart);
 
+  const priceTotal = useSelector(state => {
+    const cartItems = state.cart.cartItems;
+    let totalPrice = 0;
+    if(cartItems.length > 0) {
+      cartItems.map(item => totalPrice += item.price * item.count);
+    }
+
+    return totalPrice;
+  })
+
   return (
     <section className="cart">
       <div className="container">
@@ -30,8 +40,9 @@ const ShoppingCart = () => {
                     thumb={item.thumb}
                     name={item.name}
                     color={item.color}
+                    price={item.price}
                     size={item.size}
-                    ammount={item.count}
+                    count={item.count}
                   />
                 ))}
               </tbody>
@@ -46,7 +57,7 @@ const ShoppingCart = () => {
         <div className="cart-actions">
           <a href="/products" className="cart__btn-back"><i className="icon-left"></i> Continue Shopping</a>
           <input type="text" placeholder="Promo Code" className="cart__promo-code" />
-          <p className="cart-actions__total">Total cost <strong>$159,98</strong></p>
+          <p className="cart-actions__total">Total cost <strong>${priceTotal.toFixed(2)}</strong></p>
           <button type="button" className="btn btn--rounded btn--yellow">Checkout</button>
         </div>
       </div>

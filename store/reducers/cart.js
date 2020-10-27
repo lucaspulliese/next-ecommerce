@@ -40,6 +40,7 @@ export default (state = initialState, action) => {
       };
 
     case 'REMOVE_PRODUCT': 
+    
       // TODO refactor this, is horrible
       var sameProduct = (product) => (
         product.id === action.id && 
@@ -48,6 +49,24 @@ export default (state = initialState, action) => {
       );
       
       state.cartItems.splice(state.cartItems.findIndex(sameProduct), 1);
+
+      return {
+        ...state,
+        cartItems: state.cartItems
+      };
+
+    case 'SET_COUNT': 
+    
+      // TODO refactor this, is horrible
+      var sameProduct = (product) => (
+        product.id === action.id && 
+        product.color === action.color && 
+        product.size === action.size
+      );
+      
+      // set count to item
+      const indexItem = state.cartItems.findIndex(sameProduct);
+      state.cartItems[indexItem].count = action.count;
 
       return {
         ...state,

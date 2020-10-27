@@ -15,3 +15,11 @@ export const removeProduct = ({ color, size, id }) => ({
   size,
   id
 })
+
+export const setCount = ({ color, size, id, count }) => ({
+  type: 'SET_COUNT',
+  color,
+  size,
+  count,
+  id
+})

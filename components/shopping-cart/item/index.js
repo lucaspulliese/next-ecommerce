@@ -1,7 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { removeProduct } from './../../../store/actions/cartActions';
+import { setCount } from './../../../store/actions/cartActions';
 
-const ShoppingCart = ({ thumb, name, id, color, size, ammount }) => {
+const ShoppingCart = ({ thumb, name, id, color, size, count, price }) => {
   const dispatch = useDispatch();
 
   const removeFromCart = () => {
@@ -10,6 +11,21 @@ const ShoppingCart = ({ thumb, name, id, color, size, ammount }) => {
         id: id,
         color: color,
         size: size
+      }
+    ))
+  }
+
+  const setProductCount = (count) => {
+    if(count <= 0) {
+      return false;
+    }
+
+    dispatch(setCount(
+      { 
+        id: id,
+        color: color,
+        size: size,
+        count: count,
       }
     ))
   }
@@ -32,16 +48,16 @@ const ShoppingCart = ({ thumb, name, id, color, size, ammount }) => {
       <td className="cart-item-before" data-label="Size">{size}</td>
       <td>
         <div className="quantity-button">
-          <button type="button" className="quantity-button__btn">
+          <button type="button" onClick={() => setProductCount(count - 1)} className="quantity-button__btn">
             -
           </button>
-          <span>{ ammount }</span>
-          <button type="button" className="quantity-button__btn">
+          <span>{ count }</span>
+          <button type="button" onClick={() => setProductCount(count + 1)} className="quantity-button__btn">
             +
           </button>
         </div>
       </td>
-      <td>$89.99</td>
+      <td>${price}</td>
       <td className="cart-item-cancel"><i className="icon-cancel" onClick={() => removeFromCart()}></i></td>
     </tr>
   )
