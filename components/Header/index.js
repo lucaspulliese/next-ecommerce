@@ -65,7 +65,7 @@ const Header = () => {
         <div className="site-header__actions">
           <button ref={searchRef} className={`search-form-wrapper ${searchOpen ? 'search-form--active' : ''}`}>
             <form className={`search-form`}>
-              <i className="icon-cancel"></i>
+              <i className="icon-cancel" onClick={() => setSearchOpen(!searchOpen)}></i>
               <input type="text" name="search" placeholder="Enter the product you are looking for" />
             </form>  
             <i onClick={() => setSearchOpen(!searchOpen)}  className="icon-search"></i>

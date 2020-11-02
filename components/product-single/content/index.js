@@ -4,6 +4,7 @@ import productsSizes from './../../../utils/data/products-sizes';
 import CheckboxColor from './../../products-filter/form-builder/checkbox-color';
 import { useDispatch } from 'react-redux';
 import { addProduct } from './../../../store/actions/cartActions';
+import Tooltip from './../../../components/tooltip';
 
 
 const Content = ({ product }) => {
@@ -48,6 +49,7 @@ const Content = ({ product }) => {
         <div className="product-filter-item">
           <h5>Color:</h5>
           <div className="checkbox-color-wrapper">
+            <Tooltip />
             {productsColors.map(type => (
               <CheckboxColor 
                 key={type.id} 
@@ -64,6 +66,7 @@ const Content = ({ product }) => {
           <h5>Size: <strong>See size table</strong></h5>
           <div className="checkbox-color-wrapper">
             <div className="select-wrapper">
+              <Tooltip />
               <select onChange={onSelectChange}>
                 <option>Choose size</option>
                 {productsSizes.map(type => (

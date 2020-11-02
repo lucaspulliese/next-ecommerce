@@ -43,7 +43,7 @@ const LoginPage = () => (
 
             <button type="button" className="btn btn--rounded btn--yellow btn-submit">Sign in</button>
 
-            <p className="form__signup-link">Not a member yet? <a href="#">Sign up</a></p>
+            <p className="form__signup-link">Not a member yet? <a href="/register">Sign up</a></p>
           </form>
         </div>
 
