@@ -389,17 +389,17 @@ h1,h2,h3,h4,h5 {
     .site-logo {
       color: #000;
     }
-    .search-form-wrapper {
-      &.search-form--active {
-        .search-form {
-          top: 0;
+  }
+  .search-form-wrapper {
+    &.search-form--active {
+      .search-form {
+        top: 0;
+        @include breakpoint(tablet-lg) {
+          top: auto;
+        }
+        input {
           @include breakpoint(tablet-lg) {
-            top: auto;
-          }
-          input {
-            @include breakpoint(tablet-lg) {
-              border: 1px solid #ABABAB;
-            }
+            border: 1px solid #ABABAB;
           }
         }
       }
@@ -409,7 +409,7 @@ h1,h2,h3,h4,h5 {
 
 .search-form-wrapper {
   position: relative;
-  z-index: 10000;
+  z-index: 5000;
   .search-form {
     position: fixed;
     z-index: 100;
