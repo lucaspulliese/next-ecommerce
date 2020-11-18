@@ -1,14 +1,31 @@
 import Link from 'next/link';
+import { useDispatch } from 'react-redux';
+import { toggleFavProduct } from './../../store/actions/userActions';
 
-const ProductItem = ({ discount, productImage, id, name, price, currentPrice }) => (
-  <Link href={`/product/${id}`}>
-    <a href="#" className="product-item">
+const ProductItem = ({ discount, productImage, id, name, price, currentPrice }) => {
+  const dispatch = useDispatch();
+
+  const toggleFav = () => {
+    dispatch(toggleFavProduct(
+      { 
+        id: id,
+      }
+    ))
+  }
+
+  return (
+    <div className="product-item">
       <div className="product__image">
-        <button type="button" className="btn-heart"><i className="icon-heart"></i></button>
-        <img src={productImage} alt="product" />
-        {discount && 
-          <span className="product__discount">{discount}%</span>
-        }
+        <button onClick={toggleFav} type="button" className="btn-heart"><i className="icon-heart"></i></button>
+
+        <Link href={`/product/${id}`}>
+          <a href="#">
+            <img src={productImage} alt="product" />
+            {discount && 
+              <span className="product__discount">{discount}%</span>
+            }
+          </a>
+        </Link>
       </div>
       
       <div className="product__description">
@@ -21,9 +38,9 @@ const ProductItem = ({ discount, productImage, id, name, price, currentPrice }) 
           }
         </div>
       </div>
-    </a>
-  </Link>
-);
+    </div>
+  )
+};
 
 
 export default ProductItem

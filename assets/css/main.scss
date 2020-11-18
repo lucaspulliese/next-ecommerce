@@ -815,14 +815,21 @@ h1,h2,h3,h4,h5 {
   }
   .product__image {
     height: 250px;
-    padding: 18px;
     background-color: #FAFAFA;
     margin-bottom: 20px;
     position: relative;
     @include breakpoint(phone) {
       height: 385px;
-      padding: 24px;
       margin-bottom: 30px;
+    }
+    > a {
+      height: 100%;
+      width: 100%;
+      display: block;
+      padding: 18px;
+      @include breakpoint(phone) {
+        padding: 24px;
+      }
     }
     .btn-heart {
       top: 10px;
@@ -847,7 +854,7 @@ h1,h2,h3,h4,h5 {
         background-color: var(--color-orange);
       }
     }
-    > img {
+    img {
       top: 0;
       left: 0;
       z-index: 5;
