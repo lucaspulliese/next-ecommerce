@@ -1,9 +1,20 @@
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavProduct } from './../../store/actions/userActions';
 
 const ProductItem = ({ discount, productImage, id, name, price, currentPrice }) => {
   const dispatch = useDispatch();
+  const [isFavourite, setIsFavourite] = useState(false);
+  const { favProducts } = useSelector(state => state.user);
+
+  useEffect(() => {
+    if(favProducts.includes(id)) {
+      setIsFavourite(true);
+    } else {
+      setIsFavourite(false);
+    }
+  }, [favProducts]);
 
   const toggleFav = () => {
     dispatch(toggleFavProduct(
@@ -16,7 +27,7 @@ const ProductItem = ({ discount, productImage, id, name, price, currentPrice }) 
   return (
     <div className="product-item">
       <div className="product__image">
-        <button onClick={toggleFav} type="button" className="btn-heart"><i className="icon-heart"></i></button>
+        <button onClick={toggleFav} type="button" className={`btn-heart ${isFavourite ? 'btn-heart--active' : ''}`}><i className="icon-heart"></i></button>
 
         <Link href={`/product/${id}`}>
           <a href="#">

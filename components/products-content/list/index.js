@@ -1,18 +1,10 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 import useSwr from 'swr';
 import ProductItem from './../../product-item';
 import ProductsLoading from './loading';
 
 const ProductsContent = () => {
   const fetcher = (url) => fetch(url).then((res) => res.json());
-  const router = useRouter();
-  const queryParams = router.query;
-  const { data, error, mutate, isValidating } = useSwr('/api/products', fetcher);
-
-  useEffect(() => {
-    mutate();
-  }, [queryParams]);
+  const { data, error, isValidating } = useSwr('/api/products', fetcher);
 
   if (error) return <div>Failed to load users</div>;
   if (!data) return <ProductsLoading />;
