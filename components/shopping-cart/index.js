@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import CheckoutStatus from '../../components/checkout-status';
 import Item from './item';
 
 const ShoppingCart = () => {
@@ -19,6 +20,7 @@ const ShoppingCart = () => {
       <div className="container">
         <div className="cart__intro">
           <h3 className="cart__title">Shopping Cart</h3>
+          <CheckoutStatus />
         </div>
 
         <div className="cart-list">
