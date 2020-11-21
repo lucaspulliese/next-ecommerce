@@ -8,6 +8,7 @@ const ProductItem = ({ discount, productImage, id, name, price, currentPrice }) 
   const [isFavourite, setIsFavourite] = useState(false);
   const { favProducts } = useSelector(state => state.user);
 
+  /*
   useEffect(() => {
     if(favProducts.includes(id)) {
       setIsFavourite(true);
@@ -23,11 +24,12 @@ const ProductItem = ({ discount, productImage, id, name, price, currentPrice }) 
       }
     ))
   }
+  */
 
   return (
     <div className="product-item">
       <div className="product__image">
-        <button onClick={toggleFav} type="button" className={`btn-heart ${isFavourite ? 'btn-heart--active' : ''}`}><i className="icon-heart"></i></button>
+        <button type="button" className={`btn-heart ${isFavourite ? 'btn-heart--active' : ''}`}><i className="icon-heart"></i></button>
 
         <Link href={`/product/${id}`}>
           <a href="#">

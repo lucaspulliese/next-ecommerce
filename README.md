@@ -13,9 +13,17 @@ This repo contains a work in progress Ecommerce responsive made with Next.js, Re
 - Cart page: /cart
 - Login page: /login
 - Register page: /register
+- 404 page: /page-not-found
 
 ## Screenshots
 
 ![Next Ecommerce screenshot](https://lucaspulliese.com/wp-content/uploads/2020/09/ecommerce-1.jpg)
 
 ![Next Ecommerce screenshot](https://lucaspulliese.com/wp-content/uploads/2020/09/ecommerce-2.jpg)
+
+## Next TO-DO
+
+- [ ] Checkout page
+- [ ] Favourites products
+- [ ] Add Facebook login
+- [ ] Add Google login

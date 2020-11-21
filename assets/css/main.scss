@@ -2508,15 +2508,24 @@ h1,h2,h3,h4,h5 {
   display: flex;
   align-items: center;
   text-align: center;
+  padding: 60px 0;
   min-height: calc(100vh - 200px);
   h1 {
-    font-size: 92px;
+    font-size: 44px;
     margin: 0 auto 20px auto;
     text-align: center;
+    @include breakpoint(phone) {
+      font-size: 92px;
+    }
   }
   p {
-    font-size: 17px;
-    margin-bottom: 50px;
+    line-height: 160%;
+    font-size: 15px;
+    margin-bottom: 40px;
+    @include breakpoint(phone) {
+      font-size: 17px;
+      margin-bottom: 50px;
+    }
   }
   .btn {
     margin: 0 auto;

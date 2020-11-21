@@ -2,18 +2,22 @@ const initialState = {
   cartItems: [],
 }
 
+const indexSameProduct = (state, action) => {
+  const sameProduct = (product) => (
+    product.id === action.id && 
+    product.color === action.color && 
+    product.size === action.size
+  );
+
+  return state.cartItems.findIndex(sameProduct)
+};
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_PRODUCT':   
 
-      // TODO refactor this, is horrible
-      var sameProduct = (product) => (
-        product.id === action.id && 
-        product.color === action.color && 
-        product.size === action.size
-      );
-
-      const index = state.cartItems.findIndex(sameProduct);
+      // find index of product
+      const index = indexSameProduct(state, action);
 
       if(index !== -1) {
         state.cartItems[index].count += action.count;
@@ -41,14 +45,8 @@ export default (state = initialState, action) => {
 
     case 'REMOVE_PRODUCT': 
     
-      // TODO refactor this, is horrible
-      var sameProduct = (product) => (
-        product.id === action.id && 
-        product.color === action.color && 
-        product.size === action.size
-      );
-      
-      state.cartItems.splice(state.cartItems.findIndex(sameProduct), 1);
+      // find index of product
+      state.cartItems.splice(indexSameProduct(state, action), 1);
 
       return {
         ...state,
@@ -56,16 +54,9 @@ export default (state = initialState, action) => {
       };
 
     case 'SET_COUNT': 
-    
-      // TODO refactor this, is horrible
-      var sameProduct = (product) => (
-        product.id === action.id && 
-        product.color === action.color && 
-        product.size === action.size
-      );
       
-      // set count to item
-      const indexItem = state.cartItems.findIndex(sameProduct);
+      // find index and add new count on product count
+      const indexItem = indexSameProduct(state, action);
       state.cartItems[indexItem].count = action.count;
 
       return {
