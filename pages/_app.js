@@ -14,6 +14,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 // only events on production
 if(isProduction) {
+  
   // Notice how we track pageview when route is changed
   Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 }

@@ -6,7 +6,6 @@ import { GA_TRACKING_ID } from '../utils/gtag';
 export default class CustomDocument extends Document {
   static async getInitialProps(ctx) {
     const originalRenderPage = ctx.renderPage
-
     const initialProps = await Document.getInitialProps(ctx)
 
     // Check if in production

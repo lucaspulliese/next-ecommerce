@@ -7,6 +7,5 @@ export default (req, res) => {
   } = req
 
   const product = products.find(x => x.id === pid);
-
   res.status(200).json(product);
 }

@@ -12,7 +12,7 @@ const indexSameProduct = (state, action) => {
   return state.cartItems.findIndex(sameProduct)
 };
 
-export default (state = initialState, action) => {
+const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_PRODUCT':   
 
@@ -68,3 +68,5 @@ export default (state = initialState, action) => {
       return state;
   }
 }
+
+export default cartReducer;

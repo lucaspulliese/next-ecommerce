@@ -5,7 +5,7 @@ const initialState = {
   favProducts: [],
 }
 
-export default (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'TOGGLE_FAV_PRODUCT':   
       const index = state.favProducts.includes(action.id);
@@ -22,3 +22,5 @@ export default (state = initialState, action) => {
       return state;
   }
 }
+
+export default userReducer;
