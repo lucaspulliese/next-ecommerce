@@ -27,3 +27,5 @@ This repo contains a work in progress Ecommerce responsive made with Next.js, Re
 - [ ] Favourites products
 - [ ] Add Facebook login
 - [ ] Add Google login
+- [ ] Add Proptypes to components
+- [ ] Use CSS variables instead of static colors

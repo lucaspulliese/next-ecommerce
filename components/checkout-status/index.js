@@ -1,9 +1,9 @@
-const CheckoutStatus = () => {
+const CheckoutStatus = ({ step }) => {
   return (
     <div className="checkout-status">
       <ul className="checkout-steps">
-        <li className="active"><i className="icon-cart"></i></li>
-        <li className="done"><i className="icon-delivery"></i></li>
+        <li className={`${step === 'cart' ? 'active' : 'done'}`}><i className="icon-cart"></i></li>
+        <li className={`${step === 'checkout' ? 'active' : 'done'}`}><i className="icon-delivery"></i></li>
       </ul>
     </div>
   )
