@@ -4,18 +4,12 @@ import ProductsLoading from './loading';
 
 const ProductsContent = () => {
   const fetcher = (url) => fetch(url).then((res) => res.json());
-  const { data, error, isValidating } = useSwr('/api/products', fetcher);
+  const { data, error } = useSwr('/api/products', fetcher);
 
   if (error) return <div>Failed to load users</div>;
-  if (!data) return <ProductsLoading />;
-
   return (
     <>
-      {isValidating && 
-        <ProductsLoading />
-      }
-
-      {!isValidating &&
+      {data &&
         <section className="products-list">
           {data.map(item => (
             <ProductItem 
