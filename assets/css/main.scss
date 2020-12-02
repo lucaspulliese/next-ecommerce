@@ -1648,6 +1648,10 @@ h1,h2,h3,h4,h5 {
   align-items: center;
   justify-content: center;
   border: 1px solid #D8D8D8;
+  &:hover, &.btn-heart--active {
+    color: #FFF;
+    background-color: var(--color-orange);
+  }
 }
 
 .product-single-page {

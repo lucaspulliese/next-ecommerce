@@ -2,8 +2,10 @@ import { useState } from 'react';
 import productsColors from './../../../utils/data/products-colors';
 import productsSizes from './../../../utils/data/products-sizes';
 import CheckboxColor from './../../products-filter/form-builder/checkbox-color';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { some } from 'lodash';
 import { addProduct } from './../../../store/actions/cartActions';
+import { toggleFavProduct } from './../../../store/actions/userActions';
 
 const Content = ({ product }) => {
   const dispatch = useDispatch();
@@ -13,6 +15,17 @@ const Content = ({ product }) => {
 
   const onColorSet = (e) => setColor(e);
   const onSelectChange = (e) => setItemSize(e.target.value);
+
+  const { favProducts } = useSelector(state => state.user);
+  const isFavourite = some(favProducts, productId => productId === product.id);
+
+  const toggleFav = () => {
+    dispatch(toggleFavProduct(
+      { 
+        id: product.id,
+      }
+    ))
+  }
 
   const addToCart = () => {
     dispatch(addProduct(
@@ -86,7 +99,7 @@ const Content = ({ product }) => {
             </div>
             
             <button type="submit" onClick={() => addToCart()} className="btn btn--rounded btn--yellow">Add to cart</button>
-            <button type="button" className="btn-heart"><i className="icon-heart"></i></button>
+            <button type="button" onClick={toggleFav} className={`btn-heart ${isFavourite ? 'btn-heart--active' : ''}`}><i className="icon-heart"></i></button>
           </div>
         </div>
       </div>

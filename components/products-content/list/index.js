@@ -9,6 +9,10 @@ const ProductsContent = () => {
   if (error) return <div>Failed to load users</div>;
   return (
     <>
+      {!data && 
+        <ProductsLoading />
+      }
+
       {data &&
         <section className="products-list">
           {data.map(item => (
