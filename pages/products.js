@@ -7,7 +7,6 @@ import ProductsContent from '../components/products-content';
 const Products = () => (
   <Layout>
     <Breadcrumb />
-
     <section className="products-page">
       <div className="container">
         <ProductsFilter />
