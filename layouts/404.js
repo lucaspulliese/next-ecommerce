@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Header from '../components/header';
+import Header from '../components/Header';
 import { useRouter } from 'next/router';
 
 export default ({ children, title = 'Next.js Ecommerce' }) => {
