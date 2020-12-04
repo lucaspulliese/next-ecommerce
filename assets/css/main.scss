@@ -1607,6 +1607,11 @@ h1,h2,h3,h4,h5 {
       font-size: 15px;
     }
   }
+  &.select-form {
+    select {
+      width: 100%;
+    }
+  }
 }
 
 .quantity-buttons {
@@ -2402,6 +2407,26 @@ h1,h2,h3,h4,h5 {
       padding: 0 28px;
     }
   }
+  .select-wrapper {
+    height: 100%;
+    &:before {
+      right: 25px;
+    }
+    select {
+      height: 100%;
+      font-size: 13px;
+      color: #808080;
+      padding: 0 28px;
+      option {
+        color: #808080;
+        font-size: 15px;
+        &:first-of-type {
+          opacity: 0.8;
+          display: none;
+        }
+      }
+    }
+  }
   .form__btns {
     justify-content: space-between;
     display: flex;
@@ -2559,6 +2584,7 @@ h1,h2,h3,h4,h5 {
 
 .checkout-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   .block {
     margin-bottom: 48px;
@@ -2574,13 +2600,33 @@ h1,h2,h3,h4,h5 {
     }
   }
   .checkout__col-6 {
-    width: 41%;
+    width: 53%;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+    @include breakpoint(desktop-lg) {
+      width: 41%;
+    }
   }
   .checkout__col-4 {
-    width: 25%;
+    width: 40%;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+    @include breakpoint(desktop-lg) {
+      width: 25%;
+    }
   }
   .checkout__col-2 {
-    width: 22%;
+    width: 100%;
+    margin-top: 30px;
+    @include breakpoint(tablet-lg) {
+      width: 300px;
+    }
+    @include breakpoint(desktop-lg) {
+      width: 22%;
+      margin-top: 0;
+    }
   }
 }
 
