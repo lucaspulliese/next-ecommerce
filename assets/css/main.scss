@@ -2055,7 +2055,10 @@ h1,h2,h3,h4,h5 {
   align-items: center;
   li {
     position: relative;
-    padding-right: 105px;
+    padding-right: 60px;
+    @include breakpoint(phone) {
+      padding-right: 105px;
+    }
     &.active {
       i {
         color: #FFF;
@@ -2115,6 +2118,7 @@ h1,h2,h3,h4,h5 {
   .cart__title {
     font-size: 20px;
     font-weight: 700;
+    line-height: 140%;
   }
   .cart-actions {
     margin-top: 75px;
@@ -2600,18 +2604,20 @@ h1,h2,h3,h4,h5 {
     }
   }
   .checkout__col-6 {
-    width: 53%;
-    @include breakpoint(phone) {
-      width: 100%;
+    width: 100%;
+    @include breakpoint(tablet-lg) {
+      width: 53%;
     }
     @include breakpoint(desktop-lg) {
       width: 41%;
     }
   }
   .checkout__col-4 {
-    width: 40%;
-    @include breakpoint(phone) {
-      width: 100%;
+    width: 100%;
+    margin-top: 30px;
+    @include breakpoint(tablet-lg) {
+      width: 41%;
+      margin-top: 0;
     }
     @include breakpoint(desktop-lg) {
       width: 25%;
