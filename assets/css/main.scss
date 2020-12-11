@@ -366,7 +366,7 @@ h1,h2,h3,h4,h5 {
       display: block;
       text-align: left;
       padding: 15px 18px;
-      @include breakpoint(phone) {
+      @include breakpoint(tablet-lg) {
         width: auto;
         padding: 0;
         color: #FFF;
@@ -2128,6 +2128,45 @@ h1,h2,h3,h4,h5 {
     .btn {
       margin-left: 20px;
     }
+    .cart-actions__items-wrapper {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      @include breakpoint(phone) {
+        margin-top: 30px;
+      }
+      @include breakpoint(tablet-lg) {
+        width: auto;
+        margin-top: 0;
+      }
+    }
+    &.cart-actions--checkout {
+      display: flex;
+      flex-direction: column-reverse;
+      @include breakpoint(phone) {
+        flex-direction: row;
+      }
+      .cart-actions__items-wrapper {
+        margin-bottom: 30px;
+        justify-content: space-between;
+        @include breakpoint(phone) {
+          width: auto;
+          justify-content: flex-start;
+        }
+        .btn {
+          padding: 9px 13px;
+          font-size: 10px;
+          margin-left: 0;
+          @include breakpoint(phone) {
+            font-size: 12px;
+            padding: 11px 20px;
+          }
+          &:first-of-type {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
   }
   .icon-cancel {
     font-size: 13px;
@@ -2157,6 +2196,9 @@ h1,h2,h3,h4,h5 {
       height: 49px;
       width: auto;
       margin-bottom: 0;
+      margin-right: 0;
+    }
+    @include breakpoint(tablet-lg) {
       margin-right: 70px;
     }
     @include placeholder {
@@ -2166,7 +2208,7 @@ h1,h2,h3,h4,h5 {
   .cart-actions__total {
     font-weight: 300;
     margin-right: auto;
-    @include breakpoint(phone) {
+    @include breakpoint(tablet-lg) {
       margin-right: 60px;
     }
     strong {
