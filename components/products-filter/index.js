@@ -33,7 +33,6 @@ const handle = props => {
 const ProductsFilter = () => {
   const router = useRouter();
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const { handleSubmit, register, getValues } = useForm();
 
   const addQueryParams = () => {
     // query params changes
@@ -54,7 +53,6 @@ const ProductsFilter = () => {
             {productsTypes.map(type => (
               <Checkbox 
                 key={type.id} 
-                ref={register} 
                 name="product-type" 
                 label={type.name} 
               />
@@ -76,7 +74,6 @@ const ProductsFilter = () => {
               <Checkbox 
                 type="square" 
                 key={type.id} 
-                ref={register}
                 name="product-size" 
                 label={type.label} />
             ))}
