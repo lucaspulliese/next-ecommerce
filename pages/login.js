@@ -1,14 +1,16 @@
 import Layout from '../layouts/Main';
 import Link from 'next/link';
 import { useForm } from "react-hook-form";
+import { server } from '../utils/server'; 
 
 const LoginPage = () => {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
-    alert(JSON.stringify(data));
-  };
 
-  console.log(errors);
+  const onSubmit = async data => {
+    alert(JSON.stringify(data));
+    const res = await fetch(`${server}/api/login/${pid}`);
+    const product = await res.json();
+  };
 
   return (
     <Layout>
