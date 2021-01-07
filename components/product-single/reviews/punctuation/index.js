@@ -1,6 +1,6 @@
 import Rater from 'react-rater';
 
-const Punctuation = () => {
+const Punctuation = ({ punctuations }) => {
   return (
     <section className="product-punctuation">
       <div className="product-punctuation__values">

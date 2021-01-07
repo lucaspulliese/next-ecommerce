@@ -145,7 +145,7 @@ const CheckoutPage = () => {
           
           <div className="cart-actions cart-actions--checkout">
             <a href="/cart" className="cart__btn-back"><i className="icon-left"></i> Back</a>
-            <div class="cart-actions__items-wrapper">
+            <div className="cart-actions__items-wrapper">
               <button type="button" className="btn btn--rounded btn--border">Continue shopping</button>
               <button type="button" className="btn btn--rounded btn--yellow">Proceed to payment</button>
             </div>

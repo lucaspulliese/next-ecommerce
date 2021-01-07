@@ -38,6 +38,7 @@ const ShoppingCart = () => {
 
                 {cartItems.map(item => (
                   <Item 
+                    key={item.id}
                     id={item.id}
                     thumb={item.thumb}
                     name={item.name}
@@ -60,7 +61,7 @@ const ShoppingCart = () => {
           <a href="/products" className="cart__btn-back"><i className="icon-left"></i> Continue Shopping</a>
           <input type="text" placeholder="Promo Code" className="cart__promo-code" />
 
-          <div class="cart-actions__items-wrapper">
+          <div className="cart-actions__items-wrapper">
             <p className="cart-actions__total">Total cost <strong>${priceTotal.toFixed(2)}</strong></p>
             <a href="/cart/checkout" className="btn btn--rounded btn--yellow">Checkout</a>
           </div>

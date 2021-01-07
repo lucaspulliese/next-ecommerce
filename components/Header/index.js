@@ -8,9 +8,9 @@ import { useRouter } from 'next/router';
 const Header = ({ isErrorPage }) => {
   const router = useRouter();
   const { cartItems } = useSelector(state => state.cart);
-  const arrayPaths = ['/products', '/product/[pid]', '/login', '/cart', '/register', '/cart/checkout'];  
+  const arrayPaths = ['/'];  
 
-  const [onTop, setOnTop] = useState(( arrayPaths.includes(router.pathname) || isErrorPage ) ? false : true);
+  const [onTop, setOnTop] = useState(( !arrayPaths.includes(router.pathname) || isErrorPage ) ? false : true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const navRef = useRef(null);
@@ -25,7 +25,7 @@ const Header = ({ isErrorPage }) => {
   }
 
   useEffect(() => {
-    if(arrayPaths.includes(router.pathname) || isErrorPage) {
+    if(!arrayPaths.includes(router.pathname) || isErrorPage) {
       return;
     }
 

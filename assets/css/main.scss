@@ -1929,6 +1929,12 @@ h1,h2,h3,h4,h5 {
     background-color: gray;
     border-radius: 100%;
     height: 40px;
+    img {
+      border-radius: 100%;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
   }
   .review__content {
     flex: 1;
@@ -2554,7 +2560,7 @@ h1,h2,h3,h4,h5 {
   align-items: center;
   background-color: #3B5998;
   @include breakpoint(phone) {
-    padding: 18px 58px;
+    padding: 14px 58px;
   }
   i {
     font-size: 18px;
@@ -2571,7 +2577,7 @@ h1,h2,h3,h4,h5 {
   border: 1px solid #F1584D;
   padding: 12px 30px;
   @include breakpoint(phone) {
-    padding: 18px 58px;
+    padding: 14px 58px;
   }
   img {
     margin-right: 10px;
@@ -2773,5 +2779,27 @@ h1,h2,h3,h4,h5 {
   justify-content: space-between;
   p {
     font-weight: 300;
+  }
+}
+
+.message {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 20px;
+  &:before {
+    content: '';
+    height: 4px;
+    width: 4px;
+    border-radius: 100%;
+    display: block;
+    margin-right: 5px;
+  }
+  &.message--error {
+    color: red;
+    &:before {
+      background-color: red;
+    }
   }
 }
