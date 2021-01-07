@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { server } from '../utils/server'; 
 import { postData } from '../utils/services'; 
 
-const LoginPage = () => {
+const ForgotPassword = () => {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async data => {
@@ -20,14 +20,13 @@ const LoginPage = () => {
         <div className="container">
           <div className="back-button-section">
             <Link href="/products">
-              <a><i className="icon-left"></i> Back to store</a>
+              <a><i className="icon-left"></i> Back to shop</a>
             </Link>
           </div>
 
           <div className="form-block">
-            <h2 className="form-block__title">Log in</h2>
-            <p className="form-block__description">Lorem Ipsum is simply dummy text of the printing and typesetting 
-            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+            <h2 className="form-block__title">Forgot your password?</h2>
+            <p className="form-block__description">Enter your email or phone number and recover your account</p>
             
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
               <div className="form__input-row">
@@ -64,30 +63,7 @@ const LoginPage = () => {
                 }
               </div>
 
-              <div className="form__info">
-                <div className="checkbox-wrapper">
-                  <label htmlFor="check-signed-in" className={`checkbox checkbox--sm`}>
-                    <input 
-                      type="checkbox" 
-                      name="keepSigned" 
-                      id="check-signed-in" 
-                      ref={register({ required: false })}
-                    />
-                    <span className="checkbox__check"></span>
-                    <p>Keep me signed in</p>
-                  </label>
-                </div>
-                <a href="/forgot-password" className="form__info__forgot-password">Forgot password?</a>
-              </div>
-
-              <div className="form__btns">
-                <button type="button" className="btn-social fb-btn"><i className="icon-facebook"></i>Facebook</button>
-                <button type="button" className="btn-social google-btn"><img src="/images/icons/gmail.svg" alt="gmail" /> Gmail</button>
-              </div>
-
-              <button type="submit" className="btn btn--rounded btn--yellow btn-submit">Sign in</button>
-
-              <p className="form__signup-link">Not a member yet? <a href="/register">Sign up</a></p>
+              <button type="submit" className="btn btn--rounded btn--yellow btn-submit">Reset password</button>
             </form>
           </div>
 
@@ -97,5 +73,4 @@ const LoginPage = () => {
   )
 }
   
-export default LoginPage
-  
+export default ForgotPassword
