@@ -23,7 +23,7 @@ const ProductItem = ({ discount, productImage, id, name, price, currentPrice }) 
         <button type="button" onClick={toggleFav} className={`btn-heart ${isFavourite ? 'btn-heart--active' : ''}`}><i className="icon-heart"></i></button>
 
         <Link href={`/product/${id}`}>
-          <a href="#">
+          <a>
             <img src={productImage} alt="product" />
             {discount && 
               <span className="product__discount">{discount}%</span>
