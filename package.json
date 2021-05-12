@@ -32,7 +32,7 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "sass": "^1.26.10",
-    "swiper": "^6.2.0",
+    "swiper": "^6.5.1",
     "swr": "^0.3.2",
     "use-onclickoutside": "^0.3.1"
   },
