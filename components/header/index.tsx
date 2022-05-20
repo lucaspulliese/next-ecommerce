@@ -5,7 +5,11 @@ import Logo from '../../assets/icons/logo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const Header = ({ isErrorPage }) => {
+type HeaderType = {
+  isErrorPage?: Boolean;
+}
+
+const Header = ({ isErrorPage }: HeaderType) => {
   const router = useRouter();
   const { cartItems } = useSelector(state => state.cart);
   const arrayPaths = ['/'];  
