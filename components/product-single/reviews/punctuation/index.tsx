@@ -1,6 +1,11 @@
 import Rater from 'react-rater';
+import { PunctuationType } from 'types';
 
-const Punctuation = ({ punctuations }) => {
+type PunctuationReviewsType = {
+  punctuations: PunctuationType[] | undefined;
+}
+
+const Punctuation = ({ punctuations }: PunctuationReviewsType) => {
   return (
     <section className="product-punctuation">
       <div className="product-punctuation__values">

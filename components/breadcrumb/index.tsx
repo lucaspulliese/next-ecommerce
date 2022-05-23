@@ -1,4 +1,8 @@
-const Breadcrumb = () => (
+type BreadcrumbType = {
+  currentPage: string;
+}
+
+const Breadcrumb = ({ currentPage }: BreadcrumbType) => (
   <section className="breadcrumb">
     <div className="container">
       <ul className="breadcrumb-list">

@@ -1,3 +1,5 @@
+import { GetServerSideProps } from 'next'
+
 import { useState } from 'react';
 import Footer from '../../components/footer';
 import Layout from '../../layouts/Main';
@@ -9,8 +11,14 @@ import Description from '../../components/product-single/description';
 import Reviews from '../../components/product-single/reviews';
 import { server } from '../../utils/server'; 
 
-export async function getServerSideProps({ query }) {
+// types
+import { ProductType } from 'types';
 
+type ProductPageType = {
+  product: ProductType;
+}
+
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const pid = query.pid;
   const res = await fetch(`${server}/api/product/${pid}`);
   const product = await res.json();
@@ -22,7 +30,7 @@ export async function getServerSideProps({ query }) {
   }
 }
 
-const Product = ({ product }) => {
+const Product = ({ product }: ProductPageType) => {
   const [showBlock, setShowBlock] = useState('description');
 
   return (
@@ -42,7 +50,7 @@ const Product = ({ product }) => {
               <button type="button" onClick={() => setShowBlock('reviews')} className={`btn btn--rounded ${showBlock === 'reviews' ? 'btn--active' : ''}`}>Reviews (2)</button>
             </div>
 
-            <Description product={product} show={showBlock === 'description'} />
+            <Description show={showBlock === 'description'} />
             <Reviews product={product} show={showBlock === 'reviews'} />
           </div>
         </div>

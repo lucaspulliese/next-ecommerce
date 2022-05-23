@@ -1,15 +1,17 @@
 import Rater from 'react-rater';
+import createMarkup from 'utils/markup';
+import { ReviewType } from 'types';
 
-function createMarkup(content) {
-  return {__html: content};
+type ReviewsListType = {
+  reviews: ReviewType[];
 }
 
-const ReviewsList = ({ reviews }) => {
+const ReviewsList = ({ reviews }: ReviewsListType) => {
 
   return (
     <section className="reviews-list">
-      {reviews.map(review => (
-        <div className="review-item">
+      {reviews.map((review, index) => (
+        <div key={index} className="review-item">
           <div className="review__avatar">
             <img src={ review.avatar } alt="avatar" />
           </div>

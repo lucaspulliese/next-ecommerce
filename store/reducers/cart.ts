@@ -1,11 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ProductType } from 'types/product';
+import { ProductType } from 'types';
 
 interface CartTypes {
   cartItems: ProductType[]
 }
 
-const initialState = { cartItems: [] } as CartTypes;
+const initialState = { 
+  cartItems: [] 
+} as CartTypes;
 
 const indexSameProduct = (state: CartTypes, action: ProductType) => {
   const sameProduct = (product: ProductType) => (

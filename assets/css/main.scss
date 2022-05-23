@@ -1750,7 +1750,7 @@ h1,h2,h3,h4,h5 {
     .reviews-list {
       width: 100%;
       margin-left: auto;
-      @include breakpoint(phone) {
+      @include breakpoint(tablet-lg) {
         width: 48%;
       }
     }
@@ -1978,7 +1978,6 @@ h1,h2,h3,h4,h5 {
   @include breakpoint(phone) {
     display: flex;
     justify-content: center;
-    margin-bottom: 0;
     flex-wrap: wrap;
   }
   .product-punctuation__values {
@@ -2005,8 +2004,8 @@ h1,h2,h3,h4,h5 {
     }
   }
   .product-punctuation__rates {
+    width: 200px;
     @include breakpoint(phone) {
-      width: 200px;
       margin-left: 68px;
     }
   }
