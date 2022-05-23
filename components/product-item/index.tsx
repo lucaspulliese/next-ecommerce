@@ -2,10 +2,20 @@ import Link from 'next/link';
 import { some } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavProduct } from './../../store/actions/userActions';
+import { RootState } from 'store';
 
-const ProductItem = ({ discount, productImage, id, name, price, currentPrice }) => {
+type ProductItemProps = {
+  discount: string;
+  productImage: string;
+  id: string;
+  name: string;
+  price: string;
+  currentPrice: string;
+}
+
+const ProductItem = ({ discount, productImage, id, name, price, currentPrice }: ProductItemProps) => {
   const dispatch = useDispatch();
-  const { favProducts } = useSelector(state => state.user);
+  const { favProducts } = useSelector((state: RootState) => state.user);
 
   const isFavourite = some(favProducts, productId => productId === id);
 

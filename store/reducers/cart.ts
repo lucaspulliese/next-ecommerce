@@ -1,14 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-type ProductType = {
-  id: string;
-  name: string;
-  thumb: string;
-  price: string;
-  count: number;
-  color: string;
-  size: string;
-}
+import { ProductType } from 'types/product';
 
 interface CartTypes {
   cartItems: ProductType[]

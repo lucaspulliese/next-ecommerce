@@ -9,10 +9,14 @@ const reducer = {
   user: userReducer
 }
 
+let store = configureStore({ 
+  reducer,
+});
+
 const makeStore = ({ isServer }: { isServer: Boolean }) => {
   if (isServer) {
     //If it's on server side, create a store
-    return configureStore({ 
+    return store = configureStore({ 
       reducer,
     });
   } else {
@@ -28,8 +32,8 @@ const makeStore = ({ isServer }: { isServer: Boolean }) => {
 
     const persistedReducer = persistReducer(persistConfig, reducer); // Create a new reducer with our existing reducer
 
-    const store = configureStore({ 
-      reducer: persistedReducer,
+    store = configureStore({ 
+      reducer: reducer,
     }); // Creating the store again
 
     store.__persistor = persistStore(store); // This creates a persistor object & push that persisted object to .__persistor, so that we can avail the persistability feature
@@ -40,3 +44,9 @@ const makeStore = ({ isServer }: { isServer: Boolean }) => {
 
 // export an assembled wrapper
 export const wrapper = createWrapper(makeStore, {debug: true});
+
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>
+
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch

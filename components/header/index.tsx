@@ -4,6 +4,7 @@ import useOnClickOutside from 'use-onclickoutside';
 import Logo from '../../assets/icons/logo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { RootState } from 'store';
 
 type HeaderType = {
   isErrorPage?: Boolean;
@@ -11,7 +12,7 @@ type HeaderType = {
 
 const Header = ({ isErrorPage }: HeaderType) => {
   const router = useRouter();
-  const { cartItems } = useSelector(state => state.cart);
+  const { cartItems } = useSelector((state: RootState)  => state.cart);
   const arrayPaths = ['/'];  
 
   const [onTop, setOnTop] = useState(( !arrayPaths.includes(router.pathname) || isErrorPage ) ? false : true);
