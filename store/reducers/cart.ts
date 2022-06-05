@@ -1,16 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ProductType } from 'types';
+import { ProductStoreType } from 'types';
 
 interface CartTypes {
-  cartItems: ProductType[]
+  cartItems: ProductStoreType[]
 }
 
 const initialState = { 
   cartItems: [] 
 } as CartTypes;
 
-const indexSameProduct = (state: CartTypes, action: ProductType) => {
-  const sameProduct = (product: ProductType) => (
+const indexSameProduct = (state: CartTypes, action: ProductStoreType) => {
+  const sameProduct = (product: ProductStoreType) => (
     product.id === action.id && 
     product.color === action.color && 
     product.size === action.size
@@ -20,7 +20,7 @@ const indexSameProduct = (state: CartTypes, action: ProductType) => {
 };
 
 type AddProductType = {
-  product: ProductType,
+  product: ProductStoreType,
   count: number,
 }
 
@@ -28,52 +28,30 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addProduct(state, action: PayloadAction<AddProductType>) {
+    addProduct: (state, action: PayloadAction<AddProductType>) => {
+      const cartItems = state.cartItems;
+
       // find index of product
       const index = indexSameProduct(state, action.payload.product);
 
       if(index !== -1) {
-        state.cartItems[index].count += action.payload.count;
-
-        return {
-          ...state,
-          cartItems: state.cartItems
-        };
+        cartItems[index].count += action.payload.count;
+        return;
       }
 
       return {
         ...state,
-        cartItems: [...state.cartItems,
-          {
-            id: action.payload.product.id,
-            name: action.payload.product.name,
-            thumb: action.payload.product.thumb,
-            price: action.payload.product.price,
-            count: action.payload.product.count,
-            color: action.payload.product.color,
-            size: action.payload.product.size
-          }
-        ]
+        cartItems: [...state.cartItems, action.payload.product ]
       };
     },
-    removeProduct(state, action: PayloadAction<ProductType>) {
+    removeProduct(state, action: PayloadAction<ProductStoreType>) {
       // find index of product
       state.cartItems.splice(indexSameProduct(state, action.payload), 1);
-
-      return {
-        ...state,
-        cartItems: state.cartItems
-      };
     },
     setCount(state, action: PayloadAction<AddProductType>) {
       // find index and add new count on product count
       const indexItem = indexSameProduct(state, action.payload.product);
       state.cartItems[indexItem].count = action.payload.count;
-
-      return {
-        ...state,
-        cartItems: state.cartItems
-      };
     },
   },
 })

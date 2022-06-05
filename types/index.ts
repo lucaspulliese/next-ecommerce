@@ -24,3 +24,13 @@ export type ProductType = {
   punctuationReview?: PunctuationType[];
   reviews?: ReviewType[];
 }
+
+export type ProductStoreType = {
+  id: string;
+  name: string;
+  thumb: string;
+  price: string | undefined;
+  count: number;
+  color: string;
+  size: string;
+}

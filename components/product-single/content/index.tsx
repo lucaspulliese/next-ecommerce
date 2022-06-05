@@ -4,9 +4,9 @@ import productsSizes from './../../../utils/data/products-sizes';
 import CheckboxColor from './../../products-filter/form-builder/checkbox-color';
 import { useDispatch, useSelector } from 'react-redux';
 import { some } from 'lodash';
-import { addProduct } from './../../../store/actions/cartActions';
+import { addProduct } from 'store/reducers/cart';
 import { toggleFavProduct } from './../../../store/actions/userActions';
-import { ProductType } from 'types';
+import { ProductType, ProductStoreType } from 'types';
 import { RootState } from 'store';
 
 type ProductContent = {
@@ -34,17 +34,22 @@ const Content = ({ product }: ProductContent) => {
   }
 
   const addToCart = () => {
-    dispatch(addProduct(
-      { 
-        id: product.id,
-        name: product.name,
-        thumb: product.images ? product.images[0] : '',
-        price: product.currentPrice,
-        count: count,
-        color: color,
-        size: itemSize
-      }
-    ))
+    const productToSave: ProductStoreType = { 
+      id: product.id,
+      name: product.name,
+      thumb: product.images ? product.images[0] : '',
+      price: product.currentPrice,
+      count: count,
+      color: color,
+      size: itemSize
+    }
+
+    const productStore = {
+      count,
+      product: productToSave
+    }
+
+    dispatch(addProduct(productStore));
   }
 
   return (
