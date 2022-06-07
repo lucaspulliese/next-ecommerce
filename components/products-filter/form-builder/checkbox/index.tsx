@@ -5,7 +5,7 @@ type CheckboxType = {
 	onChange?: () => void;
 }
 
-const Checkbox = ({ type = 'square', label, name, onChange }: CheckboxType) => (
+const Checkbox = ({ type = '', label, name, onChange }: CheckboxType) => (
 	<label htmlFor={label+'-'+name} className={`checkbox ${type ? 'checkbox--'+type : ''}`}>
 		<input name={name} onChange={onChange} type="checkbox" id={label+'-'+name} />
 		<span className="checkbox__check"></span>

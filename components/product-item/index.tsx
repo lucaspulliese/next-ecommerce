@@ -26,7 +26,7 @@ const ProductItem = ({ discount, images, id, name, price, currentPrice }: Produc
 
         <Link href={`/product/${id}`}>
           <a>
-            <img src={images[0]} alt="product" />
+            <img src={images ? images[0] : ''} alt="product" />
             {discount && 
               <span className="product__discount">{discount}%</span>
             }
