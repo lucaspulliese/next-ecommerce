@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import Checkbox from './form-builder/checkbox';
 import CheckboxColor from './form-builder/checkbox-color';
 import Slider from 'rc-slider';
-import Tooltip from 'rc-tooltip';
-import { useForm } from "react-hook-form";
 
 // data
 import productsTypes from './../../utils/data/products-types';
@@ -13,25 +10,8 @@ import productsSizes from './../../utils/data/products-sizes';
 
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
-const { Handle } = Slider;
-
-const handle = props => {
-  const { value, dragging, index, ...restProps } = props;
-  return (
-    <Tooltip
-      prefixCls="rc-slider-tooltip"
-      overlay={value}
-      visible={dragging}
-      placement="top"
-      key={index}
-    >
-      <Handle value={value} {...restProps} />
-    </Tooltip>
-  );
-};
 
 const ProductsFilter = () => {
-  const router = useRouter();
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   const addQueryParams = () => {
@@ -85,7 +65,7 @@ const ProductsFilter = () => {
           <div className="products-filter__block__content">
             <div className="checkbox-color-wrapper">
               {productsColors.map(type => (
-                <CheckboxColor key={type.id} name="product-color" color={type.color} />
+                <CheckboxColor key={type.id} valueName={type.color} name="product-color" color={type.color} />
               ))}
             </div>
           </div>

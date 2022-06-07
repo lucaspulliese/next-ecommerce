@@ -1,30 +1,38 @@
 import { useDispatch } from 'react-redux';
 import { removeProduct, setCount } from 'store/reducers/cart';
+import { ProductStoreType } from 'types';
 
-const ShoppingCart = ({ thumb, name, id, color, size, count, price }) => {
+const ShoppingCart = ({ thumb, name, id, color, size, count, price }: ProductStoreType) => {
   const dispatch = useDispatch();
 
   const removeFromCart = () => {
     dispatch(removeProduct(
       { 
-        id: id,
-        color: color,
-        size: size
+        thumb, 
+        name, 
+        id, 
+        color, 
+        size, 
+        count, 
+        price
       }
     ))
   }
 
-  const setProductCount = (count) => {
+  const setProductCount = (count: number) => {
     if(count <= 0) {
-      return false;
+      return;
     }
 
     const payload = {
       product: { 
-        id: id,
-        color: color,
-        size: size,
-        count: count,
+        thumb, 
+        name, 
+        id, 
+        color, 
+        size, 
+        count, 
+        price
       },
       count,
     }

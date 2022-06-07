@@ -18,7 +18,7 @@ export type ProductType = {
   count: number;
   color: string;
   size: string;
-  images: any[];
+  images: string[];
   discount?: string;
   currentPrice?: string;
   punctuationReview?: PunctuationType[];
@@ -29,7 +29,7 @@ export type ProductStoreType = {
   id: string;
   name: string;
   thumb: string;
-  price: string | undefined;
+  price: number;
   count: number;
   color: string;
   size: string;

@@ -3,17 +3,9 @@ import { some } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavProduct } from './../../store/actions/userActions';
 import { RootState } from 'store';
+import { ProductType } from 'types';
 
-type ProductItemProps = {
-  discount: string;
-  productImage: string;
-  id: string;
-  name: string;
-  price: string;
-  currentPrice: string;
-}
-
-const ProductItem = ({ discount, productImage, id, name, price, currentPrice }: ProductItemProps) => {
+const ProductItem = ({ discount, images, id, name, price, currentPrice }: ProductType) => {
   const dispatch = useDispatch();
   const { favProducts } = useSelector((state: RootState) => state.user);
 
@@ -34,7 +26,7 @@ const ProductItem = ({ discount, productImage, id, name, price, currentPrice }: 
 
         <Link href={`/product/${id}`}>
           <a>
-            <img src={productImage} alt="product" />
+            <img src={images[0]} alt="product" />
             {discount && 
               <span className="product__discount">{discount}%</span>
             }
