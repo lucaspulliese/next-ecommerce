@@ -1,6 +1,12 @@
-export type PunctuationType = {
-  id: string;
+export type VotesType = {
+  count: number;
   value: number;
+}
+
+export type PunctuationType = {
+  countOpinions: number;
+  punctuation: number;
+  votes: VotesType[]
 }
 
 export type ReviewType = {
@@ -20,9 +26,19 @@ export type ProductType = {
   size: string;
   images: string[];
   discount?: string;
-  currentPrice?: string;
-  punctuationReview?: PunctuationType[];
-  reviews?: ReviewType[];
+  currentPrice: number;
+  punctuation: PunctuationType;
+  reviews: ReviewType[];
+}
+
+export type ProductTypeList = {
+  id: string;
+  name: string;
+  price: string;
+  color: string;
+  images: string[];
+  discount?: string;
+  currentPrice?: number;
 }
 
 export type ProductStoreType = {

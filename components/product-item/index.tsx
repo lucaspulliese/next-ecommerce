@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { some } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleFavProduct } from './../../store/actions/userActions';
+import { toggleFavProduct } from 'store/reducers/user';
 import { RootState } from 'store';
-import { ProductType } from 'types';
+import { ProductTypeList } from 'types';
 
-const ProductItem = ({ discount, images, id, name, price, currentPrice }: ProductType) => {
+const ProductItem = ({ discount, images, id, name, price, currentPrice }: ProductTypeList) => {
   const dispatch = useDispatch();
   const { favProducts } = useSelector((state: RootState) => state.user);
 

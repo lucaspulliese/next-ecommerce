@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import { useRouter } from 'next/router';
 
 type LayoutType = {
-  title: string;
+  title?: string;
   children?: React.ReactNode;
 }
 

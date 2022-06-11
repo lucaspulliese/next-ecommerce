@@ -35,7 +35,7 @@ const Product = ({ product }: ProductPageType) => {
 
   return (
     <Layout>
-      <Breadcrumb currentPage={product.name} />
+      <Breadcrumb />
 
       <section className="product-single">
         <div className="container">

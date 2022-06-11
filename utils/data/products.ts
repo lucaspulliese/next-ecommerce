@@ -12,8 +12,8 @@ export const products = [
     images: [
       '/images/products/product-1.jpg',
     ],
-    punctuationReview: {
-      countOpionions: 81,
+    punctuation: {
+      countOpinions: 81,
       punctuation: 4.5,
       votes: [
         {
@@ -71,8 +71,8 @@ export const products = [
     images: [
       '/images/products/product-2.jpg',
     ],
-    punctuationReview: {
-      countOpionions: 81,
+    punctuation: {
+      countOpinions: 81,
       punctuation: 4.5,
       votes: [
         {
@@ -130,8 +130,8 @@ export const products = [
     images: [
       '/images/products/product-3.jpg',
     ],
-    punctuationReview: {
-      countOpionions: 81,
+    punctuation: {
+      countOpinions: 81,
       punctuation: 4.5,
       votes: [
         {
@@ -189,8 +189,8 @@ export const products = [
     images: [
       '/images/products/product-4.jpg',
     ],
-    punctuationReview: {
-      countOpionions: 81,
+    punctuation: {
+      countOpinions: 81,
       punctuation: 4.5,
       votes: [
         {
@@ -248,8 +248,8 @@ export const products = [
     images: [
       '/images/products/product-5.jpg',
     ],
-    punctuationReview: {
-      countOpionions: 81,
+    punctuation: {
+      countOpinions: 81,
       punctuation: 4.5,
       votes: [
         {
@@ -308,8 +308,8 @@ export const products = [
     images: [
       '/images/products/product-6.jpg',
     ],
-    punctuationReview: {
-      countOpionions: 81,
+    punctuation: {
+      countOpinions: 81,
       punctuation: 4.5,
       votes: [
         {

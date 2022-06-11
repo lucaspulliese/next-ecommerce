@@ -1957,6 +1957,11 @@ h1,h2,h3,h4,h5 {
         &.is-active {
           color: var(--color-orange);
         }
+        &.is-active-half {
+          &:before {
+            color: var(--color-orange);
+          }
+        }
       }
     }
   }
@@ -1980,6 +1985,9 @@ h1,h2,h3,h4,h5 {
     justify-content: center;
     flex-wrap: wrap;
   }
+  @include breakpoint(tablet-lg) {
+    width: 52%;
+  }
   .product-punctuation__values {
     text-align: center;
     margin-bottom: 25px;
@@ -1999,6 +2007,11 @@ h1,h2,h3,h4,h5 {
         line-height: 100%;
         &.is-active {
           color: var(--color-orange);
+        }
+        &.is-active-half {
+          &:before {
+            color: var(--color-orange);
+          }
         }
       }
     }
@@ -2027,6 +2040,11 @@ h1,h2,h3,h4,h5 {
       .react-rater-star {
         &.is-active {
           color: var(--color-orange);
+        }
+        &.is-active-half {
+          &:before {
+            color: var(--color-orange);
+          }
         }
       }
     }

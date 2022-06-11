@@ -5,7 +5,7 @@ import CheckboxColor from './../../products-filter/form-builder/checkbox-color';
 import { useDispatch, useSelector } from 'react-redux';
 import { some } from 'lodash';
 import { addProduct } from 'store/reducers/cart';
-import { toggleFavProduct } from './../../../store/actions/userActions';
+import { toggleFavProduct } from 'store/reducers/user';
 import { ProductType, ProductStoreType } from 'types';
 import { RootState } from 'store';
 

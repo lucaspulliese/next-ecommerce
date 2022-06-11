@@ -14,7 +14,11 @@ const Reviews = ({ show, product }: ReviewsProductType) => {
 
   return (
     <section style={style} className="product-single__reviews">
-      <Punctuation punctuations={product.punctuationReview} />
+      <Punctuation 
+        punctuation={product.punctuation.punctuation}
+        countOpinions={product.punctuation.countOpinions}
+        votes={product.punctuation.votes} 
+      />
       <ReviewsList reviews={product.reviews} />
     </section>
   );

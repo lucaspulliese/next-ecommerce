@@ -17,6 +17,8 @@ const LoginPage = () => {
       email: data.email,
       password: data.password
     });
+
+    console.log(res);
   };
 
   return (

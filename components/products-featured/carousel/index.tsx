@@ -1,5 +1,5 @@
 import ProductItem from './../../product-item';
-import { ProductType } from 'types';
+import { ProductTypeList } from 'types';
 
 // import Swiper core and required components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -21,11 +21,11 @@ if (process.browser) {
 }
 
 type ProductsCarouselType = {
-  products: ProductType[]
+  products: ProductTypeList[]
 }
 
 const ProductsCarousel = ({ products }: ProductsCarouselType) => {
-  if (!products) return 'Loading';
+  if (!products) return <div>Loading</div>;
 
   return (
     <div className="products-carousel">
@@ -41,11 +41,8 @@ const ProductsCarousel = ({ products }: ProductsCarouselType) => {
             <ProductItem 
               id={item.id} 
               name={item.name}
-              thumb={item.thumb}
               price={item.price}
               color={item.color}
-              count={item.count}
-              size={item.size}
               discount={item.discount}
               currentPrice={item.currentPrice}
               key={item.id}

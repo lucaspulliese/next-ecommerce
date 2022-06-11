@@ -2,10 +2,11 @@ import Layout from '../../layouts/Main';
 import { useSelector } from 'react-redux';
 import CheckoutStatus from '../../components/checkout-status';
 import CheckoutItems from '../../components/checkout/items';
+import { RootState } from 'store';
 
 const CheckoutPage = () => {
 
-  const priceTotal = useSelector(state => {
+  const priceTotal = useSelector((state: RootState) => {
     const cartItems = state.cart.cartItems;
     let totalPrice = 0;
     if(cartItems.length > 0) {
