@@ -378,23 +378,23 @@ h1,h2,h3,h4,h5 {
   }
   &.site-header--fixed {
     border-bottom: 1px solid #E5E5E5;
-    background-color: #FFF;
+    background-color: var(--color-brown);
     .btn-hamburger {
       &:before, &:after, span {
-        background-color: #000;
+        background-color: #FFF;
       }
     }
     a, i {
-      color: #000;
+      color: #FFF;
     }
     button {
-      color: #000;
+      color: #FFF;
       i {
-        color: #000;
+        color: #FFF;
       }
     }
     .site-logo {
-      color: #000;
+      color: #FFF;
     }
   }
   .search-form-wrapper {
@@ -1199,8 +1199,8 @@ h1,h2,h3,h4,h5 {
     }
     &:hover {
       i {
-        color: var(--color-orange);
-        background: var(--color-orange-light);
+        color: var(--color-brown);
+        background: var(--color-brown-light);
       }
     }
   }
