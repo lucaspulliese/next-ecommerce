@@ -1,13 +1,13 @@
-# Updates!
+# Introduction
 
-This new version contains an integration with redux-toolkit instead of redux and it's witch Typescript :)
+This is the repo for Airashi's online shop. This is based on the original project at https://github.com/lucaspulliese/next-ecommerce, made with Next.js, Redux, Redux-persist, Hooks, SCSS and BEM. Changes to the design and extra features are added to better fit Airashi's design and purpose.
 
 # Next.js Ecommerce
 
 This repo contains a work in progress Ecommerce responsive made with Next.js, Redux, Redux-persist, Hooks, SCSS and BEM. If you like it please give it a star :)
-## Design
+## Versions
 
-[This](https://www.xdguru.com/free-xd-ecommerce-ui-kit-by-iceo/) is the design of the project.
+**0.1:** Added Airashi designs and products
 
 ## Available pages
 
@@ -19,16 +19,6 @@ This repo contains a work in progress Ecommerce responsive made with Next.js, Re
 - Register page: /register
 - 404 page: /page-not-found
 
-## Screenshots
+## Upcoming versions
 
-![Next Ecommerce screenshot](https://lucaspulliese.com/wp-content/uploads/2020/09/ecommerce-1.jpg)
-
-![Next Ecommerce screenshot](https://lucaspulliese.com/wp-content/uploads/2020/09/ecommerce-2.jpg)
-
-## Next TO-DO
-
-- [X] Checkout page
-- [ ] Add Facebook login
-- [ ] Add Google login
-- [ ] Add Proptypes on components
-- [ ] Use CSS variables instead of static colors
+**0.2** Add locales for English - Vietnamese translations
