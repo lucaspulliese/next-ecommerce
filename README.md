@@ -2,9 +2,6 @@
 
 This is the repo for Airashi's online shop. This is based on the original project at https://github.com/lucaspulliese/next-ecommerce, made with Next.js, Redux, Redux-persist, Hooks, SCSS and BEM. Changes to the design and extra features are added to better fit Airashi's design and purpose.
 
-# Next.js Ecommerce
-
-This repo contains a work in progress Ecommerce responsive made with Next.js, Redux, Redux-persist, Hooks, SCSS and BEM. If you like it please give it a star :)
 ## Versions
 
 **0.1:** Added Airashi designs and products
