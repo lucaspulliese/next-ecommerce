@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from 'components/header';
 import { useRouter } from 'next/router';
+import Script from 'next/script'
 
 type LayoutType = {
   title?: string;
