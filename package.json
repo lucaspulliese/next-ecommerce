@@ -1,6 +1,6 @@
 {
-  "name": "next-ecommerce",
-  "version": "0.1.0",
+  "name": "kaptcha-me-ecommerce",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
