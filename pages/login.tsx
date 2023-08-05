@@ -9,6 +9,7 @@ type LoginMail = {
   password: string;
 }
 
+
 const LoginPage = () => {
   const { register, handleSubmit, errors } = useForm();
 
@@ -17,6 +18,7 @@ const LoginPage = () => {
       email: data.email,
       password: data.password
     });
+
 
     console.log(res);
   };
@@ -54,8 +56,9 @@ const LoginPage = () => {
                 }
 
                 {errors.email && errors.email.type === 'pattern' && 
-                  <p className="message message--error">Please write a valid email</p>
+                  <p className="message message--error">Please enter a valid email</p>
                 }
+
               </div>
               
               <div className="form__input-row">
