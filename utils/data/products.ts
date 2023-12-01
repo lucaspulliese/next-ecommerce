@@ -42,7 +42,7 @@ export const products = [
       {
         name: 'John Doe',
         avatar: '/images/featured-1.jpg',
-        description: '<p><img src="" onError=alert(1) />Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>',
+        description: '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>',
         punctuation: 2
       },
       {

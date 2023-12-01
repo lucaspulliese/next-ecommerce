@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
-    "dompurify": "^3.0.6",
+    "isomorphic-dompurify": "^1.11.0",
     "lodash": "^4.17.21",
     "next": "^12.1.0",
     "next-redux-wrapper": "^6.0.2",
