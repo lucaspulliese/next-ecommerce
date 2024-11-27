@@ -5,9 +5,6 @@ html,body{overflow-x:hidden !important}
 @import './partials/breakpoints.scss';
 @import './partials/reset.css';
 
-// google fonts
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&family=Poppins:wght@300;400;500;600&display=swap');
-
 @mixin placeholder {
   &::-webkit-input-placeholder {
       @content;
