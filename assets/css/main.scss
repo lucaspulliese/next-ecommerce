@@ -6,7 +6,7 @@ html,body{overflow-x:hidden !important}
 @import './partials/reset.css';
 
 // google fonts
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&family=Poppins:wght@300;400;500;600&display=swap');
 
 @mixin placeholder {
   &::-webkit-input-placeholder {
@@ -74,7 +74,7 @@ html,body{overflow-x:hidden !important}
 body {
   box-sizing: border-box;
   background-color: white;
-  font-family: var(--main-font);
+  font-family: var(--main-font), "DM Sans", serif;
   color: var(--color-text);
   font-size: 16px;
   &.body--with-footer {

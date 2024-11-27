@@ -7,7 +7,7 @@ const RegisterPage = () => (
       <div className="container">
         <div className="back-button-section">
           <Link href="/products">
-            <a><i className="icon-left"></i> Back to store</a>
+            <i className="icon-left"></i>Back to store
           </Link>
         </div>
 
@@ -47,7 +47,7 @@ const RegisterPage = () => (
 
             <p className="form__signup-link">
               <Link href="/login">
-                <a href="#">Are you already a member?</a>
+                Are you already a member?
               </Link>
             </p>
           </form>
