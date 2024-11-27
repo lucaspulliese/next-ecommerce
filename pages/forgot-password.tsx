@@ -12,7 +12,7 @@ const ForgotPassword = () => {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async (data: ForgotMail) => {
-    const res = await postData(`${server}/api/login`, {
+    await postData(`${server}/api/login`, {
       email: data.email,
     });
   };
