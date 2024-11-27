@@ -1,6 +1,7 @@
-import Layout from "../layouts/Main";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+
+import Layout from "../layouts/Main";
 import { server } from "../utils/server";
 import { postData } from "../utils/services";
 
@@ -25,7 +26,8 @@ const LoginPage = () => {
         <div className="container">
           <div className="back-button-section">
             <Link href="/products">
-              <i className="icon-left"></i>Back to store
+              <i className="icon-left" />
+              Back to store
             </Link>
           </div>
 
@@ -83,7 +85,7 @@ const LoginPage = () => {
                 <div className="checkbox-wrapper">
                   <label
                     htmlFor="check-signed-in"
-                    className={`checkbox checkbox--sm`}
+                    className="checkbox checkbox--sm"
                   >
                     <input
                       type="checkbox"
@@ -91,7 +93,7 @@ const LoginPage = () => {
                       id="check-signed-in"
                       ref={register({ required: false })}
                     />
-                    <span className="checkbox__check"></span>
+                    <span className="checkbox__check" />
                     <p>Keep me signed in</p>
                   </label>
                 </div>
@@ -105,7 +107,8 @@ const LoginPage = () => {
 
               <div className="form__btns">
                 <button type="button" className="btn-social fb-btn">
-                  <i className="icon-facebook"></i>Facebook
+                  <i className="icon-facebook" />
+                  Facebook
                 </button>
                 <button type="button" className="btn-social google-btn">
                   <img src="/images/icons/gmail.svg" alt="gmail" /> Gmail
