@@ -1,8 +1,8 @@
-import Layout from '../layouts/Main';
-import Footer from '../components/footer';
-import Breadcrumb from '../components/breadcrumb';
-import ProductsFilter from '../components/products-filter';
-import ProductsContent from '../components/products-content';
+import Breadcrumb from "../components/breadcrumb";
+import Footer from "../components/footer";
+import ProductsContent from "../components/products-content";
+import ProductsFilter from "../components/products-filter";
+import Layout from "../layouts/Main";
 
 const Products = () => (
   <Layout>
@@ -15,7 +15,6 @@ const Products = () => (
     </section>
     <Footer />
   </Layout>
-)
-  
-export default Products
-  
+);
+
+export default Products;

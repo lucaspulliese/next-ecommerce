@@ -1,17 +1,17 @@
-import React, { Fragment } from "react";
-import Router from "next/router";
-import { wrapper } from "../store";
-
-// types
-import type { AppProps } from "next/app";
-
 // global styles
 import "../assets/css/styles.scss";
 import "swiper/swiper.scss";
 import "rc-slider/assets/index.css";
 import "react-rater/lib/react-rater.css";
 
-import * as gtag from "./../utils/gtag";
+// types
+import type { AppProps } from "next/app";
+import { Poppins } from "next/font/google";
+import Router from "next/router";
+import React, { Fragment } from "react";
+
+import { wrapper } from "../store";
+import * as gtag from "../utils/gtag";
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -20,8 +20,6 @@ if (isProduction) {
   // Notice how we track pageview when route is changed
   Router.events.on("routeChangeComplete", (url: string) => gtag.pageview(url));
 }
-
-import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
   subsets: ["latin"],

@@ -1,4 +1,4 @@
-import ProductItemLoading from './../../../product-item/loading';
+import ProductItemLoading from "../../../product-item/loading";
 
 const ProductsLoading = () => {
   return (
@@ -12,5 +12,5 @@ const ProductsLoading = () => {
     </section>
   );
 };
-  
-export default ProductsLoading
+
+export default ProductsLoading;

@@ -1,6 +1,7 @@
-import Layout from "../layouts/Main";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+
+import Layout from "../layouts/Main";
 import { server } from "../utils/server";
 import { postData } from "../utils/services";
 
@@ -23,7 +24,8 @@ const ForgotPassword = () => {
         <div className="container">
           <div className="back-button-section">
             <Link href="/products">
-              <i className="icon-left"></i>Back to shop
+              <i className="icon-left" />
+              Back to shop
             </Link>
           </div>
 
@@ -43,7 +45,7 @@ const ForgotPassword = () => {
                   ref={register({
                     required: true,
                     pattern:
-                      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                   })}
                 />
 

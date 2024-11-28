@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
     "export": "next build && next export"
   },
   "keywords": [
@@ -39,12 +40,24 @@
     "use-onclickoutside": "^0.3.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.15.0",
     "@types/lodash": "^4.14.182",
     "@types/node": "^17.0.34",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
+    "@typescript-eslint/parser": "^8.16.0",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "fslightbox-react": "^1.5.0",
     "node-fetch": "^3.1.1",
-    "typescript": "^5.7.2"
+    "prettier": "^3.4.1",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.16.0"
   }
 }

@@ -1,0 +1,64 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/strict",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@next/next/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "prettier",
+    "simple-import-sort",
+    "unused-imports",
+    "import"
+  ],
+  "root": true,
+  "rules": {
+    "@typescript-eslint/consistent-type-imports": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/no-unescaped-entities": "off",
+    "prettier/prettier": "error",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "unused-imports/no-unused-imports": "error",
+    "@next/next/no-img-element": "off",
+    "react/no-unknown-property": [
+      2,
+      {
+        "ignore": ["jsx", "global"]
+      }
+    ],
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
