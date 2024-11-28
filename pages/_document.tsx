@@ -1,6 +1,5 @@
 import type { DocumentContext, DocumentInitialProps } from "next/document";
 import Document, { Head, Html, Main, NextScript } from "next/document";
-import { Fragment } from "react";
 
 import { GA_TRACKING_ID } from "../utils/gtag";
 
