@@ -1,11 +1,22 @@
 # Comming soon
 
 I know it's been a while since I updated this repo, but hopefully in the next months I can add more features on the project.
-Thanks everyone who gave a start to this project 🫶
+Thanks everyone who gave a star and forked it 🫶
 
 # Next.js Ecommerce
 
 This repo contains a work in progress Ecommerce responsive made with Next.js, Redux, Redux-persist, Hooks, SCSS and BEM. If you like it please give it a star :)
+
+## Getting started
+
+It's easy to have it running locally.
+Just do a `yarn install` to install the dependencies.
+Then do a `yarn dev` to run it locally.
+
+## Backend
+
+The backend of the project it's only mocked data. You can find them in `utils/data`.
+The API is being handled by Next API routes.
 
 ## Design
 
@@ -27,9 +38,7 @@ This repo contains a work in progress Ecommerce responsive made with Next.js, Re
 
 ![Next Ecommerce screenshot](https://lucaspulliese.com/wp-content/uploads/2020/09/ecommerce-2.jpg)
 
-## Next TO-DO
+## New features added - Nov 2024
 
-- [x] Checkout page
-- [ ] Add Facebook login
-- [ ] Add Google login
-- [ ] Use CSS variables instead of static colors
+- Updated Next version.
+- Added eslint config.
