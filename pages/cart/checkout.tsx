@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useSelector } from "react-redux";
 import type { RootState } from "store";
 
@@ -175,9 +176,9 @@ const CheckoutPage = () => {
           </div>
 
           <div className="cart-actions cart-actions--checkout">
-            <a href="/cart" className="cart__btn-back">
+            <Link href="/cart" className="cart__btn-back">
               <i className="icon-left" /> Back
-            </a>
+            </Link>
             <div className="cart-actions__items-wrapper">
               <button type="button" className="btn btn--rounded btn--border">
                 Continue shopping

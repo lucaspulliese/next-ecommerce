@@ -49,7 +49,7 @@ const LoginPage = () => {
                   ref={register({
                     required: true,
                     pattern:
-                      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                   })}
                 />
 
@@ -97,12 +97,12 @@ const LoginPage = () => {
                     <p>Keep me signed in</p>
                   </label>
                 </div>
-                <a
+                <Link
                   href="/forgot-password"
                   className="form__info__forgot-password"
                 >
                   Forgot password?
-                </a>
+                </Link>
               </div>
 
               <div className="form__btns">
@@ -123,7 +123,7 @@ const LoginPage = () => {
               </button>
 
               <p className="form__signup-link">
-                Not a member yet? <a href="/register">Sign up</a>
+                Not a member yet? <Link href="/register">Sign up</Link>
               </p>
             </form>
           </div>

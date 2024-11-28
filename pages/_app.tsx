@@ -28,14 +28,14 @@ const poppins = Poppins({
 });
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <>
+  <Fragment>
     <style jsx global>{`
       :root {
         --main-font: ${poppins.style.fontFamily};
       }
     `}</style>
     <Component {...pageProps} />
-  </>
+  </Fragment>
 );
 
 export default wrapper.withRedux(MyApp);

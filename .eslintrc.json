@@ -2,7 +2,6 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/strict",
-    "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -37,6 +36,13 @@
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "unused-imports/no-unused-imports": "error",
+    "@next/next/no-img-element": "off",
+    "react/no-unknown-property": [
+      2,
+      {
+        "ignore": ["jsx", "global"]
+      }
+    ],
     "unused-imports/no-unused-vars": [
       "warn",
       {

@@ -13,9 +13,10 @@ const CheckboxColor = ({
   onChange,
   valueName,
 }: CheckboxColorType) => {
-  const onSelect = (e: any) => {
-    if (onChange) {
-      onChange(e.target.getAttribute("data-name"));
+  const onSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const dataName = e.target.getAttribute("data-name");
+    if (onChange && dataName) {
+      onChange(dataName);
     }
   };
 
