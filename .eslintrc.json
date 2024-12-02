@@ -29,6 +29,7 @@
   ],
   "root": true,
   "rules": {
+    "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/consistent-type-imports": "error",
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": "off",
